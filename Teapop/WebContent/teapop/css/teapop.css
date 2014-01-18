@@ -1,0 +1,101 @@
+#teapopHeader{
+	height: 150px;
+}
+
+.teapopMenu{
+    /* Affects the UL element */
+    overflow: hidden;
+    display: inline-block;
+
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+    -moz-box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+    -webkit-box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+}
+
+.teapopMenu li{
+    /* Specifying a fallback color and we define CSS3 gradients for the major browsers: */
+
+    background-color: #f0f0f0;
+    border-right: 1px solid rgba(9, 9, 9, 0.125);
+    /* Adding a 1px inset highlight for a more polished efect: */
+    position:relative;
+    float: left;
+    list-style: none;
+}
+
+
+.teapopMenu li:first-child{
+    border-radius: 4px 0 0 4px;
+}
+
+.teapopMenu li:first-child:after,
+.teapopMenu li.selected:first-child:after{
+    box-shadow:1px 0 0 #a3a3a3,2px 0 0 #fff;
+    -moz-box-shadow:1px 0 0 #a3a3a3,2px 0 0 #fff;
+    -webkit-box-shadow:1px 0 0 #a3a3a3,2px 0 0 #fff;
+
+    border-radius:4px 0 0 4px;
+}
+
+.teapopMenu li:last-child{
+    border-radius: 0 4px 4px 0;
+}
+
+/* Treating the last LI and li:after elements separately */
+
+.teapopMenu li:last-child:after,
+.teapopMenu li.selected:last-child:after{
+    box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff;
+    -moz-box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff;
+    -webkit-box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff;
+
+    border-radius:0 4px 4px 0;
+}
+
+.teapopMenu li:hover:after,
+.teapopMenu li.selected:after,
+.teapopMenu li:target:after{
+    /* This property triggers the CSS3 transition */
+    opacity:1;
+}
+
+.teapopMenu:hover li.selected:after,
+.teapopMenu:hover li:target:after{
+    /* Hides the targeted li when we are hovering on the UL */
+    opacity:0;
+}
+
+.teapopMenu li.selected:hover:after,
+.teapopMenu li:target:hover:after{
+    opacity:1 !important;
+}
+
+.teapopMenu li a{
+    color: black;
+    display: inline-block;
+    font: 20px/1  'Oswald', sans-serif;
+    padding: 12px 35px 14px;
+    position: relative;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+    z-index:2;
+    text-decoration:none !important;
+    white-space:nowrap;
+}
+
+.teapopMenu a.homeIcon{
+    background:url('../img/home.png') no-repeat center center;
+    display: block;
+    overflow: hidden;
+    padding-left: 12px;
+    padding-right: 12px;
+    text-indent: -9999px;
+    width: 16px;
+}
+
+.teapopMenu  li a:hover {
+background: #C15342;
+}
