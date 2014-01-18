@@ -75,7 +75,7 @@
 }
 
 .teapopMenu li a{
-    color: black;
+    color: #5d5d5d;
     display: inline-block;
     font: 20px/1  'Oswald', sans-serif;
     padding: 12px 35px 14px;
@@ -98,4 +98,5 @@
 
 .teapopMenu  li a:hover {
 background: #C15342;
+color: #fafafa;
 }
