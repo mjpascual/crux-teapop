@@ -30,12 +30,12 @@
 .teapopMenu li{
 	/* Specifying a fallback color and we define CSS3 gradients for the major browsers: */
 	
-	background-color: #f0f0f0;
-	background-image: -webkit-gradient(linear,left top, left bottom,from(#fefefe), color-stop(0.5,#f0f0f0), color-stop(0.51, #e6e6e6));
-	background-image: -moz-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
-	background-image: -o-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
-	background-image: -ms-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
-	background-image: linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
+	background-color: #7A7776;
+/* 	background-image: -webkit-gradient(linear,left top, left bottom,from(#fefefe), color-stop(0.5,#f0f0f0), color-stop(0.51, #e6e6e6)); */
+/* 	background-image: -moz-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%); */
+/* 	background-image: -o-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%); */
+/* 	background-image: -ms-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%); */
+/* 	background-image: linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%); */
 	
 	border-right: 1px solid rgba(9, 9, 9, 0.125);
 	
@@ -67,12 +67,12 @@
 	opacity:0;
 	
 	/* Gradients! */
-	
-	background-image:-webkit-gradient(linear, left top, right top, from(rgba(168,168,168,0.5)),color-stop(0.5,rgba(168,168,168,0)), to(rgba(168,168,168,0.5)));
-	background-image:-moz-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
-	background-image:-o-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
-	background-image:-ms-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
-	background-image:linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
+	background: #C15342;
+/* 	background-image:-webkit-gradient(linear, left top, right top, from(rgba(168,168,168,0.5)),color-stop(0.5,rgba(168,168,168,0)), to(rgba(168,168,168,0.5))); */
+/* 	background-image:-moz-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5)); */
+/* 	background-image:-o-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5)); */
+/* 	background-image:-ms-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5)); */
+/* 	background-image:linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5)); */
 	
 	/* Creating borders with box-shadow. Useful, as they don't affect the size of the element. */
 	
@@ -139,12 +139,12 @@
 /* Styling the anchor elements */
 
 .teapopMenu li a{
-	color: #5d5d5d;
+	color: #fafafa;
 	display: inline-block;
 	font:  20px/1  'Oswald', sans-serif;
 	padding: 12px 35px 14px;
 	position: relative;
-	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+/* 	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6); */
 	z-index:2;
 	text-decoration:none !important;
 	white-space:nowrap;
