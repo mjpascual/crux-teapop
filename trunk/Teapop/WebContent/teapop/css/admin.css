@@ -1,0 +1,66 @@
+
+body .login {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000000;
+}
+
+body .login a {
+	color: #c1503e;
+}
+
+header.login, footer.login, article.login {
+	margin-left:auto;
+	text-align: center;
+	margin-right:auto;
+	padding: 25px;
+}
+
+
+header.login {
+	padding-top: 80px;
+}
+
+article.login {
+	width: 400px;
+	text-align: left;
+}
+
+article.login aside{
+	padding: 10px 10px 10px 40px ;
+	float: left;
+}
+
+article.login section{
+	float: left;
+	padding: 10px 10px 10px 30px;
+}
+
+article.login section  div.submitLogin {
+	padding-top: 5px;
+	padding-left: 90px;
+}
+input:required:invalid, input:focus:invalid {
+    background-image: url(../images/invalid.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+  
+input:required:valid {
+	background-image: url(../images/valid.png);
+	background-position: right top;
+	background-repeat: no-repeat;
+}
+
+input.button {
+	text-decoration: none;
+	color: #FFF;
+	display: inline-block;
+	padding: 5px 15px 5px 15px;
+	background: #c1503e;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-khtml-border-radius: 10px 10px 10px 10px;
+	border-radius: 10px 10px 10px 10px;
+}
+
