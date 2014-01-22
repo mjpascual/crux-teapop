@@ -78,8 +78,11 @@
 
 .teapopMenu{
 	/* Affects the UL element */
-	overflow: hidden;
-	display: inline-block;
+	display: table;
+    margin-left: 40px;
+    overflow: hidden;
+    padding: 0;
+    width: 900px;
 }
 
 .teapopMenu li{
@@ -96,21 +99,27 @@
 	
 	/* Adding a 1px inset highlight for a more polished efect: */
 	
-	box-shadow: 1px -1px 0 rgba(100, 255, 255, 0.6) inset;
+	box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
 	-moz-box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
 	-webkit-box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
 	
 	position:relative;
 	
-	float: left;
+/* 	float: left; */
 	list-style: none;
+	display: table-cell;
 }
 
+
+/*	UNCOMMENT content to show animation. 
+	Current implementation is broken ni firefox. 
+	Has something to do with table-cell strictness */
+	
 .teapopMenu li:after{
 
-	/* This creates a pseudo element inslide each LI */	
+/* 	This creates a pseudo element inslide each LI	 */
 	
-	content:'.';
+/* 	content:' '; */
 	text-indent:-9999px;
 	overflow:hidden;
 	position:absolute;
@@ -121,21 +130,21 @@
 	z-index:1;
 	opacity:0;
 	
-	/* Gradients! */
+/* 	Gradients! */
 	background: #C15342;
-/* 	background-image:-webkit-gradient(linear, left top, right top, from(rgba(168,168,168,0.5)),color-stop(0.5,rgba(168,168,168,0)), to(rgba(168,168,168,0.5))); */
-/* 	background-image:-moz-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5)); */
-/* 	background-image:-o-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5)); */
-/* 	background-image:-ms-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5)); */
-/* 	background-image:linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5)); */
+	background-image:-webkit-gradient(linear, left top, right top, from(rgba(168,168,168,0.5)),color-stop(0.5,rgba(168,168,168,0)), to(rgba(168,168,168,0.5)));
+	background-image:-moz-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
+	background-image:-o-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
+	background-image:-ms-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
+	background-image:linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
 	
-	/* Creating borders with box-shadow. Useful, as they don't affect the size of the element. */
+/* 	Creating borders with box-shadow. Useful, as they don't affect the size of the element. */
 	
 	box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff,1px 0 0 #a3a3a3,2px 0 0 #fff;
 	-moz-box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff,1px 0 0 #a3a3a3,2px 0 0 #fff;
 	-webkit-box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff,1px 0 0 #a3a3a3,2px 0 0 #fff;
 	
-	/* This will create a smooth transition for the opacity property */
+/* 	This will create a smooth transition for the opacity property */
 	
 	-moz-transition:0.25s all;
 	-webkit-transition:0.25s all;
@@ -195,7 +204,7 @@
 
 .teapopMenu li a{
 	color: #fafafa;
-	display: inline-block;
+	display: block;
 	font:  20px/1  'Oswald', sans-serif;
 	padding: 12px 35px 14px;
 	position: relative;
@@ -207,8 +216,8 @@
 
 
 .teapopMenu  li a:hover {
-background: #C15342;
-color: #fafafa;
+	background: #C15342;
+	color: #fafafa;
 }
 
 
