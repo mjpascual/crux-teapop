@@ -190,6 +190,10 @@ footer.main a{
 	color: #f9c4bb;
 }
 
+footer.main a:hover{
+	color: #b04939;
+}
+
 
 /* ADMIN SHARED CSS */
 
