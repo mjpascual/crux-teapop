@@ -26,7 +26,7 @@ article.login {
 	text-align: left;
 }
 
-article.login figure{
+article.login aside{
 	padding: 10px 10px 10px 40px ;
 	float: left;
 }
@@ -64,3 +64,4 @@ input.button {
 	border-radius: 10px 10px 10px 10px;
 }
 
+/* ADMIN MAIN  */
