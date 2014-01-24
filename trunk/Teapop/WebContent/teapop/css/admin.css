@@ -140,7 +140,7 @@ header.main div.status a:hover{
 article.main {
 	width:100%;
 	background-color: #fbd2cb;
-	height: 1000px;
+	min-height: 1000px;
 }
 
 article.main aside {
@@ -152,4 +152,21 @@ article.main aside {
 	border-radius: 10px 10px 10px 10px;
 	margin: 20px 10px 10px 70px;
 	float: left;
+}
+
+footer.main{
+	height: 50px;
+	margin: 20px 0 0 50px;
+	text-align: center;
+	font: 14px;
+	color: #8c3a2e;
+}
+
+footer.main a{
+	height: 50px;
+	margin: 20px 0 50px 0;
+	text-align: center;
+	font-size: 14px;
+	text-decoration: none;
+	color: #8c3a2e;
 }
