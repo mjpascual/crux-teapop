@@ -1,12 +1,12 @@
 
 /* LOGIN  */
-body .login {
+body.login {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	color: #000000;
 }
 
-body .login a {
+body.login a {
 	color: #c1503e;
 }
 
@@ -53,7 +53,7 @@ article.login input:required:valid {
 	background-repeat: no-repeat;
 }
 
-input.button {
+article.login input.button {
 	text-decoration: none;
 	color: #FFF;
 	display: inline-block;
@@ -122,8 +122,7 @@ header.main div.status {
 	font-size: 18px;
 	color: white;
 	float: right;
-	width: 550px;
-	height: 130px;
+	width: 530px;
 	margin-top: 50px;
 }
 
@@ -138,28 +137,48 @@ header.main div.status a:hover{
 }
 
 article.main {
-	width:100%;
 	background-color: #fbd2cb;
+	float: none;
 	min-height: 1000px;
 }
 
 article.main aside {
-	width: 300px;
-	min-height: 500px;
+	float: left;
+	width: 350px;
+/* 	background-color: #c1503e; */
+	min-height: 300px;
 	-webkit-border-radius: 10px 10px 10px 10px;
 	-moz-border-radius: 10px 10px 10px 10px;
 	-khtml-border-radius: 10px 10px 10px 10px;
 	border-radius: 10px 10px 10px 10px;
-	margin: 20px 10px 10px 70px;
+	margin: 20px 10px 10px 40px;
+	
+}
+
+article.main section{
 	float: left;
+	width: 850px;
+/* 	background-color: white; */
+	min-height: 960px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-khtml-border-radius: 10px 10px 10px 10px;
+	border-radius: 10px 10px 10px 10px;
+	margin: 20px 10px 20px 10px;
 }
 
 footer.main{
 	height: 50px;
-	margin: 20px 0 0 50px;
+	padding: 20px 0 0 50px;
 	text-align: center;
 	font: 14px;
-	color: #8c3a2e;
+	color: #f9c4bb;
+	background-color: #c1503e;
+	-webkit-border-radius: 0 0 10px 10px;
+	-moz-border-radius: 0 0 10px 10px;
+	-khtml-border-radius: 0 0 10px 10px;
+	border-radius: 0 0 10px 10px;
+	margin-bottom: 20px;
 }
 
 footer.main a{
@@ -168,5 +187,12 @@ footer.main a{
 	text-align: center;
 	font-size: 14px;
 	text-decoration: none;
-	color: #8c3a2e;
+	color: #f9c4bb;
+}
+
+
+/* ADMIN SHARED CSS */
+
+clear {
+	float: none;
 }
