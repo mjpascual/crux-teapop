@@ -40,13 +40,14 @@ article.login section  div.submitLogin {
 	padding-top: 5px;
 	padding-left: 90px;
 }
-input:required:invalid, input:focus:invalid {
+
+article.login input:required:invalid, input:focus:invalid {
     background-image: url(../images/admin/invalid.png);
     background-position: right top;
     background-repeat: no-repeat;
 }
   
-input:required:valid {
+article.login input:required:valid {
 	background-image: url(../images/admin/valid.png);
 	background-position: right top;
 	background-repeat: no-repeat;
@@ -65,3 +66,90 @@ input.button {
 }
 
 /* ADMIN MAIN  */
+
+body.main{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	width: 1300px;	
+	margin-left:auto;
+	margin-right:auto;
+	background: #df8474;
+}
+
+header.main {
+	height: 130px;
+	background-color: #c1503e;
+}
+
+header.main figure {
+	height: 130px;
+	background-color: #c1503e;
+	float: left;
+	margin: 0px;
+	padding-left: 50px;
+	width: 350px;
+}
+
+header.main div.link {
+	height: 130px;
+	float: left;
+	width : 200px;
+}
+
+header.main div.link a {
+	font-size: 25px;
+	text-decoration: none;
+	color: #FFF;
+	display: inline-block;
+	padding: 5px 15px 5px 15px;
+	background: #b04939;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-khtml-border-radius: 10px 10px 10px 10px;
+	border-radius: 10px 10px 10px 10px;
+	margin: 35px 0 0 10px;
+	border-style:solid;
+	border-color:#d65946;
+}
+
+header.main div.link a:hover {
+	color: #b04939;
+	background: #f9c4bb;
+}
+
+header.main div.status {
+	font-size: 18px;
+	color: white;
+	float: right;
+	width: 550px;
+	height: 130px;
+	margin-top: 50px;
+}
+
+header.main div.status a{
+	font-size: 18px;
+	color: #f9c4bb;
+}
+
+header.main div.status a:hover{
+	font-size: 18px;
+	color: #a74232;
+}
+
+article.main {
+	width:100%;
+	background-color: #fbd2cb;
+	height: 1000px;
+}
+
+article.main aside {
+	width: 300px;
+	min-height: 500px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-khtml-border-radius: 10px 10px 10px 10px;
+	border-radius: 10px 10px 10px 10px;
+	margin: 20px 10px 10px 70px;
+	float: left;
+}
