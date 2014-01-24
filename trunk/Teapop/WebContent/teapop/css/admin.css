@@ -74,7 +74,7 @@ body.main{
 	width: 1300px;	
 	margin-left:auto;
 	margin-right:auto;
-	background: #df8474;
+/* 	background: #df8474; */
 }
 
 header.main {
@@ -145,7 +145,7 @@ article.main {
 article.main aside {
 	float: left;
 	width: 350px;
-/* 	background-color: #c1503e; */
+	background-color: #c1503e;
 	min-height: 300px;
 	-webkit-border-radius: 10px 10px 10px 10px;
 	-moz-border-radius: 10px 10px 10px 10px;
@@ -158,7 +158,7 @@ article.main aside {
 article.main section{
 	float: left;
 	width: 850px;
-/* 	background-color: white; */
+	background-color: white;
 	min-height: 960px;
 	-webkit-border-radius: 10px 10px 10px 10px;
 	-moz-border-radius: 10px 10px 10px 10px;
