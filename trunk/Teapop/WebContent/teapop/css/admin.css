@@ -139,8 +139,6 @@ header.main div.status a:hover{
 
 article.main {
 	background-color: #eaf1f1;
-	float: none;
-	height: 500px;
 	min-height: 500px;
 }
 
@@ -284,7 +282,6 @@ article.main section{
 	float: left;
 	width: 870px;
 	background-color: #fff;
-	height: 420px;
 	min-height: 420px;
 	-webkit-border-radius: 10px 10px 10px 10px;
 	-moz-border-radius: 10px 10px 10px 10px;
@@ -300,7 +297,6 @@ article.main section.menu,
 article.main section.settings{
 	display:none;
 }
-
 
 article.main section header{
 	height: 26px;
@@ -363,6 +359,8 @@ article.main section article table td {
 	border-top: 1px solid #dddddd;
 }
 
+
+/* Table Specific */
 article.main section.category article table th:nth-child(1), article.main section article table td:nth-child(1) {
 	width:50px;
 }
