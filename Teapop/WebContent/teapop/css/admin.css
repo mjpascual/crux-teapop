@@ -56,8 +56,7 @@ body.main{
 }
 
 header.main {
-	height: 130px;
-	margin-top:20px;
+	height: 130px;;
 	background-color: #c1503e;
 }
 
@@ -428,7 +427,6 @@ footer.main{
 	-moz-border-radius: 0 0 10px 10px;
 	-khtml-border-radius: 0 0 10px 10px;
 	border-radius: 0 0 10px 10px;
-	margin-bottom: 20px;
 }
 
 footer.main a{
