@@ -140,27 +140,150 @@ header.main div.status a:hover{
 article.main {
 	background-color: #eaf1f1;
 	float: none;
-	min-height: 1000px;
+	min-height: 500px;
 }
 
 article.main aside {
 	float: left;
 	width: 350px;
-/* 	background-color: #f9c4bb; */
-	min-height: 300px;
-	-webkit-border-radius: 10px 10px 10px 10px;
-	-moz-border-radius: 10px 10px 10px 10px;
-	-khtml-border-radius: 10px 10px 10px 10px;
-	border-radius: 10px 10px 10px 10px;
-	margin: 20px 10px 10px 40px;
+	margin: 20px 10px 10px 70px;
 	
+}
+
+article.main aside nav {
+  font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: bold;
+  line-height: 1.5;
+  width: 250px;
+  -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+     -moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+          box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+ 
+article.main aside nav .menu-item {
+  background: #fff;
+  width: 250px; 
+}
+
+article.main aside nav .menu-item h4 {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 7px 12px;
+  background: #50929B;
+}
+
+article.main aside nav .menu-item h4 a {
+  color: white;
+  display: block;
+  text-decoration: none;
+  width: 200px;
+}
+
+
+article.main aside nav .menu-item h4 {
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 7px 12px;
+  background: #50929B; 
+  background: -moz-linear-gradient(top, #50929B 0%, #649EA6 44%, #316B73 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#50929B), color-stop(44%,#649EA6), color-stop(100%,#316B73)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #50929B 0%,#649EA6 44%,#316B73 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #50929B 0%,#649EA6 44%,#316B73 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #50929B 0%,#649EA6 44%,#316B73 100%); /* IE10+ */
+  background: linear-gradient(top, #50929B 0%,#649EA6 44%,#316B73 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#50929B', endColorstr='#316B73',GradientType=0 ); /* IE6-9 */
+}
+
+article.main aside nav .menu-item h4:hover {  
+  background: #A0C4C8; /* Old browsers */
+  background: -moz-linear-gradient(top,  #A0C4C8 0%, #316B73 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#A0C4C8), color-stop(100%,#316B73)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #A0C4C8 0%,#316B73 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #A0C4C8 0%,#316B73 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #A0C4C8 0%,#316B73 100%); /* IE10+ */
+  background: linear-gradient(top,  #A0C4C8 0%,#316B73 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#A0C4C8', endColorstr='#316B73',GradientType=0 ); /* IE6-9 */
+}
+
+/*First Item Styles*/
+article.main aside nav .alpha p {
+    font-size: 13px;
+    padding: 8px 12px;
+    color: #b04939;
+    margin-top:-8%; 
+  	margin-bottom:-8%;
+}
+
+/*ul Styles*/
+article.main aside nav .menu-item ul {
+  background: #fff;
+  font-size: 13px;
+  line-height: 30px;
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0px;
+  margin-top:-8%; 
+  margin-bottom:-8%;
+}
+ 
+article.main aside nav .menu-item ul a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #b04939;
+  display: block;
+  width: 200px;
+ 
+}
+ 
+
+article.main aside nav .menu-item li {
+  border-bottom: 1px solid #eee;
+}
+ 
+article.main aside nav .menu-item li:hover {
+  background: #eee;
+}
+
+article.main aside nav .menu-item ul {
+  background: #fff;
+  font-size: 13px;
+  line-height: 30px;
+  height: 0px; /*Collapses the menu*/
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0px;
+}
+
+article.main aside nav .menu-item ul {
+  background: #fff;
+  font-size: 13px;
+  line-height: 30px;
+  height: 0px;
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0px;
+   
+  /*Animation*/
+  -webkit-transition: height 1s ease;
+     -moz-transition: height 1s ease;
+       -o-transition: height 1s ease;
+      -ms-transition: height 1s ease;
+          transition: height 1s ease;
+}
+
+article.main aside nav .menu-item:hover ul {
+  height: 93px;
 }
 
 article.main section{
 	float: left;
-	width: 850px;
+	width: 500px;
 /* 	background-color: #f0f8ff; */
-	min-height: 960px;
+	min-height: 460px;
 	-webkit-border-radius: 10px 10px 10px 10px;
 	-moz-border-radius: 10px 10px 10px 10px;
 	-khtml-border-radius: 10px 10px 10px 10px;
@@ -208,16 +331,18 @@ footer.main a:hover{
 }
 
 
+
+
 /* ADMIN SHARED CSS */
 
 clear {
 	float: none;
 }
 
-/* .embossed-heavy { */
-/*     border: 1px solid rgba(0,0,0,0.05); */
-/*     box-shadow:  */
-/*         inset 0 2px 3px rgba(255,255,255,0.3),  */
-/*         inset 0 -2px 45px rgba(0,0,0,0.3), */
-/*         0 1px 1px rgba(255,255,255,0.9); */
-/* } */
+.embossed-heavy {
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 
+        inset 0 2px 3px rgba(255,255,255,0.3), 
+        inset 0 -2px 45px rgba(0,0,0,0.3),
+        0 1px 1px rgba(255,255,255,0.9);
+}
