@@ -326,8 +326,8 @@ article.main section article table td {
 	padding: 8px;
 	line-height: 20px;
 	text-align: left;
-	vertical-align: top;
 	border-top: 1px solid #dddddd;
+	vertical-align: middle;
 }
 
 /* Table Specific */
@@ -342,14 +342,14 @@ article.main section.settings{
 
 article.main section.dashboard table,
 article.main section.branch table, 
-article.main section.category table, 
+/* article.main section.category table,  */
 article.main section.menu table, 
 article.main section.settings table{
 	display:none;
 }
 
 article.main section.branch article div.branch_add, 
-/* article.main section.category article div.category_add,  */
+article.main section.category article div.category_add, 
 article.main section.menu article div.menu_add, 
 article.main section.settings article div.setting_add{
 	display:none;
@@ -368,8 +368,15 @@ article.main section.category article table th:nth-child(3), article.main sectio
 }
 
 article.main section.category article table th:nth-child(4), article.main section article table td:nth-child(4) {
-	width:100px;
+	width:200px;
 	text-align: center;
+	vertical-align: middle;
+}
+
+article.main section.category article table th:nth-child(4), article.main section article table td:nth-child(4) input.pos {
+	text-align: center;
+	vertical-align: middle;
+	width:20px;
 }
 
 article.main section.category article table th:nth-child(5), article.main section article table td:nth-child(5) {
