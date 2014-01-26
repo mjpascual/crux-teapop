@@ -41,29 +41,6 @@ article.login section  div.submitLogin {
 	padding-left: 90px;
 }
 
-article.login input:required:invalid, input:focus:invalid {
-    background-image: url(../images/admin/invalid.png);
-    background-position: right top;
-    background-repeat: no-repeat;
-}
-  
-article.login input:required:valid {
-	background-image: url(../images/admin/valid.png);
-	background-position: right top;
-	background-repeat: no-repeat;
-}
-
-article.login input.button {
-	text-decoration: none;
-	color: #FFF;
-	display: inline-block;
-	padding: 5px 15px 5px 15px;
-	background: #c1503e;
-	-webkit-border-radius: 10px 10px 10px 10px;
-	-moz-border-radius: 10px 10px 10px 10px;
-	-khtml-border-radius: 10px 10px 10px 10px;
-	border-radius: 10px 10px 10px 10px;
-}
 
 /* ADMIN MAIN  */
 
@@ -75,6 +52,7 @@ body.main{
 	margin-left:auto;
 	margin-right:auto;
 	background: #3d8690;
+
 }
 
 header.main {
@@ -138,6 +116,7 @@ header.main div.status a:hover{
 }
 
 article.main {
+	display: flex;
 	background-color: #eaf1f1;
 	min-height: 500px;
 }
@@ -287,15 +266,7 @@ article.main section{
 	-moz-border-radius: 10px 10px 10px 10px;
 	-khtml-border-radius: 10px 10px 10px 10px;
 	border-radius: 10px 10px 10px 10px;
-	margin: 40px 10px 10px 0px;
-}
-
-article.main section.dashboard,
-article.main section.branch, 
-/* article.main section.category,  */
-article.main section.menu, 
-article.main section.settings{
-	display:none;
+	margin: 40px 10px 40px 0px;
 }
 
 article.main section header{
@@ -359,8 +330,31 @@ article.main section article table td {
 	border-top: 1px solid #dddddd;
 }
 
-
 /* Table Specific */
+
+article.main section.dashboard,
+article.main section.branch, 
+/* article.main section.category,  */
+article.main section.menu, 
+article.main section.settings{
+	display:none;
+}
+
+article.main section.dashboard table,
+article.main section.branch table, 
+article.main section.category table, 
+article.main section.menu table, 
+article.main section.settings table{
+	display:none;
+}
+
+article.main section.branch article div.branch_add, 
+/* article.main section.category article div.category_add,  */
+article.main section.menu article div.menu_add, 
+article.main section.settings article div.setting_add{
+	display:none;
+}
+
 article.main section.category article table th:nth-child(1), article.main section article table td:nth-child(1) {
 	width:50px;
 }
@@ -384,6 +378,36 @@ article.main section.category article table th:nth-child(5), article.main sectio
 
 article.main section.category article table.table-striped tbody>tr:nth-child(odd)>td, .table-striped tbody>tr:nth-child(odd)>th {
 	background-color: #f9f9f9;
+}
+
+article.main section.category article div.category_add {
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+article.main section.category article div.category_add div {
+	padding-top:20px;
+}
+
+article.main section.category article div.category_add input.button {
+	width: 150px;
+	margin-left: 410px;
+	margin-top: 20px;
+}
+
+article.main section.category article div label {
+	display: inline-block;
+	width: 150px;
+	vertical-align: top;
+}
+
+article.main section.category article div input {
+	width: 200px;
+}
+
+
+article.main section.category article div textarea {
+	width: 400px;
 }
 
 footer.main{
@@ -415,17 +439,8 @@ footer.main a:hover{
 
 
 /* ADMIN SHARED CSS */
-
 clear {
 	float: none;
-}
-
-.embossed-heavy {
-    border: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 
-        inset 0 2px 3px rgba(255,255,255,0.3), 
-        inset 0 -2px 45px rgba(0,0,0,0.3),
-        0 1px 1px rgba(255,255,255,0.9);
 }
 
 .btn {
@@ -524,3 +539,35 @@ a:hover, a:focus {
 	background-position: -456px 0;
 }
 
+hr {
+	  border: 0; border-top: 1px solid #e5e5e5;
+}
+
+input.button {
+	text-decoration: none;
+	color: #FFF;
+	display: inline-block;
+	padding: 5px 15px 5px 15px;
+	background: #c1503e;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-khtml-border-radius: 10px 10px 10px 10px;
+	border-radius: 10px 10px 10px 10px;
+	cursor: pointer; 
+}
+
+input.button:hover {
+	background: #b04939;
+}
+
+input:required:invalid, input:focus:invalid, textarea:required:invalid, textarea:focus:invalid{
+    background-image: url(../images/admin/invalid.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+
+input:required:valid, textarea:required:valid {
+	background-image: url(../images/admin/valid.png);
+	background-position: right top;
+	background-repeat: no-repeat;
+}
