@@ -546,6 +546,10 @@ a:hover, a:focus {
 	background-position: -456px 0;
 }
 
+.icon-plus {
+	background-position: -408px -96px;
+}
+
 hr {
 	  border: 0; border-top: 1px solid #e5e5e5;
 }
@@ -577,4 +581,8 @@ input:required:valid, textarea:required:valid {
 	background-image: url(../images/admin/valid.png);
 	background-position: right top;
 	background-repeat: no-repeat;
+}
+
+.pull-right {
+	float: right;
 }
