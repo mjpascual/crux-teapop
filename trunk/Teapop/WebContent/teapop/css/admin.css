@@ -341,14 +341,14 @@ article.main section.settings{
 
 article.main section.dashboard table,
 article.main section.branch table, 
-/* article.main section.category table,  */
+article.main section.category table, 
 article.main section.menu table, 
 article.main section.settings table{
 	display:none;
 }
 
 article.main section.branch article div.branch_add, 
-article.main section.category article div.category_add, 
+/* article.main section.category article div.category_add,  */
 article.main section.menu article div.menu_add, 
 article.main section.settings article div.setting_add{
 	display:none;
@@ -583,6 +583,11 @@ input:required:valid, textarea:required:valid {
 	background-image: url(../images/admin/valid.png);
 	background-position: right top;
 	background-repeat: no-repeat;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=number], textarea    {
+    border-style: inset;
+    border-width: 2px;
 }
 
 .pull-right {
