@@ -329,8 +329,57 @@ article.main section article table td {
 	vertical-align: middle;
 }
 
-/* Table Specific */
+article.main section article table th:nth-child(1), 
+article.main section article table td:nth-child(1) {
+	width:50px;
+}
 
+article.main section article table tr:nth-child(1), 
+article.main section article table tr:nth-child(1) th:nth-child(1){
+	width:100%px;
+}
+
+article.main section article table.table-striped tbody>tr:nth-child(odd)>td, 
+article.main section article table.table-striped tbody>tr:nth-child(odd)>th {
+	background-color: #f9f9f9;
+}
+
+article.main section article div.formAdd {
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+article.main section article div div {
+	padding-top:20px;
+}
+
+article.main section article div label {
+	display: inline-block;
+	width: 150px;
+	vertical-align: top;
+}
+
+article.main section article div input.button {
+	width: 150px;
+	margin-left: 410px;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+
+article.main section article div input[type="text"] {
+	width: 250px;
+}
+
+article.main section article div select {
+	width: 150px;
+}
+
+article.main section article div textarea {
+	width: 400px;
+}
+
+/* TABLE SPECIFIC */
 article.main section.dashboard,
 article.main section.branch, 
 article.main section.category, 
@@ -342,47 +391,51 @@ article.main section.settings{
 article.main section.dashboard table,
 article.main section.branch table, 
 article.main section.category table, 
-/* article.main section.menu table,  */
+article.main section.menu table, 
 article.main section.settings table{
 	display:none;
 }
 
 article.main section.branch article div.branch_add, 
 article.main section.category article div.category_add, 
-article.main section.menu article div.menu_add, 
+/* article.main section.menu article div.menu_add,  */
 article.main section.settings article div.setting_add{
 	display:none;
 }
 
-article.main section article table th:nth-child(1), article.main section article table td:nth-child(1) {
-	width:50px;
-}
-
-article.main section.category article table th:nth-child(2), article.main section.category article table td:nth-child(2) {
+/* CATEGORY */
+article.main section.category article table th:nth-child(2), 
+article.main section.category article table td:nth-child(2) {
 	width:150px;
 }
 
-article.main section.category article table th:nth-child(3), article.main section.category article table td:nth-child(3) {
+article.main section.category article table th:nth-child(3), 
+article.main section.category article table td:nth-child(3) {
 	width:350px;
 }
 
-article.main section.category article table th:nth-child(4), article.main section.category article table td:nth-child(4) {
+article.main section.category article table th:nth-child(4), 
+article.main section.category article table td:nth-child(4) {
 	width:200px;
 	text-align: center;
 	vertical-align: middle;
 }
 
-article.main section.category article table th:nth-child(4), article.main section.category article table td:nth-child(4) input.pos {
+article.main section.category article table th:nth-child(4), 
+article.main section.category article table td:nth-child(4) input.pos {
 	text-align: center;
 	vertical-align: middle;
 	width:20px;
 }
 
-article.main section.category article table th:nth-child(5), article.main section.category article table td:nth-child(5) {
+article.main section.category article table th:nth-child(5), 
+article.main section.category article table td:nth-child(5) {
 	text-align: center;
 }
 
-article.main section.menu article table th:nth-child(2), article.main section.menu article table td:nth-child(2) {
+/* MENU */
+article.main section.menu article table th:nth-child(2), 
+article.main section.menu article table td:nth-child(2) {
 	width:200px;
 }
 
@@ -396,7 +449,6 @@ article.main section.menu article table td:nth-child(5) {
 	text-align: center;
 }
 
-
 article.main section.menu article table th:nth-child(6), 
 article.main section.menu article table th:nth-child(7),
 article.main section.menu article table td:nth-child(6),
@@ -404,44 +456,15 @@ article.main section.menu article table td:nth-child(7){
 	width:50px;
 	text-align: center;
 }
-article.main section article table.table-striped tbody>tr:nth-child(odd)>td, article.main section article table.table-striped tbody>tr:nth-child(odd)>th {
-	background-color: #f9f9f9;
-}
 
-article.main section.category article table tr:nth-child(1), article.main section.category article table tr:nth-child(1) th:nth-child(1){
-	width:100%px;
-}
-
-article.main section.category article div.category_add {
-	padding-left: 50px;
-	padding-right: 50px;
-}
-
-article.main section.category article div.category_add div {
-	padding-top:20px;
-}
-
-article.main section.category article div.category_add input.button {
+article.main section.menu article #menuCode{
 	width: 150px;
-	margin-left: 410px;
-	margin-top: 20px;
+}
+article.main section.menu article #menuPrice{
+	width: 50px;
 }
 
-article.main section.category article div label {
-	display: inline-block;
-	width: 150px;
-	vertical-align: top;
-}
-
-article.main section.category article div input {
-	width: 200px;
-}
-
-
-article.main section.category article div textarea {
-	width: 400px;
-}
-
+/* FOOTER */
 footer.main{
 	height: 50px;
 	padding: 20px 0 0 50px;
@@ -467,7 +490,6 @@ footer.main a{
 footer.main a:hover{
 	color: #b04939;
 }
-
 
 /* ADMIN SHARED CSS */
 clear {
@@ -595,7 +617,8 @@ input.button:hover {
 	background: #b04939;
 }
 
-input:required:invalid, input:focus:invalid, textarea:required:invalid, textarea:focus:invalid{
+input:required:invalid, input:focus:invalid, 
+textarea:required:invalid, textarea:focus:invalid{
     background-image: url(../images/admin/invalid.png);
     background-position: right top;
     background-repeat: no-repeat;
@@ -607,7 +630,7 @@ input:required:valid, textarea:required:valid {
 	background-repeat: no-repeat;
 }
 
-input[type=text], input[type=password], input[type=email], input[type=number], textarea    {
+input[type=text], input[type=password], input[type=email], input[type=number], textarea, select    {
     border-style: inset;
     border-width: 2px;
 }
