@@ -386,6 +386,10 @@ article.main section.category article table.table-striped tbody>tr:nth-child(odd
 	background-color: #f9f9f9;
 }
 
+article.main section.category article table tr:nth-child(1), article.main section.category article table tr:nth-child(1) th:nth-child(1){
+	width:100%px;
+}
+
 article.main section.category article div.category_add {
 	padding-left: 50px;
 	padding-right: 50px;
