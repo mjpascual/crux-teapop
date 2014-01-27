@@ -39,7 +39,7 @@
 				      <ul>
     					<li><a href="#">Manage Categories</a></li>
 				        <li><a href="#">Add New Category</a></li>
-				        <li><a href="#">Print Category List</a></li>
+				        <li><a href="#">Move Item to Category</a></li>
 				      </ul>
 				    </div>
 				       
@@ -155,11 +155,11 @@
 							</tr>
 						</tbody>
 					</table>
-					<div class="category_add">
+					<div class="formAdd category_add">
 						<h3>Add Menu Category</h3><hr><br>
 						<div>
 							<label for="categoryName">Category Name:</label>
-							<input type="text" id="categoryName" name="categoryName" autofocus required>
+							<input type="text" id="categoryName" name="categoryName" maxlength="35" autofocus required>
 						</div>
 						<div>
 							<label for="categoryDesc">Category Description:</label>
@@ -201,8 +201,8 @@
 								<td>DCH-MT</td>
 								<td>Milk Tea</td>
 								<td>P70-80</td>
-								<td><input type="checkbox"></td>
-								<td><input type="checkbox"></td>
+								<td>Y</td>
+								<td>Y</td>
 								<td>
 									<div class="btn-group">
 										<a class="btn btn-mini"><span class="icon-pencil"></span></a>
@@ -216,8 +216,8 @@
 								<td>SCH-MT</td>
 								<td>Milk Tea</td>
 								<td>P80</td>
-								<td><input type="checkbox"></td>
-								<td><input type="checkbox"></td>
+								<td>N</td>
+								<td>N</td>
 								<td>
 									<div class="btn-group">
 										<a class="btn btn-mini"><span class="icon-pencil"></span></a>
@@ -231,8 +231,8 @@
 								<td>VNL-MT</td>
 								<td>Milk Tea</td>
 								<td>P70</td>
-								<td><input type="checkbox"></td>
-								<td><input type="checkbox"></td>
+								<td>N</td>
+								<td>N</td>
 								<td>
 									<div class="btn-group">
 										<a class="btn btn-mini"><span class="icon-pencil"></span></a>
@@ -242,6 +242,46 @@
 							</tr>
 						</tbody>
 					</table>
+					<div class="formAdd menu_add">
+						<h3>Add Menu Item</h3><hr><br>
+						<div>
+							<label for="menuName">Menu Name:</label>
+							<input type="text" id="menuName" name="menuName" maxlength="35" autofocus required>
+						</div>
+						<div>
+							<label for="menuDesc">Menu Description:</label>
+							<textarea name="menuDesc" rows="6" maxlength="250" required></textarea>
+						</div>
+						<div>
+							<label for="menuCode">Menu Code:</label>
+							<input type="text" id="menuCode" name="menuCode" maxlength="10" required>
+						</div>
+						<div>
+							<label for="menuDesc">Category:</label>
+							<select id = "category">
+				               <option value = "Milk Tea">Milk Tea</option>
+				               <option value = "Meals">Meals</option>
+				               <option value = "Snacks">Snacks</option>
+				             </select>
+						</div>
+						<div>
+							<label for="menuPrice">Price:</label>
+							<input type="text" id="menuPrice" name="menuPrice" maxlength="3" required>
+						</div>
+						<div>
+							<label for="menuPrice">Featured:</label>
+							<input type="checkbox" id="menuFeatured" name="menuFeatured" required>
+						</div>
+						<div>
+							<label for="menuPrice">Hidden:</label>
+							<input type="checkbox" id="menuHidden" name="menuHidden" required>
+						</div>
+						<div>
+						 	<label for="image_file">Image: </label>
+						 	<input type="file" name="image_file" id="image_file" />
+						</div>
+						<input class="button" type="submit">
+					</div>
 				</article>
 			</section>
 			<section class="settings">
