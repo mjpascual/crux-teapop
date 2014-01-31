@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- saved from url=(0014)about:internet -->
+		<title>Tea-Pop Admin</title>
+		<link href="../css/admin.css" rel="stylesheet">
+		<script src="../js/admin.js"></script>
+	</head>
+	<body class="main">
+		<header class="main" >
+			<figure>
+				<img src="../images/admin/logo2.png" title="Logo">
+			</figure>
+			<div class="link">
+				<a href="#">View website</a>
+			</div>
+			<div class="status">
+				You're logged in as <strong>Admin</strong>. <a href="#"><strong>Edit your settings</strong></a>, or <a href="#"><strong>Log out</strong></a>
+			</div>
+		</header>
+		<article class="main">
+			<aside>
+				<nav>
+					<div class="menu-item alpha">
+				      <h4><a href="#">Tea-Pop Dashboard</a></h4>
+				      <p> ADMIN PANEL <br> This administration page allows you to create, edit, delete and rearrange items for your stores.</p>
+				    </div>
+					<div class="menu-item">
+				      <h4>Branch Management</h4>
+				      <ul>
+   						<li><a href="#">Manage Branches</a></li>
+				        <li><a href="#">Add New Branch</a></li>
+				        <li><a href="#">Print Branch List</a></li>
+				      </ul>
+				    </div>
+				    <div class="menu-item">
+				      <h4>Category Management</h4>
+				      <ul>
+    					<li><a href="#">Manage Categories</a></li>
+				        <li><a href="#">Add New Category</a></li>
+				        <li><a href="#">Move Item to Category</a></li>
+				      </ul>
+				    </div>
+				       
+				    <div class="menu-item">
+				      <h4>Menu Management</h4>
+				      <ul>
+			    		<li><a href="#">Manage Menu</a></li>
+				        <li><a href="#">Add New Menu</a></li>
+				        <li><a href="#">Print Menu List</a></li>
+				      </ul>
+				    </div>
+				    
+				    <div class="menu-item">
+				      <h4>Administration Settings</h4>
+				      <ul>
+				        <li><a href="#">Manage Admin Users</a></li>
+				        <li><a href="#">Add New Admin User</a></li>
+				        <li><a href="#">Print Admin Users</a></li>
+				      </ul>
+				    </div>
+				</nav>	
+			</aside>
+			<section class="dashboard">
+				<header>
+					Dashboard
+				</header>
+				<article>
+					
+					
+				</article>
+			</section>
+			<section class="branch">
+				<header>
+					Branch Management
+				</header>
+				<article>
+				
+				</article>
+			</section>
+			<section class="category">
+				<header>
+					Category Management
+				</header>
+				<article>
+					<table class="table table-striped table-hovered table-condensed">
+						<thead>
+							<tr>
+								<th colspan="5"><button class="btn pull-right"><span class="icon-plus"></span>&nbsp;Add Menu Category</button></th>
+							</tr>
+							<tr>
+								<th>ID</th>
+								<th>Category Name</th>
+								<th>Category Description</th>
+								<th>Position</th>
+								<th>Functions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Milk Tea</td>
+								<td>Milk Tea is a healthy drink that is gaining popularity.</td>
+								<td>
+									<form class="menuCategory" action="" method="post">
+										<input class="pos" name="pos" type="text" value="1">
+										<input name="posid" type="hidden" value="16">
+										<input class="btn btn-mini" type="submit" value="Change">
+									</form>
+								</td>
+								<td>
+									<div class="btn-group">
+										<a class="btn btn-mini"><span class="icon-pencil"></span></a>
+										<a class="btn btn-mini"><span class="icon-trash"></span></a>
+									</div>
+								</td>
+								
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Snacks</td>
+								<td>Delicious and tasty food delight for everyone!.</td>
+								<td>
+									<form class="menuCategory" action="" method="post">
+										<input class="pos" name="pos" type="text" value="2">
+										<input name="posid" type="hidden" value="16">
+										<input class="btn btn-mini" type="submit" value="Change">
+									</form>
+								</td>
+								<td>
+									<div class="btn-group">
+										<a class="btn btn-mini"><span class="icon-pencil"></span></a>
+										<a class="btn btn-mini"><span class="icon-trash"></span></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Value Meals</td>
+								<td>Sumptuous value-saving meals.</td>
+								<td>
+									<form class="menuCategory" action="" method="post">
+										<input class="pos" name="pos" type="text" value="3">
+										<input name="posid" type="hidden" value="16">
+										<input class="btn btn-mini" type="submit" value="Change">
+									</form>
+								</td>
+								<td>
+									<div class="btn-group">
+										<a class="btn btn-mini"><span class="icon-pencil"></span></a>
+										<a class="btn btn-mini"><span class="icon-trash"></span></a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="formAdd category_add">
+						<h3>Add Menu Category</h3><hr><br>
+						<div>
+							<label for="categoryName">Category Name:</label>
+							<input type="text" id="categoryName" name="categoryName" maxlength="35" autofocus required>
+						</div>
+						<div>
+							<label for="categoryDesc">Category Description:</label>
+							<textarea name="categoryDesc" rows="6" maxlength="250" required></textarea>
+						</div>
+						<div>
+						 	<label for="image_file">Category Image: </label>
+						 	<input type="file" name="image_file" id="image_file" />
+						</div>
+						<input class="button" type="submit" value="Save">
+					</div>
+				</article>
+			</section>
+			<section class="menu">
+				<header>
+					Menu Management
+				</header>
+				<article>
+					<table class="table table-striped table-hovered table-condensed">
+						<thead>
+							<tr>
+								<th colspan="8"><button class="btn pull-right"><span class="icon-plus"></span>&nbsp;Add Menu Item</button></th>
+							</tr>
+							<tr>
+								<th>ID</th>
+								<th>Menu Name</th>
+								<th>Menu Code</th>
+								<th>Category</th>
+								<th>Price</th>
+								<th>Featured</th>
+								<th>Hidden</th>
+								<th>Functions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Dark Chocolate Milk Tea</td>
+								<td>DCH-MT</td>
+								<td>Milk Tea</td>
+								<td>P70-80</td>
+								<td>Y</td>
+								<td>Y</td>
+								<td>
+									<div class="btn-group">
+										<a class="btn btn-mini"><span class="icon-pencil"></span></a>
+										<a class="btn btn-mini"><span class="icon-trash"></span></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Strawberry Chocolate Milk Tea</td>
+								<td>SCH-MT</td>
+								<td>Milk Tea</td>
+								<td>P80</td>
+								<td>N</td>
+								<td>N</td>
+								<td>
+									<div class="btn-group">
+										<a class="btn btn-mini"><span class="icon-pencil"></span></a>
+										<a class="btn btn-mini"><span class="icon-trash"></span></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Vanilla Milk Tea</td>
+								<td>VNL-MT</td>
+								<td>Milk Tea</td>
+								<td>P70</td>
+								<td>N</td>
+								<td>N</td>
+								<td>
+									<div class="btn-group">
+										<a class="btn btn-mini"><span class="icon-pencil"></span></a>
+										<a class="btn btn-mini"><span class="icon-trash"></span></a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="formAdd menu_add">
+						<h3>Add Menu Item</h3><hr><br>
+						<div>
+							<label for="menuName">Menu Name:</label>
+							<input type="text" id="menuName" name="menuName" maxlength="35" autofocus required>
+						</div>
+						<div>
+							<label for="menuDesc">Menu Description:</label>
+							<textarea name="menuDesc" rows="6" maxlength="250" required></textarea>
+						</div>
+						<div>
+							<label for="menuCode">Menu Code:</label>
+							<input type="text" id="menuCode" name="menuCode" maxlength="10" required>
+						</div>
+						<div>
+							<label for="menuDesc">Category:</label>
+							<select id = "category">
+				               <option value = "Milk Tea">Milk Tea</option>
+				               <option value = "Meals">Meals</option>
+				               <option value = "Snacks">Snacks</option>
+				             </select>
+						</div>
+						<div>
+							<label for="menuPrice">Price:</label>
+							<input type="text" id="menuPrice" name="menuPrice" maxlength="3" required>
+						</div>
+						<div>
+							<label for="menuPrice">Featured:</label>
+							<input type="checkbox" id="menuFeatured" name="menuFeatured" required>
+						</div>
+						<div>
+							<label for="menuPrice">Hidden:</label>
+							<input type="checkbox" id="menuHidden" name="menuHidden" required>
+						</div>
+						<div>
+						 	<label for="image_file">Image: </label>
+						 	<input type="file" name="image_file" id="image_file" />
+						</div>
+						<input class="button" type="submit" value="Save">
+					</div>
+				</article>
+			</section>
+			<section class="settings">
+				<header>
+					Settings
+				</header>
+				<article>
+				
+				</article>
+			</section>
+		</article>
+		<footer class="main">
+			<a href="#">UPOU-CRUX</a> &#169; 2014 All Rights Reserved. <br>
+			Version 1.0.0
+		</footer>
+	</body>
+</html>
