@@ -10,6 +10,11 @@
         <link rel="stylesheet" href="css/header.css" />
         <link rel="stylesheet" href="css/teapop.css" />
         <link rel="stylesheet" href="css/footer.css" />
+        <link rel="stylesheet" href="css/contactus.css" />
+		<link rel="stylesheet" href="css/location.css" />
+		<link rel="stylesheet" href="css/promo.css" />
+		
+		
         
         <!-- Including the Lobster font from Google's Font Directory -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster" />
@@ -18,6 +23,18 @@
         <!--[if lt IE 9]>
           <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
+        
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="js/jsviews.js"></script>
+        <script type="text/javascript" src="js/EventHandler.js"></script>
+        <script type="text/javascript" src="js/ContentHandler.js"></script>
+        <script type="text/javascript">
+        $(document).ready( function(){
+        	EventHandler.initTopMenu();
+        	ContentHandler.show("home");
+        });
+        </script>
+        
     </head>
 	
     <body id="teapopBody" style="background:  url(images/background.jpg)">
@@ -59,12 +76,11 @@
 			    	<div  id="teapopNav" class="grid_16">
 				        <nav>
 				            <ul class="teapopMenu">
-				            	<li id="home" class="selected"><a href="index.html">Home</a></li>
-				                <li id="menu"><a href="pages/menu.html">Menu</a></li>
-				                <li id="locationAndDelivery"><a href="pages/locationanddelivery.html">Location And Delivery</a></li>
-				                <li id="specials"><a href="pages/specials.html">Specials</a></li>
-				                <li id="contact"><a href="pages/contactus.html">Contact Us</a></li>
-				            
+				            	<li id="home" class="selected menu_link"><a href="#">Home</a></li>
+				                <li id="products" class="menu_link"><a href="#">Menu</a></li>
+				                <li id="locationanddelivery" class="menu_link"><a href="#">Location And Delivery</a></li>
+				                <li id="specials" class="menu_link"><a href="#">Specials</a></li>
+				                <li id="contactus" class="menu_link"><a href="#">Contact Us</a></li>
 				            </ul>
 				        </nav>
 			        </div>
@@ -73,34 +89,8 @@
          	
          	
          	<!--CONTENT-->
-         	<div class="main_content grid_16">
-         	
-				
-         		<div id="home" class="grid_16">
-         			<object id="home_slider" width="400" height="400" data="pages/components/slider.html"></object> 
-         			<div id="specials" class="grid_5">
-         				<h3>Try Our Specials!</h3>
-         				<p>
-         				<ul>
-         					<li>Special 1</li>
-         					<li>Special 2</li>
-         					<li>Special 3</li>
-         				</ul>
-         				</p>
-         			</div>
-         			<div id="delivery" class="grid_5">
-         				<h3>Delivery Hours:</h3>
-         				<p>
-         					Mon-Thu: 10am - 8pm <br/>
-							Fri-Sat: 10am - 11:30pm <br/>
-							Sun: 11am - 8pm <br/>
-         				</p>
-         			</div>
-         		</div>
-         		
-         			
-         		</div>
-         		<!-- end menu -->
+         	<div id="content_wrapper" class="main_content grid_16">
+
          	</div>
          
          
