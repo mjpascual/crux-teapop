@@ -1,0 +1,60 @@
+<div id="categories" class="grid_16">
+	<ul id="menu_category_links" class="category_links">
+	</ul>
+</div>
+
+<div id="menu_wrapper" class="grid_16 menu"></div>
+
+
+<script type="text/javascript">
+function initContent(json){
+
+	// link new content template
+	$.templates("#categories_tmpl").link("#menu_category_links", json);
+	$.templates("#menu_tmpl").link("#menu_wrapper", json);
+	
+	// load event handlers
+	EventHandler.initCategoryLinks("menu_category_links");	
+}
+</script>
+
+
+<script id="categories_tmpl" type="text/x-jsrender">
+	{{for categories}}
+		<li><a class="category_link" href="#{{:link}}">{{:name}}</a></li>
+	{{/for}}
+</script>
+
+<script id="menu_tmpl" type="text/x-jsrender">
+{{for categories}}
+	<!-- category item -->
+	<div class="category" id="{{:link}}">
+		<div class="category_photo">
+			<img src="{{:image}}">
+		</div>
+		<div class="category_info">
+			<div class="category_name">{{:name}}</div>
+			<div class="category_description">{{:desc}}</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+		{{for items}}
+		<div class="item">
+			<div class="name">
+				<strong>{{:name}}</strong>
+			</div>
+			<div class="price">{{:price}}</div>
+			<div class="description">{{:desc}}</div>
+			<div class="clear"></div>
+		</div>
+		{{/for}}
+		<div class="clear"></div>
+	</div>
+	<!-- end category item -->
+
+	<img class="category_divider" src="images/category_divider.png" />
+{{/for}}
+</script>
+	
+
+
