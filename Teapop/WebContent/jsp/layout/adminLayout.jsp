@@ -19,7 +19,7 @@
 					<tiles:insertAttribute name="nav" ignore="true" />
 				</nav>	
 			</aside>
-			
+			<tiles:insertAttribute name="body" ignore="true" />
 		</article>
 		<footer class="main">
 			<tiles:insertAttribute name="footer" ignore="true" />

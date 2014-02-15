@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@taglib uri="/struts-tags" prefix="s" %>
 
 <html>
 	<head>
@@ -11,7 +10,7 @@
 	</head>
 	<body class="login">
 		<header class="login" >
-			<img src="images/admin/logo1.jpg" title="TeaPop"></div>
+			<img src="images/admin/logo1.jpg" title="TeaPop">
 		</header>
 		<article class="login">
 			<fieldset>
@@ -19,16 +18,16 @@
 					<img src="images/admin/login.png" title="Administration">
 				</aside>
 				<section>
-					<label for="username">Username:</label><br>
-					<input type="text" id="username" name="username" autofocus required><br>
-					<label for="password">Password:</label><br>
-					<input type="password" id="password" name="password" autofocus required><br>
-					<a href="#">Forgotten Password</a><br>
-					<div class="submitLogin">
-						<form action="admin/main.html" method="get">
+					<form action="login" method="post">
+						<label for="username">Username:</label><br>
+						<input type="text" id="username" name="login.username" autofocus required><br>
+						<label for="password">Password:</label><br>
+						<input type="password" id="password" name="login.password" autofocus required><br>
+						<a href="#">Forgotten Password</a><br>
+						<div class="submitLogin">
 							<input class="button" type="submit" value="Login"></input>
-						</form>
-					</div>
+						</div>
+					</form>
 				</section>
 			</fieldset>
 		</article>

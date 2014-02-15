@@ -5,7 +5,7 @@
 <div class="menu-item">
    <h4>Branch Management</h4>
    <ul>
-		<li><a href="#">Manage Branches</a></li>
+	 <li><a href="#">Manage Branches</a></li>
      <li><a href="#">Add New Branch</a></li>
      <li><a href="#">Print Branch List</a></li>
    </ul>
@@ -13,7 +13,7 @@
  <div class="menu-item">
    <h4>Category Management</h4>
    <ul>
-		<li><a href="#">Manage Categories</a></li>
+	 <li><a href="#">Manage Categories</a></li>
      <li><a href="#">Add New Category</a></li>
      <li><a href="#">Move Item to Category</a></li>
    </ul>
@@ -21,7 +21,7 @@
  <div class="menu-item">
    <h4>Menu Management</h4>
    <ul>
-		<li><a href="#">Manage Menu</a></li>
+	 <li><a href="#">Manage Menu</a></li>
      <li><a href="#">Add New Menu</a></li>
      <li><a href="#">Print Menu List</a></li>
    </ul>
