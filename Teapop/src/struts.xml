@@ -24,7 +24,7 @@
    	  <default-action-ref name="index" />
    	  
    	  <global-results>
-   	      <result name="login" type="redirectAction">admin</result>
+   	      <result name="login">/jsp/admin/login.jsp</result>
    	  </global-results>
 
       <action name="index">
@@ -37,7 +37,7 @@
 
    	  <action name="loginUser" class="com.upou.teapop.action.LoginAction" method="login"> 
    	    <result name="success" type="redirectAction">dashboard</result>
-      	<result name="login" type="redirectAction">admin</result>
+      	<result name="login">/jsp/admin/login.jsp</result>
       </action>
       
    	  <action name="dashboard" class="com.upou.teapop.action.LoginAction" method="dashboard"> 
