@@ -9,7 +9,7 @@
    <definition name="baseLayout" template="/jsp/layout/adminLayout.jsp">
       <put-attribute name="title"  	value="/jsp/layout/adminHeader.jsp"/>
       <put-attribute name="nav" 	value="/jsp/layout/adminNav.jsp"/>
-      <put-attribute name="body"   	value="baseLayout.body"/>
+      <put-attribute name="body"   	value=""/>
       <put-attribute name="footer"  value="/jsp/layout/adminFooter.jsp"/>
    </definition>
 
@@ -18,5 +18,4 @@
    </definition>
    
    
-  
 </tiles-definitions>

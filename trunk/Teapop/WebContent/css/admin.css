@@ -379,30 +379,6 @@ article.main section article div textarea {
 	width: 400px;
 }
 
-/* TABLE SPECIFIC */
-article.main section.dashboard,
-article.main section.branch, 
-article.main section.category, 
-/* article.main section.menu,  */
-article.main section.settings{
-	display:none;
-}
-
-article.main section.dashboard table,
-article.main section.branch table, 
-article.main section.category table, 
-article.main section.menu table, 
-article.main section.settings table{
-	display:none;
-}
-
-article.main section.branch article div.branch_add, 
-article.main section.category article div.category_add, 
-/* article.main section.menu article div.menu_add,  */
-article.main section.settings article div.setting_add{
-	display:none;
-}
-
 /* CATEGORY */
 article.main section.category article table th:nth-child(2), 
 article.main section.category article table td:nth-child(2) {
