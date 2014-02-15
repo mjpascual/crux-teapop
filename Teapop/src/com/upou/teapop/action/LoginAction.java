@@ -18,6 +18,10 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	private LoginData login;
 	private Map<String, Object> session;
 	
+	public String dashboard(){
+		return SUCCESS;
+	}
+	
 	public String login(){
 		//TEMPORARY
 		if(login.getUsername().equals("admin") && login.getPassword().equals("admin")){

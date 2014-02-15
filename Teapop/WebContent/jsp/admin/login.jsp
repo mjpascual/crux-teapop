@@ -19,7 +19,7 @@
 					<img src="images/admin/login.png" title="Administration">
 				</aside>
 				<section>
-					<form action="login" method="post">
+					<form action="loginUser" method="post">
 						<label for="username">Username:</label><br>
 						<input type="text" id="username" name="login.username" autofocus required><br>
 						<label for="password">Password:</label><br>
