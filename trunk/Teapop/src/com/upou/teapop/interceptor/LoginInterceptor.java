@@ -4,6 +4,7 @@ import java.util.Map;
 
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.Interceptor;
+import com.upou.teapop.constants.DisplayConstants;
 
 public class LoginInterceptor implements Interceptor {
 
@@ -20,13 +21,13 @@ public class LoginInterceptor implements Interceptor {
 	@Override
 	public String intercept(ActionInvocation invocation) throws Exception {
 		Map<String, Object> sessionAttributes = invocation.getInvocationContext().getSession();
-		if(sessionAttributes == null || sessionAttributes.get("user") == null){
-			return "login";
+		if(sessionAttributes == null || sessionAttributes.get(DisplayConstants.SESSION_USER) == null){
+			return DisplayConstants.LOGIN;
 		} else {
-			if(!sessionAttributes.get("user").equals(null)){
+			if(!sessionAttributes.get(DisplayConstants.SESSION_USER).equals(null)){
 				return invocation.invoke();
 			} else {
-				return  "login";
+				return DisplayConstants.LOGIN;
 			}
 		}
 	}

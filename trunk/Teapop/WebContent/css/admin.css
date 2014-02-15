@@ -105,7 +105,7 @@ header.main div.status {
 }
 
 header.main div.status a{
-	font-size: 18px;
+	font-size: 16px;
 	color: #f9c4bb;
 }
 
@@ -637,4 +637,23 @@ input[type=text], input[type=password], input[type=email], input[type=number], t
 
 .pull-right {
 	float: right;
+}
+
+/* error */
+.errors {
+	background-color:#FFCCCC;
+	border:1px solid #CC0000;
+	margin-bottom:8px;
+	text-align: center;
+	width: 90%;
+}
+.errors ul{ 
+	padding: 0px;
+	margin: 0px; 
+}
+.errors li{ 
+	list-style: none; 
+	padding: 0px;
+	margin: 0px; 
+	display: block;
 }
