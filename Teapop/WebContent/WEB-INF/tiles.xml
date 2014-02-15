@@ -9,12 +9,14 @@
    <definition name="baseLayout" template="/jsp/layout/adminLayout.jsp">
       <put-attribute name="title"  	value="/jsp/layout/adminHeader.jsp"/>
       <put-attribute name="nav" 	value="/jsp/layout/adminNav.jsp"/>
-      <put-attribute name="body"   	value=""/>
+      <put-attribute name="body"   	value="baseLayout.body"/>
       <put-attribute name="footer"  value="/jsp/layout/adminFooter.jsp"/>
    </definition>
-   
+
    <definition name="dashboard" extends="baseLayout">      
       <put-attribute name="body"   value="/jsp/admin/dashboard.jsp"/>      
    </definition>
+   
+   
   
 </tiles-definitions>

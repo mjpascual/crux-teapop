@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
 <html>
@@ -29,6 +30,11 @@
 						</div>
 					</form>
 				</section>
+				<s:if test="hasActionErrors()">
+					<section class="errors">
+						<s:actionerror/>
+					</section>
+				</s:if>
 			</fieldset>
 		</article>
 		<footer class="login">
