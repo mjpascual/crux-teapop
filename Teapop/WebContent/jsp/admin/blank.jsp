@@ -1,6 +1,6 @@
-<section class="dashboard">
+<section class="category">
 	<header>
-		Dashboard
+		Blank
 	</header>
 	<article>
 		
