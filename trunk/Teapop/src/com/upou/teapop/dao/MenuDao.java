@@ -64,7 +64,6 @@ public class MenuDao extends BaseDao {
 				category.setDesc(rs.getString("description"));
 				category.setCategoryId(rs.getInt("id"));
 				category.setName(rs.getString("name"));
-				category.setLink(rs.getString("link"));
 				categories.add(category);
 			}
 			conn.close();
@@ -117,7 +116,6 @@ public class MenuDao extends BaseDao {
 				category.setDesc(rs.getString("description"));
 				category.setCategoryId(rs.getInt("id"));
 				category.setName(rs.getString("name"));
-				category.setLink(rs.getString("link"));
 			}
 			conn.close();
 			stmt.close();

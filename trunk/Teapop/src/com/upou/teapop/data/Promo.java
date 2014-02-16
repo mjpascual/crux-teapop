@@ -9,8 +9,6 @@ public class Promo {
 	private String image;
 	
 	private String desc;
-	
-	private String link;
 
 	public String getName() {
 		return name;
@@ -42,13 +40,5 @@ public class Promo {
 
 	public void setPromoId(int promoId) {
 		this.promoId = promoId;
-	}
-
-	public String getLink() {
-		return link;
-	}
-
-	public void setLink(String link) {
-		this.link = link;
 	}
 }
