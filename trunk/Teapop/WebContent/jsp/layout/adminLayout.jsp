@@ -8,7 +8,13 @@
 		<meta charset="utf-8">
 		<title>Tea-Pop Admin</title>
 		<link href="css/admin.css" rel="stylesheet">
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 		<script src="js/admin.js"></script>
+		<script type="text/javascript">
+	        $(document).ready( function(){
+	        	BodySwitcher.initBodySwitcher();
+	        });
+        </script>
 	</head>
 	<body class="main">
 		<header class="main" >
@@ -20,7 +26,9 @@
 					<tiles:insertAttribute name="nav" ignore="true" />
 				</nav>	
 			</aside>
-			<tiles:insertAttribute name="body" ignore="true" />
+			<div id="body_container">
+				<tiles:insertAttribute name="body" ignore="true" />
+			</div>
 		</article>
 		<footer class="main">
 			<tiles:insertAttribute name="footer" ignore="true" />
