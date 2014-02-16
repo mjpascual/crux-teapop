@@ -1,22 +1,26 @@
 package com.upou.teapop.util;
 
-//STEP 1. Import required packages
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
+
+import com.upou.teapop.constants.DBConstants;
 
 public class ConnectionManager {
 
-	private final String driverName = "com.mysql.jdbc.Driver";
-	private final String connectionUrl = "jdbc:mysql://localhost:3306/student";
-	private final String userName = "root";
-	private final String userPass = "root";
+	private String driverName;
+	private String connectionUrl;
+	private String userName;
+	private String userPass;
 
-	private Connection con = null;
-
+	public Connection con = null;
+	
 	public ConnectionManager() {
 		try {
-			// Loading Driver for MySql
+			loadPropertiesFile();
 			Class.forName(driverName);
 		} catch (ClassNotFoundException e) {
 			System.out.println(e.toString());
@@ -25,7 +29,9 @@ public class ConnectionManager {
 
 	public Connection createConnection() {
 		try {
-			con = DriverManager.getConnection(connectionUrl, userName, userPass);
+			if (con == null) {
+				con = DriverManager.getConnection(connectionUrl, userName, userPass);
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -34,10 +40,27 @@ public class ConnectionManager {
 
 	public void closeConnection() {
 		try {
-			this.con.close();
+			if (con != null) {
+				this.con.close();
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private void loadPropertiesFile(){
+		try {
+			Properties prop = new Properties();
+			InputStream in = getClass().getClassLoader().getResourceAsStream(DBConstants.PROPERIES_JDBC);
+			prop.load(in);
+			driverName = prop.getProperty(DBConstants.DRIVER_PROP);
+	        connectionUrl = prop.getProperty(DBConstants.CONN_URL_PROP);
+	        userName = prop.getProperty(DBConstants.USERNAME_PROP);
+	        userPass = prop.getProperty(DBConstants.PASSWORD_PROP);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+       
 	}
 
 	public static void main(String args[]) {
