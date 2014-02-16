@@ -17,5 +17,9 @@
       <put-attribute name="body"   value="/jsp/admin/dashboard.jsp"/>      
    </definition>
    
+   <definition name="bodySwitcher" template="/WEB-INF/layouts/bodySwitcher.jspx">
+	<put-attribute name="bodyContent" value="" />
+   </definition>
+   
    
 </tiles-definitions>
