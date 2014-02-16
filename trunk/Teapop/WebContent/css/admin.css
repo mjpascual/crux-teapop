@@ -26,12 +26,12 @@ article.login {
 	text-align: left;
 }
 
-article.login aside{
+article.login div.aside{
 	padding: 10px 10px 10px 40px ;
 	float: left;
 }
 
-article.login section{
+article.login div.section{
 	float: left;
 	padding: 10px 10px 10px 30px;
 }
