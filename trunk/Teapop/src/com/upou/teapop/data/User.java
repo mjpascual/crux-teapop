@@ -18,6 +18,8 @@ public class User {
 	private String lastName;
 
 	private String position;
+	
+	private String email;
 
 	public int getUserId() {
 		return userId;
@@ -79,5 +81,14 @@ public class User {
 		return this.firstName + DisplayConstants.SPACE + this.lastName;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	
 
 }
