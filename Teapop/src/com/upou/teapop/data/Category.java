@@ -9,21 +9,11 @@ public class Category {
 	
 	private String name;
 	
-	private String link;
-	
 	private String image;
 	
 	private String desc;
 	
 	private List<Item> items;
-
-	public String getLink() {
-		return link;
-	}
-
-	public void setLink(String link) {
-		this.link = link;
-	}
 
 	public String getName() {
 		return name;

@@ -7,15 +7,15 @@ import com.upou.teapop.util.ConnectionManager;
 
 public abstract class BaseDao {
 	
-	private ConnectionManager conn;
+	private ConnectionManager connectionManager;
 	
 	public Connection createConnection(){
-		conn = new ConnectionManager();
-		return conn.createConnection();
+		connectionManager = new ConnectionManager();
+		return connectionManager.createConnection();
 	}
 	
 	public void closeConnection(){
-		conn.closeConnection();
+		connectionManager.closeConnection();
 	}
 
 }

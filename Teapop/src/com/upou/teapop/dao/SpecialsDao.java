@@ -45,7 +45,6 @@ public class SpecialsDao extends BaseDao {
 				promo.setDesc(rs.getString("description"));
 				promo.setName(rs.getString("name"));
 				promo.setImage(rs.getString("image"));
-				promo.setLink(rs.getString("link"));
 				promo.setPromoId(rs.getInt("promoId"));
 				specials.getPromos().add(promo);
 			}
@@ -75,7 +74,6 @@ public class SpecialsDao extends BaseDao {
 				promo.setPromoId(rs.getInt("promoId"));
 				promo.setName(rs.getString("name"));
 				promo.setImage(rs.getString("image"));
-				promo.setLink(rs.getString("link"));
 			}
 			conn.close();
 			stmt.close();
