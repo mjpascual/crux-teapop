@@ -11,6 +11,7 @@
 		<result-types>
 			<result-type name="tiles"
 				class="org.apache.struts2.views.tiles.TilesResult" />
+			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
 		</result-types>
 
 		<interceptors>
@@ -32,23 +33,23 @@
 		<action name="index">
 			<result>index.jsp</result>
 		</action>
-		
+
 		<action name="home">
 			<result>/teapop/content/home.jsp</result>
 		</action>
-		
+
 		<action name="location">
 			<result>/teapop/content/locationanddelivery.html</result>
 		</action>
-		
+
 		<action name="menu" class="com.upou.teapop.action.DisplayMenuAction">
 			<result>/teapop/content/products.jsp</result>
 		</action>
-		
+
 		<action name="specials" class="com.upou.teapop.action.DisplaySpecialsAction">
 			<result>/teapop/content/specials.jsp</result>
 		</action>
-		
+
 		<action name="contactus">
 			<result>/teapop/content/contactus.jsp</result>
 		</action>
@@ -73,12 +74,33 @@
 			method="logout">
 			<result name="success">/jsp/admin/login.jsp</result>
 		</action>
+		
+		<action name="displayMenuItems" class="com.upou.teapop.action.DisplayMenuAction">
+			<interceptor-ref name="loginInterceptor" />
+			<result name="success">/jsp/admin/menuList.jsp</result>
+		</action>
+		
+		<action name="displayAddMenu">
+		    <interceptor-ref name="loginInterceptor" />
+			<result>/jsp/admin/menuForm.jsp</result>
+		</action>
+		
+		<action name="displayCategories">
+			<interceptor-ref name="loginInterceptor" />
+			<result>/jsp/admin/categoryList.jsp</result>
+		</action>
+		
+		<action name="displayAddCategory">
+		    <interceptor-ref name="loginInterceptor" />
+			<result>/jsp/admin/categoryForm.jsp</result>
+		</action>
+
+		<action name="displayBlank">
+			<interceptor-ref name="loginInterceptor" />
+			<result>/jsp/admin/blank.jsp</result>
+		</action>
 
 	</package>
 
-	<package name="admin" namespace="admin" extends="struts-default">
-
-
-	</package>
 
 </struts>
