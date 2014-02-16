@@ -32,9 +32,9 @@
 						</form>
 					</div>
 					<s:if test="hasActionErrors()">
-						<section class="errors">
+						<div class="login_errors">
 							<s:actionerror/>
-						</section>
+						</div>
 					</s:if>
 				</fieldset>
 			</article>

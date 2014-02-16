@@ -616,18 +616,19 @@ input[type=text], input[type=password], input[type=email], input[type=number], t
 }
 
 /* error */
-.errors {
+.login_errors {
 	background-color:#FFCCCC;
 	border:1px solid #CC0000;
 	margin-bottom:8px;
 	text-align: center;
-	width: 90%;
+	width: 100%;
+	clear:both;
 }
-.errors ul{ 
+.login_errors ul{ 
 	padding: 0px;
 	margin: 0px; 
 }
-.errors li{ 
+.login_errors li{ 
 	list-style: none; 
 	padding: 0px;
 	margin: 0px; 
