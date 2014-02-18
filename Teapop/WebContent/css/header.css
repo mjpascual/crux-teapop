@@ -3,6 +3,96 @@
     height: 180px;
 }
 
+#fixed_header {
+	width: 100%;
+	position: relative;
+	margin: 0px;
+	height: 72px;
+/* 	background: url('../images/navheader.jpg') scroll 0% 0% transparent; */
+	top: 170px;
+	overflow: hidden;
+    z-index: 1;
+    
+	background: rgb(168,113,231); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(168,113,231,1) 0%, rgba(147,94,200,1) 47%, rgba(124,73,169,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(168,113,231,1)), color-stop(47%,rgba(147,94,200,1)), color-stop(100%,rgba(124,73,169,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(168,113,231,1) 0%,rgba(147,94,200,1) 47%,rgba(124,73,169,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(168,113,231,1) 0%,rgba(147,94,200,1) 47%,rgba(124,73,169,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(168,113,231,1) 0%,rgba(147,94,200,1) 47%,rgba(124,73,169,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(168,113,231,1) 0%,rgba(147,94,200,1) 47%,rgba(124,73,169,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a871e7', endColorstr='#7c49a9',GradientType=0 ); /* IE6-9 */    
+}
+
+#fixed_header.content {
+	background: none repeat scroll 0% 0% transparent;
+	top: -120px;
+	z-index: 4;
+}
+
+#fixed_header.hidden {
+	-webkit-transition: all 1.5s ease;
+    -moz-transition: all 1.5s ease;
+    -o-transition: all 1.5s ease;
+    transition: all 1.5s ease;
+	top: -50px;
+}
+
+#fixed_header .right {
+	float: right;
+}
+
+#fixed_header a {
+	 float:left;
+	 display:inline;
+	 padding:0px 24px 0px 24px;
+	 margin:0px 0px 0px 0px;
+	 font-family:"Trebuchet MS";
+	 font-size:14px;
+	 font-weight:bold;
+	 color:#ffffff;
+	 text-decoration:none;
+	 text-shadow:1px 1px 1px #959595;
+}
+
+#fixed_header a:hover{
+	color:#faf1cb;
+	text-decoration:none;
+}
+
+#fixed_header #main_menu {
+	width: 1005px;
+	margin: auto;
+	margin-top: 25px;
+}
+
+#teapop_logo {
+	text-align: center;
+	z-index: 2;
+	margin-top: -110px;
+	position: relative;
+}
+
+#teapop_logo img {
+	width: 300px;
+}
+
+#sunrays {
+	margin: auto auto auto -65px;
+	text-align: center;
+	margin-top: -310px;
+}
+
+#header_text {
+	text-align: center;
+	font-size: 64px;
+	padding-bottom: 40px;
+	font-family: matchbook;
+	margin-top: -40px;
+}
+
+
+/* OLD CSS */
+
 #teapopNav {
 	
 }
@@ -61,10 +151,6 @@
 #wrap.boxed {
 	width: 1000px;
 	margin: 10px auto -22px auto;
-	-webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
-	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
-	border-radius: 5px;
-	background: #FDF8F6;
 }
 
 /*----------------------------
