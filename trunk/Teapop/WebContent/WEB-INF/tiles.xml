@@ -46,4 +46,8 @@
       <put-attribute name="body"   value="/jsp/main/specials.jsp"/>      
    </definition>
    
+   <definition name="contactus" extends="mainLayout">      
+      <put-attribute name="body"   value="/jsp/main/contactus.jsp"/>      
+   </definition>
+   
 </tiles-definitions>
