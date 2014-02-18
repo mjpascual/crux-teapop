@@ -103,11 +103,11 @@ var ContentHandler = {
 	},
 	
 	generateContent : function(contentId, json, callback){
-		$.post("content/"+ contentId +".html", function(data){
+		$.post("jsp/main/"+ contentId +".jsp", function(data){
 			response = data;
 			callback(json, data);
 		}).fail(function() {
-			alert( "error" );
+			alert( "content handler error" );
 		});
 	},
 

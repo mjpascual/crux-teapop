@@ -15,7 +15,7 @@ var BodySwitcher = {
 		    type: "POST",
 		    data: data,
 		    error: function(){
-		        alert('Error');
+		        alert('Admin Error');
 		    },
 		    success: function(data){         
 		    	callback(data);
