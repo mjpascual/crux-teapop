@@ -1,4 +1,4 @@
-<div id="contactInfoHeader" class="short_header">Welcome</div>
+<div id="contactInfoHeader" class="short_header">Tea and More!</div>
 
 <div id="home" class="grid_16">
 
