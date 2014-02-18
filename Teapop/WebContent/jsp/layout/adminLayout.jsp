@@ -9,6 +9,7 @@
 		<title>Tea-Pop Admin</title>
 		<link href="css/admin.css" rel="stylesheet">
         <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 		<script src="js/admin.js"></script>
 		<script type="text/javascript">
 	        $(document).ready( function(){

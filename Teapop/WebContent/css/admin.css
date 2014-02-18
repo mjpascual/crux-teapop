@@ -355,8 +355,8 @@ article.main section article div div {
 
 article.main section article div label {
 	display: inline-block;
-	width: 150px;
-	vertical-align: top;
+	width: 300px;
+	vertical-align: center;
 }
 
 article.main section article div input.button {
@@ -379,59 +379,6 @@ article.main section article div textarea {
 	width: 400px;
 }
 
-/* CATEGORY */
-article.main section.category article table th:nth-child(2), 
-article.main section.category article table td:nth-child(2) {
-	width:150px;
-}
-
-article.main section.category article table th:nth-child(3), 
-article.main section.category article table td:nth-child(3) {
-	width:350px;
-}
-
-article.main section.category article table th:nth-child(4), 
-article.main section.category article table td:nth-child(4) {
-	width:200px;
-	text-align: center;
-	vertical-align: middle;
-}
-
-article.main section.category article table th:nth-child(4), 
-article.main section.category article table td:nth-child(4) input.pos {
-	text-align: center;
-	vertical-align: middle;
-	width:20px;
-}
-
-article.main section.category article table th:nth-child(5), 
-article.main section.category article table td:nth-child(5) {
-	text-align: center;
-}
-
-/* MENU */
-article.main section.menu article table th:nth-child(2), 
-article.main section.menu article table td:nth-child(2) {
-	width:200px;
-}
-
-article.main section.menu article table th:nth-child(3), 
-article.main section.menu article table th:nth-child(4),
-article.main section.menu article table th:nth-child(5),
-article.main section.menu article table td:nth-child(3),
-article.main section.menu article table td:nth-child(4),
-article.main section.menu article table td:nth-child(5) {
-	width:100px;
-	text-align: center;
-}
-
-article.main section.menu article table th:nth-child(6), 
-article.main section.menu article table th:nth-child(7),
-article.main section.menu article table td:nth-child(6),
-article.main section.menu article table td:nth-child(7){
-	width:50px;
-	text-align: center;
-}
 
 article.main section.menu article #menuCode{
 	width: 150px;
@@ -510,6 +457,7 @@ clear {
 	font-size: 0;
 	white-space: nowrap;
 	vertical-align: middle;
+	padding-top: 0px!important;
 }
 
 .btn-mini {
@@ -633,4 +581,189 @@ input[type=text], input[type=password], input[type=email], input[type=number], t
 	padding: 0px;
 	margin: 0px; 
 	display: block;
+}
+
+
+/* tables */
+/*
+ * DataTables framework
+ */
+
+div.dataTables_length {
+	float: left;
+}
+
+div.dataTables_filter {
+	float: right;
+}
+
+div.dataTables_info {
+	padding: 9px 6px 6px 6px;
+	float: left;
+}
+
+div.dataTables_paginate {
+	float: right;
+}
+
+div.dataTables_length,
+div.dataTables_filter,
+div.dataTables_paginate {
+	padding: 6px;
+}
+
+/* Self clearing - http://www.webtoolkit.info/css-clearfix.html */
+.dataTables_wrapper:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+html[xmlns] .dataTables_wrapper {
+	display: block;
+}
+ 
+* html .dataTables_wrapper {
+	height: 1%;
+}
+
+
+/*
+ * Table styles
+ */
+table.table {
+	width: 100%;
+	clear: both;
+}
+
+table.table td,
+table.table th {
+	padding: 5px;
+	border: 1px solid #fff;
+}
+
+/* Header cells */
+table.table thead th {
+	text-align: center;
+	background: #66a9bd;
+}
+
+/* Body cells */
+table.table tbody th {
+	text-align: left;
+	background: #91c5d4;
+}
+	
+table.table tbody td {
+	text-align: center;
+	background: #d5eaf0;
+}
+		
+table.table tbody tr.odd td { 
+	background: #f9f9f9;
+}
+
+/* Footer cells */	
+table.table tfoot th {
+	background: #b0cc7f;
+	text-align: left;
+}
+	
+table.table tfoot td {
+	background: #d7e1c5;
+	text-align: center;
+	font-weight: bold;
+}
+
+
+/*
+ * Pagination
+ */
+a.paginate_button,
+a.paginate_active {
+	display: inline-block;
+/* 	background-color: #608995; */
+	padding: 2px 6px;
+	margin-left: 2px;
+	cursor: pointer;
+	*cursor: hand;
+}
+
+a.paginate_active {
+	background-color: transparent;
+	border: 1px solid black;
+}
+
+a.paginate_button_disabled {
+	color: #3d6672;
+}
+.paging_full_numbers a:active {
+	outline: none
+}
+.paging_full_numbers a:hover {
+	text-decoration: none;
+}
+
+div.dataTables_paginate span>a {
+	width: 15px;
+	text-align: center;
+}
+
+/*
+ * Sorting
+ */
+table thead th.sorting_asc {
+	background: #66A9BD url('../images/admin/sort_asc.png') no-repeat right center;
+	cursor: pointer;
+}
+
+table thead th.sorting_asc:last-child, 
+table thead th.sorting_desc:last-child, 
+table thead th.sorting:last-child {
+	background: #66A9BD!important;
+}
+
+table thead th.sorting_desc {
+	background: #66A9BD  url('../images/admin/sort_desc.png') no-repeat right center;
+	cursor: pointer;
+}
+
+table thead th.sorting {
+	background: #66A9BD  url('../images/admin/sort_both.png') no-repeat right center;
+	cursor: pointer;
+}
+
+table td:last-child{
+	text-align: center!important;
+}
+
+span.paginate_button,
+span.paginate_active {
+	display: inline-block;
+	background-color: #608995;
+	padding: 2px 6px;
+	margin-left: 2px;
+	cursor: pointer;
+	*cursor: hand;
+}
+
+span.paginate_active {
+	background-color: transparent;
+	border: 1px solid black;
+}
+
+span.paginate_button_disabled {
+	color: #3d6672;
+}
+
+div.dataTables_paginate span>span {
+	width: 15px;
+	text-align: center;
+}
+
+div.dataTables_info {
+	padding: 9px 6px 6px 6px;
 }
