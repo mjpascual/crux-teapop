@@ -1,0 +1,64 @@
+#teapopFooterTop {
+	background: #404041;
+	float: left;
+	width: 100%;
+}
+
+.teapopContainer {
+	position: relative;
+	width: 960px;
+	margin-top: 10px;
+	padding: 0;
+}
+
+footer {
+	margin-top: 40px;
+}
+
+#teapopInformation {
+	width: 300px;
+	margin-left: 13%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	float: left;
+}
+
+#siteInformation {
+	margin-left: 40px;	
+	color: #E1E1E1!important;
+	font-weight: bold;
+}
+
+
+ul .siteInformationLinks{
+	width: 140px;
+	list-style: none;
+}
+
+ul.siteInformationLinks li {
+	display: block;
+	border-bottom: 1px solid #555;
+	padding-bottom: 8px;
+	margin-bottom: 8px;
+	color:  #E1E1E1;
+}
+
+#teapopJoinUs {
+	width: 300px;
+	margin-left: 50px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	float: left;
+}
+
+#teapopFooterBottom {
+	background: #383838;
+	padding: 22px 0;
+}
+
+#copyright {
+	color: #E1E1E1;
+	top: 15px;
+	position: relative;
+	font-size: 8px;
+}
