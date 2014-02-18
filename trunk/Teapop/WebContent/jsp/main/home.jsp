@@ -1,5 +1,5 @@
 <div id="home" class="grid_16">
-	<iframe id="slider_frame" src="teapop/content/components/slider/slider.html" marginheight="0" marginwidth="0"></iframe>
+	<iframe id="slider_frame" src="components/slider/slider.html" marginheight="0" marginwidth="0"></iframe>
 <!-- 	<object id="home_slider" width="400" height="400" -->
 <!-- 		data="content/components/slider/index.html"></object> -->
 	<div id="specials" class="grid_5">

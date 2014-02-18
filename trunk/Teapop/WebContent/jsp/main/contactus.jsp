@@ -54,12 +54,12 @@
 <div class="contactUsWestSide">
 	<div class="contactInfoContainer">
 		<div id="contactUsLogo">
-			<img border="0" src="teapop/images/teapop_logo.png" id="header_logo"
+			<img border="0" src="images/teapop_logo.png" id="header_logo"
 				style="height: 120px; width: 200px;">
 		</div>
 		<div id="contactInfoHeader">Contact Info</div>
 		<div id="contactUsAddress">
-			<img class="locationIcon iconLeft" src="teapop/images/home/location.jpg">
+			<img class="locationIcon iconLeft" src="images/home/location.jpg">
 			<div id="locationInfo">
 				Cenel Building <br> Burgos Concepcion <br> 1478 Malabon
 				City
@@ -67,12 +67,12 @@
 		</div>
 
 		<div id="contactUsPhone">
-			<img class="locationIcon iconLeft" src="teapop/images/home/phone.jpg">
+			<img class="locationIcon iconLeft" src="images/home/phone.jpg">
 			<div id="locationInfo">(033) 376-4362</div>
 		</div>
 
 		<div id="contactUsEmail">
-			<img class="locationIcon iconLeft" src="teapop/images/home/email.png">
+			<img class="locationIcon iconLeft" src="images/home/email.png">
 			<div id="locationInfo">crux@upou.edu.ph</div>
 		</div>
 	</div>

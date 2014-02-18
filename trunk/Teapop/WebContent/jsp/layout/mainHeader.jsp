@@ -2,7 +2,7 @@
 <header>
 	<div id="teapopHeader">
 		<div class="grid_5">
-			<img border="0" src="teapop/images/teapop_logo.png" id="header_logo" />
+			<img border="0" src="images/teapop_logo.png" id="header_logo" />
 		</div>
 		<div id="header_delivery_info" class="grid_10">
 			<h1>We Deliver!</h1>
@@ -23,7 +23,7 @@
 					<li>
 						<div class="info_name2">FOLLOW</div> <a
 						href="https://www.facebook.com/TeaPop/info"> <img border="0"
-							src="teapop/images/facebook_logo.png" id="facebook_logo" />
+							src="images/facebook_logo.png" id="facebook_logo" />
 					</a>
 					</li>
 				</ul>
@@ -34,12 +34,12 @@
 	<div id="teapopNav" class="grid_16">
 		<nav>
 			<ul class="teapopMenu">
-				<li id="home" class="selected menu_link"><a href="#">Home</a></li>
-				<li id="menu" class="menu_link"><a href="#">Menu</a></li>
-				<li id="locationanddelivery" class="menu_link"><a href="#">Location
+				<li id="home" class="selected menu_link"><a href="home">Home</a></li>
+				<li id="menu" class="menu_link"><a href="menu">Menu</a></li>
+				<li id="locationanddelivery" class="menu_link"><a href="location">Location
 						And Delivery</a></li>
-				<li id="specials" class="menu_link"><a href="#">Specials</a></li>
-				<li id="contactus" class="menu_link"><a href="#">Contact Us</a></li>
+				<li id="specials" class="menu_link"><a href="specials">Specials</a></li>
+				<li id="contactus" class="menu_link"><a href="contactus">Contact Us</a></li>
 			</ul>
 		</nav>
 	</div>
