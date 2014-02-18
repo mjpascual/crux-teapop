@@ -9,13 +9,13 @@
         <title>Tea Pop Online</title>
 
         <!-- Our CSS stylesheet file -->
-        <link rel="stylesheet" href="teapop/css/960.css" />
-        <link rel="stylesheet" href="teapop/css/header.css" />
-        <link rel="stylesheet" href="teapop/css/teapop.css" />
-        <link rel="stylesheet" href="teapop/css/footer.css" />
-        <link rel="stylesheet" href="teapop/css/contactus.css" />
-		<link rel="stylesheet" href="teapop/css/location.css" />
-		<link rel="stylesheet" href="teapop/css/promo.css" />
+        <link rel="stylesheet" href="css/960.css" />
+        <link rel="stylesheet" href="css/header.css" />
+        <link rel="stylesheet" href="css/teapop.css" />
+        <link rel="stylesheet" href="css/footer.css" />
+        <link rel="stylesheet" href="css/contactus.css" />
+		<link rel="stylesheet" href="css/location.css" />
+		<link rel="stylesheet" href="css/promo.css" />
 		
 		
         
@@ -28,19 +28,18 @@
         <![endif]-->
         
         <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-        <script type="text/javascript" src="teapop/js/jsviews.js"></script>
-        <script type="text/javascript" src="teapop/js/EventHandler.js"></script>
-        <script type="text/javascript" src="teapop/js/ContentHandler.js"></script>
+        <script type="text/javascript" src="js/jsviews.js"></script>
+        <script type="text/javascript" src="js/EventHandler.js"></script>
+        <script type="text/javascript" src="js/ContentHandler.js"></script>
         <script type="text/javascript">
         $(document).ready( function(){
-        	EventHandler.initTopMenu();
-        	ContentHandler.show("home");
+
         });
         </script>
         
     </head>
 	
-    <body id="teapopBody" style="background:  url(teapop/images/background.jpg)">
+    <body id="teapopBody" style="background:  url(images/background.jpg)">
     	
     	<div id="wrap" class="boxed container_16"> <!--START DIV BODY-->
          	

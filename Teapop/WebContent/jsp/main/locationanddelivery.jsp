@@ -6,7 +6,7 @@
 
 	<!-- start customer info -->
 	<div id="customerInfoContainer">
-		<img src="teapop/images/map-location.jpg">
+		<img src="images/map-location.jpg">
 
 	</div>
 
