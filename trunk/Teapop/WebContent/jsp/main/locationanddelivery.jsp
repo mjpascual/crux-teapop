@@ -1,4 +1,6 @@
-<!-- start header -->
+<div id="contactInfoHeader" class="short_header">Location</div>
+
+
 <div class="contactUsEastSide">
 	<header id="contactUsHeaderContainer"> Tea-Pop Information</header>
 
@@ -12,7 +14,7 @@
 
 </div>
 
-<div class="contactUsWestSide">
+<div class="locationEestSide">
 	<div class="contactInfoContainer">
 		<table id="scheduleTable" border="1">
 			<tr>
@@ -83,7 +85,7 @@
 		Area Delivery Charge: 3,000 Php
 	</div>
 
-	<div class="contactUsEastSide">
+	<div class="locationWestSide">
 
 		<div id="deliveryAreaLocation">
 			<div id="contactUsHeaderContainer" class="addressLocation">

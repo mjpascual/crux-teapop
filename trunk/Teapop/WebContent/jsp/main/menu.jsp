@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
+<div id="contactInfoHeader" class="short_header">Our Menu</div>
+
 <div id="categories" class="grid_16">
 	<ul id="menu_category_links" class="category_links">
 		<s:iterator status="status" value="menu.categories">

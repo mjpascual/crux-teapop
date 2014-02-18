@@ -25,6 +25,7 @@
    
    <!-- MAIN -->
    <definition name="mainLayout" template="/jsp/layout/mainLayout.jsp">
+   	  <put-attribute name="nav"  	value="/jsp/layout/mainNav.jsp"/>
       <put-attribute name="header"  	value="/jsp/layout/mainHeader.jsp"/>
       <put-attribute name="body"   	value=""/>
       <put-attribute name="footer"  value="/jsp/layout/mainFooter.jsp"/>
