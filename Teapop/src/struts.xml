@@ -37,11 +37,11 @@
 		</action>
 
 		<action name="home">
-			<result type="tiles">home</result>
+			<result name="success" type="tiles">home</result>
 		</action>
 
 		<action name="location">
-			<result>/teapop/content/locationanddelivery.html</result>
+			<result name="success" type="tiles">locationanddelivery</result>
 		</action>
 
 		<action name="menu" class="com.upou.teapop.action.DisplayMenuAction">
@@ -49,11 +49,11 @@
 		</action>
 
 		<action name="specials" class="com.upou.teapop.action.DisplaySpecialsAction">
-			<result>/teapop/content/specials.jsp</result>
+			<result name="success" type="tiles">specials</result>
 		</action>
 
 		<action name="contactus">
-			<result>/teapop/content/contactus.jsp</result>
+			<result name="success" type="tiles">contactus</result>
 		</action>
 
 		<action name="admin">
