@@ -3,7 +3,7 @@
 		Menu Management
 	</header>
 	<article>
-		<table class="table table-striped table-hovered table-condensed">
+		<table id="menu-table" class="table">
 			<thead>
 				<tr>
 					<th colspan="8"><button class="btn pull-right"><span class="icon-plus"></span>&nbsp;Add Menu Item</button></th>
