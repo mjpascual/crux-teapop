@@ -334,6 +334,10 @@ article.main section article table td:nth-child(1) {
 	width:50px;
 }
 
+article.main section article table tr:first-child th:first-child{
+	background: white!important;
+}
+
 article.main section article table tr:nth-child(1), 
 article.main section article table tr:nth-child(1) th:nth-child(1){
 	width:100%px;
