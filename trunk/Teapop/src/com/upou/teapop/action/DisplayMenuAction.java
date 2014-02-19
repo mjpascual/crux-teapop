@@ -47,25 +47,25 @@ public class DisplayMenuAction extends ActionSupport{
 		item1.setDesc("desc1");
 		item1.setItemId(1);
 		item1.setName("name1");
-		item1.setPrice("1001");
+		item1.setPrice(1001);
 		
 		Item item2 = new Item();
 		item2.setDesc("desc2");
 		item2.setItemId(2);
 		item2.setName("name2");
-		item2.setPrice("1002");
+		item2.setPrice(1002);
 		
 		Item item3 = new Item();
 		item3.setDesc("desc3");
 		item3.setItemId(3);
 		item3.setName("name3");
-		item3.setPrice("1003");
+		item3.setPrice(1003);
 		
 		Item item4 = new Item();
 		item4.setDesc("desc4");
 		item4.setItemId(4);
 		item4.setName("name4");
-		item4.setPrice("1004");
+		item4.setPrice(1004);
 		
 		category1.getItems().add(item1);
 		category1.getItems().add(item2);
