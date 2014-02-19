@@ -4,26 +4,58 @@ public class Item {
 	
 	private int itemId;
 	
+	private int catId;
+	
+	private int dispPosition;
+
+	private String itemCode;
+	
 	private String name;
 	
-	private String price;
-	
 	private String desc;
+	
+	private String featured;
+	
+	private String hidden;
+	
+	private String currency;
+	
+	private String size;
+	
+	private String image;
+	
+	private double price;
 
-	public String getDesc() {
-		return desc;
+	public int getItemId() {
+		return itemId;
 	}
 
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setItemId(int itemId) {
+		this.itemId = itemId;
 	}
 
-	public String getPrice() {
-		return price;
+	public int getCatId() {
+		return catId;
 	}
 
-	public void setPrice(String price) {
-		this.price = price;
+	public void setCatId(int catId) {
+		this.catId = catId;
+	}
+
+	public int getDispPosition() {
+		return dispPosition;
+	}
+
+	public void setDispPosition(int dispPosition) {
+		this.dispPosition = dispPosition;
+	}
+
+	public String getItemCode() {
+		return itemCode;
+	}
+
+	public void setItemCode(String itemCode) {
+		this.itemCode = itemCode;
 	}
 
 	public String getName() {
@@ -34,11 +66,62 @@ public class Item {
 		this.name = name;
 	}
 
-	public int getItemId() {
-		return itemId;
+	public String getDesc() {
+		return desc;
 	}
 
-	public void setItemId(int itemId) {
-		this.itemId = itemId;
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
+
+	public String getFeatured() {
+		return featured;
+	}
+
+	public void setFeatured(String featured) {
+		this.featured = featured;
+	}
+
+	public String getHidden() {
+		return hidden;
+	}
+
+	public void setHidden(String hidden) {
+		this.hidden = hidden;
+	}
+
+	public String getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+
+	public String getSize() {
+		return size;
+	}
+
+	public void setSize(String size) {
+		this.size = size;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	
+
 }

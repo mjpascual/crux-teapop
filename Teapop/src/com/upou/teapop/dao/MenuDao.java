@@ -14,46 +14,67 @@ import com.upou.teapop.data.Menu;
 
 public class MenuDao extends BaseDao {
 
-	// CREATE
 	public boolean createItem(Item item) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();
 			Statement stmt = conn.createStatement();
-			
-			String query = "INSERT VALUES() INTO menu";
-			
-			stmt.executeQuery(query);
+
+			String query = "INSERT INTO teapop.product (product_code, category_id, name, description, currency, price, position, featured, hidden) "
+					+ "VALUES ('"
+					+ item.getItemCode()
+					+ "',"
+					+ item.getCatId()
+					+ ", '"
+					+ item.getName()
+					+ "', '"
+					+ item.getDesc()
+					+ "', '"
+					+ item.getCurrency()
+					+ "', "
+					+ item.getPrice()
+					+ ","
+					+ item.getDispPosition()
+					+ ", '"
+					+ item.getFeatured()
+					+ "', '" + item.getHidden() + "')";
+
+			stmt.executeUpdate(query);
 			result = true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return result;
 	}
-	
+
 	public boolean createCategory(Category category) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();
 			Statement stmt = conn.createStatement();
-			
-			String query = "INSERT VALUES() INTO menu";
-			
-			stmt.executeQuery(query);
+
+			String query = "INSERT INTO teapop.category(name, description, image_name) VALUES "
+					+ "('"
+					+ category.getName()
+					+ "', '"
+					+ category.getDesc()
+					+ "', '" + category.getImage() + "')";
+
+			stmt.executeUpdate(query);
 			result = true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return result;
 	}
-	
+
 	// RETRIEVE
-	public List<Category> retrieveCategories(){
-		
+	public List<Category> retrieveCategories() {
+
 		List<Category> categories = new ArrayList<Category>();
 		try {
 			Connection conn = createConnection();
-			
+
 			// get category info
 			Statement stmt = conn.createStatement();
 			String query = "SELECT * FROM category";
@@ -73,23 +94,23 @@ public class MenuDao extends BaseDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return categories;
 	}
-	
-	public Item retrieveItem(String itemId){
+
+	public Item retrieveItem(int itemId) {
 		Item item = new Item();
 		try {
 			Connection conn = createConnection();
-			
+
 			// get category info
 			Statement stmt = conn.createStatement();
-			String query = "SELECT * FROM items";
+			String query = "SELECT * FROM teapop.product";
 			ResultSet rs = stmt.executeQuery(query);
 
 			while (rs.next()) {
 				item.setDesc(rs.getString("description"));
-				item.setItemId(rs.getInt("id"));
+				item.setItemId(rs.getInt("product_id"));
 				item.setName(rs.getString("name"));
 			}
 			conn.close();
@@ -101,12 +122,12 @@ public class MenuDao extends BaseDao {
 		}
 		return item;
 	}
-	
-	public Category retrieveCategory(String categoryId){
+
+	public Category retrieveCategory(String categoryId) {
 		Category category = new Category();
 		try {
 			Connection conn = createConnection();
-			
+
 			// get category info
 			Statement stmt = conn.createStatement();
 			String query = "SELECT * FROM category";
@@ -128,20 +149,19 @@ public class MenuDao extends BaseDao {
 	}
 
 	public Menu retrieveMenu() {
-		
+
 		Menu menu = new Menu();
-		
+
 		// create map for categories
 		HashMap<Integer, Category> categoryMap = new HashMap<Integer, Category>();
 		for (Category category : retrieveCategories()) {
 			categoryMap.put(category.getCategoryId(), category);
 		}
-		
+
 		try {
-			
+
 			Connection conn = createConnection();
 
-			
 			// get items info
 			Statement stmt = conn.createStatement();
 			String query = "SELECT * FROM items LEFT JOIN category";
@@ -152,10 +172,10 @@ public class MenuDao extends BaseDao {
 				item.setDesc(rs.getString("description"));
 				item.setItemId(rs.getInt("id"));
 				item.setName(rs.getString("name"));
-				item.setPrice(rs.getString("price"));
-				
+				item.setPrice(rs.getDouble("price"));
+
 				int categoryId = rs.getInt("categoryId");
-				if (categoryMap.containsKey(categoryId)){
+				if (categoryMap.containsKey(categoryId)) {
 					categoryMap.get(categoryId).getItems().add(item);
 				} else {
 					System.out.println("NO MATCHING CATEGORY ID");
@@ -171,16 +191,16 @@ public class MenuDao extends BaseDao {
 
 		return menu;
 	}
-	
+
 	// UPDATE
 	public boolean updateItem(Item item) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();
 			Statement stmt = conn.createStatement();
-			
+
 			String query = "INSERT VALUES() INTO menu";
-			
+
 			stmt.executeQuery(query);
 			result = true;
 		} catch (Exception e) {
@@ -188,15 +208,15 @@ public class MenuDao extends BaseDao {
 		}
 		return result;
 	}
-	
+
 	public boolean updateCategory(Category category) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();
 			Statement stmt = conn.createStatement();
-			
+
 			String query = "INSERT VALUES() INTO menu";
-			
+
 			stmt.executeQuery(query);
 			result = true;
 		} catch (Exception e) {
@@ -204,16 +224,16 @@ public class MenuDao extends BaseDao {
 		}
 		return result;
 	}
-	
+
 	// DELETE
 	public boolean deleteItem(String id) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();
 			Statement stmt = conn.createStatement();
-			
+
 			String query = "DELETE FROM items WHERE id=" + id;
-			
+
 			stmt.executeQuery(query);
 			result = true;
 		} catch (Exception e) {
@@ -221,15 +241,15 @@ public class MenuDao extends BaseDao {
 		}
 		return result;
 	}
-	
+
 	public boolean deleteCategory(String id) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();
 			Statement stmt = conn.createStatement();
-			
+
 			String query = "DELETE FROM category WHERE id=" + id;
-			
+
 			stmt.executeQuery(query);
 			result = true;
 		} catch (Exception e) {
