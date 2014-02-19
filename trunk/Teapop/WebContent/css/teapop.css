@@ -25,6 +25,7 @@ a {
 
 .small_infobox {
 	background-color: #FFF;
+	box-shadow: 7px 5px 24px #888888;
 	border-radius: 8px;
 	padding-left: 10px;
 	padding-top: 10px;
@@ -42,7 +43,7 @@ a {
 	height: 40px;
 	text-align: center;
 	padding: 4px 0px 0px;
-	margin-left: 295px;
+	margin: auto;
 	margin-bottom: 26px;
 }
 
@@ -59,8 +60,8 @@ a {
 }
 
 .main_content {
+    margin: auto;
     margin-bottom: 44px;
-    margin-left: 80px;
     min-height: 500px;
 }
 
@@ -77,6 +78,18 @@ a {
     height: 200px;
     padding: 10px;
     width: 310px;
+}
+
+#menu_box {
+    background-color: #FFFFFF;
+    border: 1px solid #B84427;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    padding-left: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    box-shadow: 7px 5px 24px #888888;
 }
 
 #teapopBody-overlay{
@@ -96,6 +109,10 @@ a {
 .category_divider{
     margin-bottom: 15px;
     margin-top: 40px;
+}
+
+#categories {
+	padding-bottom: 20px;
 }
 
 #categories ol, ul, li {
@@ -128,7 +145,11 @@ a {
 .menu {
 }
 
-.menu .category{
+
+.menu .category {
+    margin: auto;
+    width: 600px;
+    text-align: left;
 }
 
 .menu .category .category_photo{
@@ -192,6 +213,8 @@ a {
 
 /* HOME CSS */
 #home{
+	margin: auto;
+	text-align: center;
 }
 
 #home #home_slider{
@@ -207,7 +230,7 @@ a {
 	overflow:hidden;
 	border:none;
 	padding:0;
-	margin:0;
+	margin:auto;
 	display:block;"
     -webkit-box-shadow: 5px 9px 16px 0px rgba(48, 50, 50, 0.46);
 	-moz-box-shadow:    5px 9px 16px 0px rgba(48, 50, 50, 0.46);

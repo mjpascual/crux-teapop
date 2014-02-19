@@ -34,13 +34,13 @@ public class DisplayMenuAction extends ActionSupport{
 		Category category1 = new Category();
 		category1.setCategoryId(1);
 		category1.setDesc("desc1");
-		category1.setImage("image1.jpg");
+		category1.setImage("images/categories/cat1.png");
 		category1.setName("name1");
 		
 		Category category2 = new Category();
 		category2.setCategoryId(2);
 		category2.setDesc("desc2");
-		category2.setImage("image2.jpg");
+		category2.setImage("images/categories/cat2.png");
 		category2.setName("name2");
 		
 		Item item1 = new Item();
