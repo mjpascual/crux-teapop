@@ -1,9 +1,9 @@
-<div id="contactInfoHeader" class="short_header">Tea and More!</div>
+<div id="contactInfoHeader" class="short_header">Welcome to Teapop</div>
 
-<div id="home" class="grid_16">
+<div id="home" class="">
 
 	<p>
-	Welcome to Teapop!
+	Enjoy Tea and More!
 	</p>
 	<iframe id="slider_frame" src="components/slider/slider.html" marginheight="0" marginwidth="0"></iframe>
 <!-- 	<object id="home_slider" width="400" height="400" -->
