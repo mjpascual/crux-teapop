@@ -13,6 +13,8 @@ public class Category {
 	
 	private String desc;
 	
+	private boolean showSML;
+	
 	private List<Item> items;
 
 	public String getName() {
@@ -56,6 +58,14 @@ public class Category {
 
 	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
+	}
+
+	public boolean isShowSML() {
+		return showSML;
+	}
+
+	public void setShowSML(boolean showSML) {
+		this.showSML = showSML;
 	}
 
 }

@@ -37,13 +37,14 @@ public class DisplayMenuAction extends ActionSupport{
 		category1.setDesc("A Serenitea specialty! Our best seller drinks have the goodness of milk combined with unique tea blends.");
 		category1.setImage("images/categories/cat1.png");
 		category1.setName("Milk Tea Classics");
+		category1.setShowSML(true);
 		
-
 		Category category2 = new Category();
 		category2.setCategoryId(2);
 		category2.setDesc("Fruit flavored tea creations that is sure to delight your taste buds!");
 		category2.setImage("images/categories/cat2.png");
 		category2.setName("Fruit Tea");
+		category2.setShowSML(false);
 		
 		Item item1 = new Item();
 		item1.setDesc("black  tea flavor");
@@ -52,7 +53,6 @@ public class DisplayMenuAction extends ActionSupport{
 		Price price1 = new Price();
 		price1.setSmall(90);
 		price1.setRegular(100);
-		price1.setLarge(120);
 		item1.setPrice(price1);
 		
 		Item item2 = new Item();
@@ -70,9 +70,7 @@ public class DisplayMenuAction extends ActionSupport{
 		item3.setItemId(3);
 		item3.setName("Calamansi");
 		Price price3 = new Price();
-		price3.setSmall(90);
 		price3.setRegular(100);
-		price3.setLarge(120);
 		item3.setPrice(price3);
 		
 		Item item4 = new Item();
@@ -81,7 +79,6 @@ public class DisplayMenuAction extends ActionSupport{
 		item4.setName("Cranberry");
 		Price price4 = new Price();
 		price4.setRegular(100);
-		price4.setLarge(120);
 		item4.setPrice(price4);
 		
 		category1.getItems().add(item1);
