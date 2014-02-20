@@ -11,6 +11,7 @@ import java.util.List;
 import com.upou.teapop.data.Category;
 import com.upou.teapop.data.Item;
 import com.upou.teapop.data.Menu;
+import com.upou.teapop.data.Price;
 
 public class MenuDao extends BaseDao {
 
@@ -172,8 +173,17 @@ public class MenuDao extends BaseDao {
 				item.setDesc(rs.getString("description"));
 				item.setItemId(rs.getInt("id"));
 				item.setName(rs.getString("name"));
-				item.setPrice(rs.getDouble("price"));
-
+				
+				Price price = new Price();
+				double regularPrice = rs.getDouble("price");
+				price.setRegular(regularPrice);
+				
+				// TODO get actual large and small price
+				price.setLarge(regularPrice + 10);
+				price.setSmall(regularPrice - 10);
+				
+				item.setPrice(price);
+				
 				int categoryId = rs.getInt("categoryId");
 				if (categoryMap.containsKey(categoryId)) {
 					categoryMap.get(categoryId).getItems().add(item);

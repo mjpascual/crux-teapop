@@ -2,12 +2,6 @@
 
 var EventHandler = {
 	
-	initTopMenu : function(){
-		$(".menu_link").click( function(){
-			ContentHandler.show($(this).attr("id"));
-		});
-	},
-	
 	initCategoryLinks : function(id){
 		$('#'+id+' a[href^="#"]').on('click',function (e) {
 		    e.preventDefault();

@@ -24,7 +24,7 @@ public class Item {
 	
 	private String image;
 	
-	private double price;
+	private Price price;
 
 	public int getItemId() {
 		return itemId;
@@ -114,14 +114,13 @@ public class Item {
 		this.image = image;
 	}
 
-	public double getPrice() {
+	public Price getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(Price price) {
 		this.price = price;
 	}
-
 	
 
 }
