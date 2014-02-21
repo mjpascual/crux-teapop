@@ -15,7 +15,7 @@ public class Category {
 	
 	private boolean showSML;
 	
-	private List<Beverage> items;
+	private List<MenuItem> items;
 
 	public String getName() {
 		return name;
@@ -41,14 +41,11 @@ public class Category {
 		this.desc = desc;
 	}
 
-	public List<Beverage> getItems() {
-		if (items == null){
-			items = new ArrayList<Beverage>();
-		}
+	public List<MenuItem> getItems() {
 		return items;
 	}
 
-	public void setItems(List<Beverage> items) {
+	public void setItems(List<MenuItem> items) {
 		this.items = items;
 	}
 

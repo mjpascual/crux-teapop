@@ -6,10 +6,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 
-import com.upou.teapop.data.Beverage;
 import com.upou.teapop.data.Category;
 import com.upou.teapop.data.Menu;
-import com.upou.teapop.data.PriceSML;
+import com.upou.teapop.data.MenuItem;
+import com.upou.teapop.data.Price;
 
 public class MenuDao extends BaseDao{
 
@@ -34,16 +34,14 @@ public class MenuDao extends BaseDao{
 			ResultSet rs = stmt.executeQuery(query);
 
 			while (rs.next()) {
-				Beverage item = new Beverage();
+				MenuItem item = new MenuItem();
 				item.setDesc(rs.getString("description"));
 				item.setItemId(rs.getInt("id"));
 				item.setName(rs.getString("name"));
 				
-				PriceSML price = new PriceSML();
+				Price price = new Price();
 				double regularPrice = rs.getDouble("price");
 				price.setRegular(regularPrice);
-				
-				// TODO get actual large and small price
 				price.setLarge(regularPrice + 10);
 				price.setSmall(regularPrice - 10);
 				
