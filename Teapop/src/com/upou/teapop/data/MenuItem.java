@@ -22,6 +22,8 @@ public class MenuItem {
 	
 	private String image;
 	
+	private Price price;
+	
 	public int getItemId() {
 		return itemId;
 	}
@@ -102,4 +104,14 @@ public class MenuItem {
 		this.image = image;
 	}
 
+	public Price getPrice() {
+		return price;
+	}
+
+	public void setPrice(Price price) {
+		this.price = price;
+	}
+
+	
+	
 }

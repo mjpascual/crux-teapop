@@ -6,43 +6,22 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
-import com.upou.teapop.data.Category;
-import com.upou.teapop.data.Beverage;
-import com.upou.teapop.data.Menu;
-import com.upou.teapop.data.PriceSML;
+import com.upou.teapop.data.MenuItem;
+
 
 public class MenuItemDao extends BaseDao {
 
-	public boolean createItem(Beverage beverage) {
+	public boolean createItem(MenuItem MenuItem) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();
 			Statement stmt = conn.createStatement();
 
-			String query = "INSERT INTO teapop.product (product_code, category_id, name, description, currency, regular_price, small_price, large_price, position, featured, hidden) "
+			String query = "INSERT INTO menu (menu_id, price) "
 					+ "VALUES ('"
-					+ beverage.getItemCode()
-					+ "',"
-					+ beverage.getCatId()
-					+ ", '"
-					+ beverage.getName()
-					+ "', '"
-					+ beverage.getDesc()
-					+ "', '"
-					+ beverage.getPrice().getCurrency()
-					+ "', "
-					+ beverage.getPrice().getRegular()
-					+ ","
-					+ beverage.getPrice().getSmall()
-					+ ","
-					+ beverage.getPrice().getLarge()
-					+ ","
-					+ beverage.getDispPosition()
-					+ ", '"
-					+ beverage.getFeatured()
-					+ "', '" + beverage.getHidden() + "')";
+					+ MenuItem.getItemCode()
+					+ "')";
 
 			stmt.executeUpdate(query);
 			result = true;
@@ -55,8 +34,8 @@ public class MenuItemDao extends BaseDao {
 	
 	
 
-	public Beverage retrieveItem(int itemId) {
-		Beverage item = new Beverage();
+	public MenuItem retrieveItem(int itemId) {
+		MenuItem item = new MenuItem();
 		try {
 			Connection conn = createConnection();
 
@@ -80,7 +59,7 @@ public class MenuItemDao extends BaseDao {
 		return item;
 	}
 
-	public boolean updateItem(Beverage item) {
+	public boolean updateItem(MenuItem menuItem) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();

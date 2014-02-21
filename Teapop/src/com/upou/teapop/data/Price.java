@@ -4,7 +4,11 @@ public class Price {
 	
 	private String currency;
 
+	private double small;
+	
 	private double regular;
+
+	private double large;
 	
 	public double getRegular() {
 		return regular;
@@ -21,5 +25,23 @@ public class Price {
 	public String getCurrency() {
 		return currency;
 	}
+
+	public double getSmall() {
+		return small;
+	}
+
+	public void setSmall(double small) {
+		this.small = small;
+	}
+
+	public double getLarge() {
+		return large;
+	}
+
+	public void setLarge(double large) {
+		this.large = large;
+	}
+
+	
 
 }
