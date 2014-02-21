@@ -4,6 +4,8 @@ public class Promo {
 	
 	private int promoId;
 	
+	private String promoCode;
+	
 	private String name;
 	
 	private String image;
@@ -16,6 +18,14 @@ public class Promo {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getPromoCode() {
+		return promoCode;
+	}
+
+	public void setPromoCode(String promoCode) {
+		this.promoCode = promoCode;
 	}
 
 	public String getImage() {

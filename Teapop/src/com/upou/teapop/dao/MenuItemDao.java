@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.upou.teapop.data.Category;
 import com.upou.teapop.data.MenuItem;
 import com.upou.teapop.data.Price;
 
@@ -13,6 +17,8 @@ public class MenuItemDao extends BaseDao {
                                                 "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	
 	private static final String MENU_VIEW     = "SELECT * FROM teapop.menu WHERE menu_id = ?";
+	
+	private static final String MENU_VIEW_ALL = "SELECT * FROM teapop.menu";
 	
 	private static final String MENU_DELETE	  = "DELETE FROM teapop.menu WHERE menu_id = ?";
 	
@@ -73,6 +79,46 @@ public class MenuItemDao extends BaseDao {
 		}
 		return menuItem;
 	}
+	
+	public List<MenuItem> retrieveItems() {
+		
+		List<MenuItem> menuItems = new ArrayList<MenuItem>();
+		
+		try {
+			Connection conn = createConnection();
+
+			PreparedStatement stmt = conn.prepareStatement(MENU_VIEW);
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				MenuItem menuItem = new MenuItem();
+				menuItem.setItemId(rs.getInt("menu_id"));
+				menuItem.setItemCode(rs.getString("menu_code"));
+				menuItem.setCatId(rs.getInt("category_id"));
+				menuItem.setName(rs.getString("name"));
+				menuItem.setDesc(rs.getString("description"));
+				Price price = new Price();
+				price.setCurrency(rs.getString("currency"));
+				price.setRegular(rs.getDouble("price"));
+				price.setSmall(rs.getDouble("price_small"));
+				price.setLarge(rs.getDouble("price_big"));
+				menuItem.setPrice(price);
+				menuItem.setDispPosition(rs.getInt("position"));
+				menuItem.setFeatured(rs.getString("featured"));
+				menuItem.setHidden(rs.getString("hidden"));
+				menuItems.add(menuItem);
+			}
+			
+			conn.close();
+			stmt.close();
+			rs.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return menuItems;
+	}
+
 
 	public boolean deleteItem(int id) {
 		boolean result = false;
