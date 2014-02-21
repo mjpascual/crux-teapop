@@ -1,31 +1,27 @@
 package com.upou.teapop.data;
 
-public class Item {
-	
+public class MenuItem {
+
 	private int itemId;
-	
+
 	private int catId;
-	
+
 	private int dispPosition;
 
 	private String itemCode;
-	
+
 	private String name;
-	
+
 	private String desc;
-	
+
 	private String featured;
-	
+
 	private String hidden;
-	
-	private String currency;
 	
 	private String size;
 	
 	private String image;
 	
-	private Price price;
-
 	public int getItemId() {
 		return itemId;
 	}
@@ -89,15 +85,7 @@ public class Item {
 	public void setHidden(String hidden) {
 		this.hidden = hidden;
 	}
-
-	public String getCurrency() {
-		return currency;
-	}
-
-	public void setCurrency(String currency) {
-		this.currency = currency;
-	}
-
+	
 	public String getSize() {
 		return size;
 	}
@@ -113,14 +101,5 @@ public class Item {
 	public void setImage(String image) {
 		this.image = image;
 	}
-
-	public Price getPrice() {
-		return price;
-	}
-
-	public void setPrice(Price price) {
-		this.price = price;
-	}
-	
 
 }
