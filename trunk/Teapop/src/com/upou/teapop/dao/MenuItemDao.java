@@ -41,8 +41,6 @@ public class MenuItemDao extends BaseDao {
 		return result;
 	}
 
-	
-	
 	public MenuItem retrieveItem(int menuId) {
 		MenuItem menuItem = new MenuItem();
 		try {
@@ -76,7 +74,6 @@ public class MenuItemDao extends BaseDao {
 		return menuItem;
 	}
 
-	
 	public boolean deleteItem(int id) {
 		boolean result = false;
 		try {
