@@ -41,13 +41,14 @@ public class CategoryDao extends BaseDao {
 		return result;
 	}
 
-	public Category retrieveCategory(String categoryId) {
+	public Category retrieveCategory(int categoryId) {
 		Category category = new Category();
 		try {
 			
 			Connection conn = createConnection();
 
 			PreparedStatement stmt = conn.prepareStatement(CATEGORY_VIEW);
+			stmt.setInt(1, categoryId);
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {

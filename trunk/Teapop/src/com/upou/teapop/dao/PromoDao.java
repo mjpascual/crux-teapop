@@ -40,13 +40,14 @@ public class PromoDao extends BaseDao {
 		return result;
 	}
 
-	public Promo retrievePromo(String promoId) {
+	public Promo retrievePromo(int promoId) {
 		Promo promo = new Promo();
 		try {
 			
 			Connection conn = createConnection();
 
 			PreparedStatement stmt = conn.prepareStatement(PROMO_VIEW);
+			stmt.setInt(1, promoId);
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {

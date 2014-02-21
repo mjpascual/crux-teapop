@@ -53,6 +53,7 @@ public class MenuItemDao extends BaseDao {
 			Connection conn = createConnection();
 
 			PreparedStatement stmt = conn.prepareStatement(MENU_VIEW);
+			stmt.setInt(1, menuId);
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
