@@ -1,8 +1,5 @@
 package com.upou.teapop.data;
 
-import com.upou.teapop.constants.DisplayConstants;
-
-
 public class User {
 	
 	private int userId;
@@ -11,15 +8,7 @@ public class User {
 	
 	private String password;
 	
-	private int accessLevel;
-	
-	private String firstName;
-	
-	private String lastName;
-
-	private String position;
-	
-	private String email;
+	private String displayName;
 
 	public int getUserId() {
 		return userId;
@@ -45,50 +34,12 @@ public class User {
 		this.password = password;
 	}
 
-	public int getAccessLevel() {
-		return accessLevel;
-	}
-
-	public void setAccessLevel(int accessLevel) {
-		this.accessLevel = accessLevel;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getPosition() {
-		return position;
-	}
-
-	public void setPosition(String position) {
-		this.position = position;
-	}
-	
 	public String getDisplayName() {
-		return this.firstName + DisplayConstants.SPACE + this.lastName;
+		return displayName;
 	}
 
-	public String getEmail() {
-		return email;
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
 	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	
 
 }
