@@ -1,6 +1,5 @@
 package com.upou.teapop.dao;
 
-//STEP 1. Import required packages
 import java.sql.Connection;
 
 import com.upou.teapop.util.ConnectionManager;
