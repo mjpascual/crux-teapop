@@ -1,26 +1,38 @@
 package com.upou.teapop.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.upou.teapop.data.Promo;
-import com.upou.teapop.data.Promos;
 
 public class PromoDao extends BaseDao {
-	// CREATE
+	
+	private static final String PROMO_CREATE   = "INSERT INTO teapop.promo (promo_id, promo_code, name, description, image_name) on duplicate key update " +
+												 "VALUES (?, ?, ?, ?, ?)";
+
+	private static final String PROMO_VIEW     = "SELECT * FROM teapop.promo WHERE promo_id = ?";
+	
+	private static final String PROMO_VIEW_ALL = "SELECT * FROM teapop.promo";
+	
+	private static final String PROMO_DELETE   = "DELETE FROM teapop.promo WHERE promo_id = ?";
+	
 	public boolean createPromo(Promo promo) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();
-			Statement stmt = conn.createStatement();
+			PreparedStatement stmt = conn.prepareStatement(PROMO_CREATE);
 
-			String query = "INSERT VALUES() INTO menu";
-
-			stmt.executeQuery(query);
+			stmt.setInt(1, promo.getPromoId());
+			stmt.setString(2, promo.getPromoCode());
+			stmt.setString(3, promo.getName());
+			stmt.setString(4, promo.getDesc());
+			stmt.setString(5, promo.getImage());
+	
+			stmt.executeUpdate();
 			result = true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -28,52 +40,20 @@ public class PromoDao extends BaseDao {
 		return result;
 	}
 
-	// RETRIEVE
-	public Promos retrievePromos() {
-
-		Promos specials = new Promos();
-		try {
-			Connection conn = createConnection();
-
-			// get category info
-			Statement stmt = conn.createStatement();
-			String query = "SELECT * FROM category";
-			ResultSet rs = stmt.executeQuery(query);
-
-			while (rs.next()) {
-				Promo promo = new Promo();
-				promo.setDesc(rs.getString("description"));
-				promo.setName(rs.getString("name"));
-				promo.setImage(rs.getString("image"));
-				promo.setPromoId(rs.getInt("promoId"));
-				specials.getPromos().add(promo);
-			}
-			conn.close();
-			stmt.close();
-			rs.close();
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-		return specials;
-	}
-
 	public Promo retrievePromo(String promoId) {
 		Promo promo = new Promo();
 		try {
+			
 			Connection conn = createConnection();
 
-			// get category info
-			Statement stmt = conn.createStatement();
-			String query = "SELECT * FROM promos WHERE id=" + promoId;
-			ResultSet rs = stmt.executeQuery(query);
+			PreparedStatement stmt = conn.prepareStatement(PROMO_VIEW);
+			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
+				promo.setPromoCode(rs.getString("promo_code"));
 				promo.setDesc(rs.getString("description"));
-				promo.setPromoId(rs.getInt("promoId"));
 				promo.setName(rs.getString("name"));
-				promo.setImage(rs.getString("image"));
+				promo.setImage(rs.getString("image_name"));
 			}
 			conn.close();
 			stmt.close();
@@ -85,38 +65,49 @@ public class PromoDao extends BaseDao {
 		return promo;
 	}
 
-	// UPDATE
-	public boolean updatePromo(Promo promo) {
+	public List<Promo> retrieveCategories() {
+
+		List<Promo> categories = new ArrayList<Promo>();
+		try {
+			Connection conn = createConnection();
+			
+			PreparedStatement stmt = conn.prepareStatement(PROMO_VIEW_ALL);
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				Promo promo = new Promo();
+				promo.setPromoId(rs.getInt("promo_id"));
+				promo.setPromoCode(rs.getString("promo_code"));
+				promo.setDesc(rs.getString("description"));
+				promo.setName(rs.getString("name"));
+				promo.setImage(rs.getString("image_name"));
+				categories.add(promo);
+			}
+			conn.close();
+			stmt.close();
+			rs.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return categories;
+	}
+	
+	public boolean deletePromo(int id) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();
-			Statement stmt = conn.createStatement();
-
-			String query = "INSERT VALUES() INTO menu";
-
-			stmt.executeQuery(query);
+			
+			PreparedStatement stmt = conn.prepareStatement(PROMO_DELETE);
+			stmt.setInt(1, id);
+			stmt.executeUpdate();
+ 
+			stmt.executeQuery();
 			result = true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return result;
 	}
-
-	// DELETE
-	public boolean deletePromo(String id) {
-		boolean result = false;
-		try {
-			Connection conn = createConnection();
-			Statement stmt = conn.createStatement();
-
-			String query = "DELETE FROM items WHERE id=" + id;
-
-			stmt.executeQuery(query);
-			result = true;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
-
 }

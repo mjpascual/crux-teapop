@@ -78,6 +78,7 @@ public class CategoryDao extends BaseDao {
 
 			while (rs.next()) {
 				Category category = new Category();
+				category.setCategoryId(rs.getInt("category_id"));
 				category.setDesc(rs.getString("description"));
 				category.setName(rs.getString("name"));
 				category.setMain(rs.getString("main_category"));

@@ -1,11 +1,12 @@
 package com.upou.teapop.data;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Category {
 	
 	private int categoryId;
+	
+	private String main;
 	
 	private String name;
 	
@@ -13,9 +14,25 @@ public class Category {
 	
 	private String desc;
 	
-	private boolean showSML;
+	private String showSML;
 	
 	private List<MenuItem> items;
+
+	public int getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public String getMain() {
+		return main;
+	}
+
+	public void setMain(String main) {
+		this.main = main;
+	}
 
 	public String getName() {
 		return name;
@@ -41,6 +58,14 @@ public class Category {
 		this.desc = desc;
 	}
 
+	public String getShowSML() {
+		return showSML;
+	}
+
+	public void setShowSML(String showSML) {
+		this.showSML = showSML;
+	}
+
 	public List<MenuItem> getItems() {
 		return items;
 	}
@@ -48,21 +73,5 @@ public class Category {
 	public void setItems(List<MenuItem> items) {
 		this.items = items;
 	}
-
-	public int getCategoryId() {
-		return categoryId;
-	}
-
-	public void setCategoryId(int categoryId) {
-		this.categoryId = categoryId;
-	}
-
-	public boolean isShowSML() {
-		return showSML;
-	}
-
-	public void setShowSML(boolean showSML) {
-		this.showSML = showSML;
-	}
-
+	
 }
