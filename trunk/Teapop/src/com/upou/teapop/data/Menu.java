@@ -1,19 +1,26 @@
 package com.upou.teapop.data;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Menu {
-	private List<Category> categories;
 
-	public List<Category> getCategories() {
-		if (categories == null){
-			categories = new ArrayList<Category>();
-		}
-		return categories;
+	private MenuSection beveragesSection;
+	
+	private MenuSection additionalSection;
+
+	public void setBeveragesSection(MenuSection beverages) {
+		this.beveragesSection = beverages;
 	}
 
-	public void setCategories(List<Category> categories) {
-		this.categories = categories;
+	public MenuSection getBeveragesSection() {
+		return beveragesSection;
 	}
+
+	public void setAdditionalSection(MenuSection additional) {
+		this.additionalSection = additional;
+	}
+
+	public MenuSection getAdditionalSection() {
+		return additionalSection;
+	}
+	
 }

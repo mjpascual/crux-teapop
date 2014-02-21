@@ -9,36 +9,40 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.upou.teapop.data.Category;
-import com.upou.teapop.data.Item;
+import com.upou.teapop.data.Beverage;
 import com.upou.teapop.data.Menu;
-import com.upou.teapop.data.Price;
+import com.upou.teapop.data.SMLPrice;
 
 public class MenuDao extends BaseDao {
 
-	public boolean createItem(Item item) {
+	public boolean createItem(Beverage beverage) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();
 			Statement stmt = conn.createStatement();
 
-			String query = "INSERT INTO teapop.product (product_code, category_id, name, description, currency, price, position, featured, hidden) "
+			String query = "INSERT INTO teapop.product (product_code, category_id, name, description, currency, regular_price, small_price, large_price, position, featured, hidden) "
 					+ "VALUES ('"
-					+ item.getItemCode()
+					+ beverage.getItemCode()
 					+ "',"
-					+ item.getCatId()
+					+ beverage.getCatId()
 					+ ", '"
-					+ item.getName()
+					+ beverage.getName()
 					+ "', '"
-					+ item.getDesc()
+					+ beverage.getDesc()
 					+ "', '"
-					+ item.getCurrency()
+					+ beverage.getPrice().getCurrency()
 					+ "', "
-					+ item.getPrice()
+					+ beverage.getPrice().getRegular()
 					+ ","
-					+ item.getDispPosition()
+					+ beverage.getPrice().getSmall()
+					+ ","
+					+ beverage.getPrice().getLarge()
+					+ ","
+					+ beverage.getDispPosition()
 					+ ", '"
-					+ item.getFeatured()
-					+ "', '" + item.getHidden() + "')";
+					+ beverage.getFeatured()
+					+ "', '" + beverage.getHidden() + "')";
 
 			stmt.executeUpdate(query);
 			result = true;
@@ -99,8 +103,8 @@ public class MenuDao extends BaseDao {
 		return categories;
 	}
 
-	public Item retrieveItem(int itemId) {
-		Item item = new Item();
+	public Beverage retrieveItem(int itemId) {
+		Beverage item = new Beverage();
 		try {
 			Connection conn = createConnection();
 
@@ -169,12 +173,12 @@ public class MenuDao extends BaseDao {
 			ResultSet rs = stmt.executeQuery(query);
 
 			while (rs.next()) {
-				Item item = new Item();
+				Beverage item = new Beverage();
 				item.setDesc(rs.getString("description"));
 				item.setItemId(rs.getInt("id"));
 				item.setName(rs.getString("name"));
 				
-				Price price = new Price();
+				SMLPrice price = new SMLPrice();
 				double regularPrice = rs.getDouble("price");
 				price.setRegular(regularPrice);
 				
@@ -203,7 +207,7 @@ public class MenuDao extends BaseDao {
 	}
 
 	// UPDATE
-	public boolean updateItem(Item item) {
+	public boolean updateItem(Beverage item) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();

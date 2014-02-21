@@ -6,7 +6,7 @@
 <div id="menu_box">
 	<div id="categories" class="">
 		<ul id="menu_category_links" class="category_links">
-			<s:iterator status="status" value="menu.categories">
+			<s:iterator status="status" value="menu.beveragesSection.categories">
 				<li><a class="category_link"
 					href='#itemlink<s:property value="%{#status.index}" />'> <s:property
 							value="name" />
@@ -16,7 +16,7 @@
 	</div>
 
 	<div id="menu_wrapper" class="menu">
-		<s:iterator status="status" value="menu.categories">
+		<s:iterator status="status" value="menu.beveragesSection.categories">
 			<!-- category item -->
 			<div class="category"
 				id="itemlink<s:property value="%{#status.index}"/>">
