@@ -1,179 +1,169 @@
 package com.upou.teapop.dao.test;
 
+import static org.junit.Assert.assertEquals;
+
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
-import org.junit.*;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import com.upou.teapop.data.Category;
-import com.upou.teapop.data.Item;
+import com.upou.teapop.data.MenuItem;
+import com.upou.teapop.data.Price;
 import com.upou.teapop.util.ConnectionManager;
 
 public class MenuDaoTest {
 
-	static ConnectionManager connectionManager;
-	static Connection connection;
+//	static ConnectionManager connectionManager;
+//	static Connection connection;
+//
+//	@BeforeClass
+//	public static void start() {
+//		connectionManager = new ConnectionManager();
+//		connection = connectionManager.createConnection();
+//	}
+//
+//	@AfterClass
+//	public static void end() {
+//		connectionManager.closeConnection();
+//	}
+//
+//	@Ignore
+//	@Test
+//	public void createItem() {
+//
+//		try {
+//			Statement stmt = connection.createStatement();
+//			
 
-	@BeforeClass
-	public static void start() {
-		connectionManager = new ConnectionManager();
-		connection = connectionManager.createConnection();
-	}
+//			private int itemId;
+//
+//			private int catId;
+//
+//			private int dispPosition;
+//
+//			private String itemCode;
+//
+//			private String name;
+//
+//			private String desc;
+//
+//			private String featured;
+//
+//			private String hidden;
+//			
+//			private String size;
+//			
+//			private String image;
 
-	@AfterClass
-	public static void end() {
-		connectionManager.closeConnection();
-	}
+//			MenuItem item = new Beverage();
+//			item.setItemCode("DCA-MA");
+//			item.setCatId(1);
+//			item.setName("Dark Chocolate Milk Tea");
+//			item.setDesc("A milk tea with dark chocolate, yum yum");
+//			
+//			item.setDispPosition(5);
+//			item.setImage("noimage.jpg");
+//			item.setFeatured("Y");
+//			item.setHidden("Y");
+//			item.setSize("Small");
+//
+//			String query = "INSERT INTO teapop.product (menu_code, category_id, name, description, price, price_small, price_big, image_name, featured, hidden, currency, position) "
+//					+ "VALUES ('"
+//					+ item.getItemCode()
+//					+ "',"
+//					+ item.getCatId()
+//					+ ", '"
+//					+ item.getName()
+//					+ "', '"
+//					+ item.getDesc()
+//					+ "', '"
+//					+ item.getCurrency()
+//					+ "', "
+//					+ item.getPriceVal()
+//					+ ","
+//					+ item.getDispPosition()
+//					+ ", '"
+//					+ item.getFeatured()
+//					+ "', '" 
+//					+ item.getHidden() 
+//					+ "', '" 
+//					+ item.getSize() + "')";
+//
+//			stmt.executeUpdate(query);
+//
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//
+//	}
+//	
+//	@Test
+//	public void retrieveItem() {
+//		Item item = new Item();
+//		int itemId = 1;
+//	
+//		try {
+//
+//			Statement stmt = connection.createStatement();
+//			String query = "SELECT * FROM product WHERE id = "+itemId;
+//			ResultSet rs = stmt.executeQuery(query);
+//			
+//			
+////			  `price`, `store_id`, `position`, `image_name`, `featured`, `hidden`, `currency`
+//			while (rs.next()) {
+//				
+//				item.setItemId(rs.getInt("product_id"));
+//				item.setItemCode(rs.getString("product_code"));
+//				item.setCatId(rs.getInt("category_id"));
+//				item.setName(rs.getString("name"));
+//				item.setDesc(rs.getString("description"));
+//				item.setImage(rs.getString("image_name"));
+//				item.setPrice(rs.getDouble("price"));
+//				item.setDispPosition(rs.getInt("position"));
+//			
+//				
+//			}
+//			
+//			assertEquals(item.getName(), "Milk Tea");
+//		
+//			stmt.close();
+//			rs.close();
+//
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//
+//	}
 
-	@Test
-	public void createItem() {
-
-		try {
-			Statement stmt = connection.createStatement();
-
-			Item item = new Item();
-			item.setItemCode("DCA-MA");
-			item.setCatId(1);
-			item.setName("Dark Chocolate Milk Tea");
-			item.setDesc("A milk tea with dark chocolate, yum yum");
-			item.setCurrency("P");
-			item.setPrice(70.00);
-			item.setDispPosition(4);
-			item.setImage("noimage.jpg");
-			item.setFeatured("Y");
-			item.setHidden("Y");
-
-			String query = "INSERT INTO teapop.product (product_code, category_id, name, description, currency, price, position, featured, hidden) "
-					+ "VALUES ('"
-					+ item.getItemCode()
-					+ "',"
-					+ item.getCatId()
-					+ ", '"
-					+ item.getName()
-					+ "', '"
-					+ item.getDesc()
-					+ "', '"
-					+ item.getCurrency()
-					+ "', "
-					+ item.getPrice()
-					+ ","
-					+ item.getDispPosition()
-					+ ", '"
-					+ item.getFeatured()
-					+ "', '" + item.getHidden() + "')";
-
-			stmt.executeUpdate(query);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	@Test
-	public void createCategory() {
-
-		try {
-			Statement stmt = connection.createStatement();
-			Category category = new Category();
-			category.setName("Candies");
-			category.setDesc("Sweet");
-			category.setImage("candy.jpg");
-
-			String query = "INSERT INTO teapop.category(name, description, image_name) VALUES "
-					+ "('"
-					+ category.getName()
-					+ "', '"
-					+ category.getDesc()
-					+ "', '" + category.getImage() + "')";
-
-			stmt.executeUpdate(query);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	// // RETRIEVE
-	// public List<Category> retrieveCategories(){
-	//
-	// List<Category> categories = new ArrayList<Category>();
-	// try {
-	// Connection conn = createConnection();
-	//
-	// // get category info
-	// Statement stmt = conn.createStatement();
-	// String query = "SELECT * FROM category";
-	// ResultSet rs = stmt.executeQuery(query);
-	//
-	// while (rs.next()) {
-	// Category category = new Category();
-	// category.setDesc(rs.getString("description"));
-	// category.setCategoryId(rs.getInt("id"));
-	// category.setName(rs.getString("name"));
-	// categories.add(category);
-	// }
-	// conn.close();
-	// stmt.close();
-	// rs.close();
-	//
-	// } catch (SQLException e) {
-	// e.printStackTrace();
-	// }
-	//
-	// return categories;
-	// }
-	//
-	// public Item retrieveItem(String itemId){
-	// Item item = new Item();
-	// try {
-	// Connection conn = createConnection();
-	//
-	// // get category info
-	// Statement stmt = conn.createStatement();
-	// String query = "SELECT * FROM items";
-	// ResultSet rs = stmt.executeQuery(query);
-	//
-	// while (rs.next()) {
-	// item.setDesc(rs.getString("description"));
-	// item.setItemId(rs.getInt("id"));
-	// item.setName(rs.getString("name"));
-	// }
-	// conn.close();
-	// stmt.close();
-	// rs.close();
-	//
-	// } catch (SQLException e) {
-	// e.printStackTrace();
-	// }
-	// return item;
-	// }
-	//
-	// public Category retrieveCategory(String categoryId){
-	// Category category = new Category();
-	// try {
-	// Connection conn = createConnection();
-	//
-	// // get category info
-	// Statement stmt = conn.createStatement();
-	// String query = "SELECT * FROM category";
-	// ResultSet rs = stmt.executeQuery(query);
-	//
-	// while (rs.next()) {
-	// category.setDesc(rs.getString("description"));
-	// category.setCategoryId(rs.getInt("id"));
-	// category.setName(rs.getString("name"));
-	// }
-	// conn.close();
-	// stmt.close();
-	// rs.close();
-	//
-	// } catch (SQLException e) {
-	// e.printStackTrace();
-	// }
-	// return category;
-	// }
+//	public Category retrieveCategory(String categoryId) {
+//		Category category = new Category();
+//		
+//		try {
+//		
+//			Statement stmt = connection.createStatement();
+//			String query = "SELECT * FROM category";
+//			ResultSet rs = stmt.executeQuery(query);
+//
+//			while (rs.next()) {
+//				category.setDesc(rs.getString("description"));
+//				category.setCategoryId(rs.getInt("id"));
+//				category.setName(rs.getString("name"));
+//			}
+////			conn.close();
+//			stmt.close();
+//			rs.close();
+//
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		return category;
+//	}
 	//
 	// public Menu retrieveMenu() {
 	//

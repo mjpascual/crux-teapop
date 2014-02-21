@@ -10,7 +10,7 @@ import com.upou.teapop.data.User;
 
 public class UserDAO extends BaseDao{
 	
-	private static final String USER_VIEW     = "SELECT * FROM teapop.user WHERE username  = ? AND password = ?";
+	private static final String USER_VIEW     = "s";
 	
 	public User retrieveUser(String username, String password){
 		User user = new User();
