@@ -1,30 +1,39 @@
 package com.upou.teapop.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.upou.teapop.data.Category;
 
 public class CategoryDao extends BaseDao {
+	
+	private static final String CATEGORY_CREATE   = "INSERT INTO teapop.category (category_id, main_category, name, description, image_name, show_sml) on duplicate key update " +
+												    "VALUES (?, ?, ?, ?, ?, ?)";
 
+	private static final String CATEGORY_VIEW     = "SELECT * FROM teapop.category WHERE category_id = ?";
+	
+	private static final String CATEGORY_VIEW_ALL = "SELECT * FROM teapop.category";
+	
+	private static final String CATEGORY_DELETE   = "DELETE FROM teapop.category WHERE category_id = ?";
+	
 	public boolean createCategory(Category category) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();
-			Statement stmt = conn.createStatement();
+			PreparedStatement stmt = conn.prepareStatement(CATEGORY_CREATE);
 
-			String query = "INSERT INTO teapop.category(name, description, image_name) VALUES "
-					+ "('"
-					+ category.getName()
-					+ "', '"
-					+ category.getDesc()
-					+ "', '" + category.getImage() + "')";
-
-			stmt.executeUpdate(query);
+			stmt.setInt(1, category.getCategoryId());
+			stmt.setString(2, category.getMain());
+			stmt.setString(3, category.getName());
+			stmt.setString(4, category.getDesc());
+			stmt.setString(5, category.getImage());
+			stmt.setString(6, category.getShowSML());
+	
+			stmt.executeUpdate();
 			result = true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -32,23 +41,48 @@ public class CategoryDao extends BaseDao {
 		return result;
 	}
 
-	// RETRIEVE
+	public Category retrieveCategory(String categoryId) {
+		Category category = new Category();
+		try {
+			
+			Connection conn = createConnection();
+
+			PreparedStatement stmt = conn.prepareStatement(CATEGORY_VIEW);
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				category.setDesc(rs.getString("description"));
+				category.setName(rs.getString("name"));
+				category.setMain(rs.getString("main_category"));
+				category.setImage(rs.getString("image_name"));
+				category.setShowSML(rs.getString("show_sml"));
+			}
+			conn.close();
+			stmt.close();
+			rs.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return category;
+	}
+
 	public List<Category> retrieveCategories() {
 
 		List<Category> categories = new ArrayList<Category>();
 		try {
 			Connection conn = createConnection();
-
-			// get category info
-			Statement stmt = conn.createStatement();
-			String query = "SELECT * FROM category";
-			ResultSet rs = stmt.executeQuery(query);
+			
+			PreparedStatement stmt = conn.prepareStatement(CATEGORY_VIEW_ALL);
+			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
 				Category category = new Category();
 				category.setDesc(rs.getString("description"));
-				category.setCategoryId(rs.getInt("id"));
 				category.setName(rs.getString("name"));
+				category.setMain(rs.getString("main_category"));
+				category.setImage(rs.getString("image_name"));
+				category.setShowSML(rs.getString("show_sml"));
 				categories.add(category);
 			}
 			conn.close();
@@ -62,56 +96,16 @@ public class CategoryDao extends BaseDao {
 		return categories;
 	}
 	
-	public Category retrieveCategory(String categoryId) {
-		Category category = new Category();
-		try {
-			Connection conn = createConnection();
-
-			// get category info
-			Statement stmt = conn.createStatement();
-			String query = "SELECT * FROM category";
-			ResultSet rs = stmt.executeQuery(query);
-
-			while (rs.next()) {
-				category.setDesc(rs.getString("description"));
-				category.setCategoryId(rs.getInt("id"));
-				category.setName(rs.getString("name"));
-			}
-			conn.close();
-			stmt.close();
-			rs.close();
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return category;
-	}
-	
-	public boolean updateCategory(Category category) {
+	public boolean deleteCategory(int id) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();
-			Statement stmt = conn.createStatement();
-
-			String query = "INSERT VALUES() INTO menu";
-
-			stmt.executeQuery(query);
-			result = true;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
-	
-	public boolean deleteCategory(String id) {
-		boolean result = false;
-		try {
-			Connection conn = createConnection();
-			Statement stmt = conn.createStatement();
-
-			String query = "DELETE FROM category WHERE id=" + id;
-
-			stmt.executeQuery(query);
+			
+			PreparedStatement stmt = conn.prepareStatement(CATEGORY_DELETE);
+			stmt.setInt(1, id);
+			stmt.executeUpdate();
+ 
+			stmt.executeQuery();
 			result = true;
 		} catch (Exception e) {
 			e.printStackTrace();

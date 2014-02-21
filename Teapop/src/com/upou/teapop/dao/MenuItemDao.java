@@ -10,11 +10,11 @@ import com.upou.teapop.data.Price;
 public class MenuItemDao extends BaseDao {
 	
 	private static final String MENU_CREATE   = "INSERT INTO teapop.menu (menu_id, menu_code, category_id, name, description, currency, regular_price, small_price, large_price, position, featured, hidden) on duplicate key update" +
-                                               "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                                                "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	
 	private static final String MENU_VIEW     = "SELECT * FROM teapop.menu WHERE menu_id = ?";
 	
-	private static final String MENU_DELETE	  = "DELETE FROM person WHERE id = ?";
+	private static final String MENU_DELETE	  = "DELETE FROM teapop.menu WHERE menu_id = ?";
 	
 	public boolean createItem(MenuItem menuItem) {
 		boolean result = false;
