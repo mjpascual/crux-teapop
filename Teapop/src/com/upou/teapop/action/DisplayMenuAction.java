@@ -6,7 +6,7 @@ import com.upou.teapop.data.Category;
 import com.upou.teapop.data.Beverage;
 import com.upou.teapop.data.Menu;
 import com.upou.teapop.data.MenuSection;
-import com.upou.teapop.data.SMLPrice;
+import com.upou.teapop.data.PriceSML;
 
 
 public class DisplayMenuAction extends ActionSupport{
@@ -51,7 +51,7 @@ public class DisplayMenuAction extends ActionSupport{
 		item1.setDesc("black  tea flavor");
 		item1.setItemId(1);
 		item1.setName("Assam");
-		SMLPrice price1 = new SMLPrice();
+		PriceSML price1 = new PriceSML();
 		price1.setSmall(90);
 		price1.setRegular(100);
 		item1.setPrice(price1);
@@ -60,7 +60,7 @@ public class DisplayMenuAction extends ActionSupport{
 		item2.setDesc("floral and creamy");
 		item2.setItemId(2);
 		item2.setName("Jasmine");
-		SMLPrice price2 = new SMLPrice();
+		PriceSML price2 = new PriceSML();
 		price2.setSmall(95);
 		price2.setRegular(105);
 		price2.setLarge(125);
@@ -70,7 +70,7 @@ public class DisplayMenuAction extends ActionSupport{
 		item3.setDesc("");
 		item3.setItemId(3);
 		item3.setName("Calamansi");
-		SMLPrice price3 = new SMLPrice();
+		PriceSML price3 = new PriceSML();
 		price3.setRegular(100);
 		item3.setPrice(price3);
 		
@@ -78,7 +78,7 @@ public class DisplayMenuAction extends ActionSupport{
 		item4.setDesc("");
 		item4.setItemId(4);
 		item4.setName("Cranberry");
-		SMLPrice price4 = new SMLPrice();
+		PriceSML price4 = new PriceSML();
 		price4.setRegular(100);
 		item4.setPrice(price4);
 		
