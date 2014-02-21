@@ -11,7 +11,7 @@ import java.util.List;
 import com.upou.teapop.data.Category;
 import com.upou.teapop.data.Beverage;
 import com.upou.teapop.data.Menu;
-import com.upou.teapop.data.SMLPrice;
+import com.upou.teapop.data.PriceSML;
 
 public class MenuDao extends BaseDao {
 
@@ -178,7 +178,7 @@ public class MenuDao extends BaseDao {
 				item.setItemId(rs.getInt("id"));
 				item.setName(rs.getString("name"));
 				
-				SMLPrice price = new SMLPrice();
+				PriceSML price = new PriceSML();
 				double regularPrice = rs.getDouble("price");
 				price.setRegular(regularPrice);
 				
