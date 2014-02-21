@@ -1,7 +1,7 @@
 package com.upou.teapop.action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.upou.teapop.dao.MenuDao;
+import com.upou.teapop.dao.MenuItemDao;
 import com.upou.teapop.data.Category;
 import com.upou.teapop.data.Beverage;
 import com.upou.teapop.data.Menu;
@@ -24,7 +24,7 @@ public class DisplayMenuAction extends ActionSupport{
 	}
 	
 	public String execute(){
-		MenuDao dao = new MenuDao();
+		MenuItemDao dao = new MenuItemDao();
 //		menu = dao.retrieveMenu();
 		menu = getMockMenu();
 		return SUCCESS;

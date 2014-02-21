@@ -7,20 +7,24 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.upou.teapop.data.Promo;
-import com.upou.teapop.data.Specials;
+import com.upou.teapop.data.Category;
 
-public class SpecialsDao extends BaseDao {
-	// CREATE
-	public boolean createPromo(Promo promo) {
+public class CategoryDao extends BaseDao {
+
+	public boolean createCategory(Category category) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();
 			Statement stmt = conn.createStatement();
 
-			String query = "INSERT VALUES() INTO menu";
+			String query = "INSERT INTO teapop.category(name, description, image_name) VALUES "
+					+ "('"
+					+ category.getName()
+					+ "', '"
+					+ category.getDesc()
+					+ "', '" + category.getImage() + "')";
 
-			stmt.executeQuery(query);
+			stmt.executeUpdate(query);
 			result = true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -29,9 +33,9 @@ public class SpecialsDao extends BaseDao {
 	}
 
 	// RETRIEVE
-	public Specials retrievePromos() {
+	public List<Category> retrieveCategories() {
 
-		Specials specials = new Specials();
+		List<Category> categories = new ArrayList<Category>();
 		try {
 			Connection conn = createConnection();
 
@@ -41,12 +45,11 @@ public class SpecialsDao extends BaseDao {
 			ResultSet rs = stmt.executeQuery(query);
 
 			while (rs.next()) {
-				Promo promo = new Promo();
-				promo.setDesc(rs.getString("description"));
-				promo.setName(rs.getString("name"));
-				promo.setImage(rs.getString("image"));
-				promo.setPromoId(rs.getInt("promoId"));
-				specials.getPromos().add(promo);
+				Category category = new Category();
+				category.setDesc(rs.getString("description"));
+				category.setCategoryId(rs.getInt("id"));
+				category.setName(rs.getString("name"));
+				categories.add(category);
 			}
 			conn.close();
 			stmt.close();
@@ -56,24 +59,23 @@ public class SpecialsDao extends BaseDao {
 			e.printStackTrace();
 		}
 
-		return specials;
+		return categories;
 	}
-
-	public Promo retrievePromo(String promoId) {
-		Promo promo = new Promo();
+	
+	public Category retrieveCategory(String categoryId) {
+		Category category = new Category();
 		try {
 			Connection conn = createConnection();
 
 			// get category info
 			Statement stmt = conn.createStatement();
-			String query = "SELECT * FROM promos WHERE id=" + promoId;
+			String query = "SELECT * FROM category";
 			ResultSet rs = stmt.executeQuery(query);
 
 			while (rs.next()) {
-				promo.setDesc(rs.getString("description"));
-				promo.setPromoId(rs.getInt("promoId"));
-				promo.setName(rs.getString("name"));
-				promo.setImage(rs.getString("image"));
+				category.setDesc(rs.getString("description"));
+				category.setCategoryId(rs.getInt("id"));
+				category.setName(rs.getString("name"));
 			}
 			conn.close();
 			stmt.close();
@@ -82,11 +84,10 @@ public class SpecialsDao extends BaseDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return promo;
+		return category;
 	}
-
-	// UPDATE
-	public boolean updatePromo(Promo promo) {
+	
+	public boolean updateCategory(Category category) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();
@@ -101,15 +102,14 @@ public class SpecialsDao extends BaseDao {
 		}
 		return result;
 	}
-
-	// DELETE
-	public boolean deletePromo(String id) {
+	
+	public boolean deleteCategory(String id) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();
 			Statement stmt = conn.createStatement();
 
-			String query = "DELETE FROM items WHERE id=" + id;
+			String query = "DELETE FROM category WHERE id=" + id;
 
 			stmt.executeQuery(query);
 			result = true;
@@ -118,5 +118,4 @@ public class SpecialsDao extends BaseDao {
 		}
 		return result;
 	}
-
 }

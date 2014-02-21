@@ -3,7 +3,7 @@ package com.upou.teapop.data;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Specials {
+public class Promos {
 	
 	private List<Promo> promos;
 

@@ -1,33 +1,33 @@
 package com.upou.teapop.action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.upou.teapop.dao.SpecialsDao;
+import com.upou.teapop.dao.PromoDao;
 import com.upou.teapop.data.Promo;
-import com.upou.teapop.data.Specials;
+import com.upou.teapop.data.Promos;
 
 public class DisplaySpecialsAction extends ActionSupport {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private Specials specials;
+	private Promos specials;
 	
 	public String execute(){
-		SpecialsDao dao = new SpecialsDao();
+		PromoDao dao = new PromoDao();
 //		specials = dao.retrievePromos();
 		specials = getMockSPecials();
 		return SUCCESS;
 	}
 
-	public Specials getSpecials() {
+	public Promos getSpecials() {
 		return specials;
 	}
 
-	public void setSpecials(Specials specials) {
+	public void setSpecials(Promos specials) {
 		this.specials = specials;
 	}
 	
-	private Specials getMockSPecials(){
-		Specials specials = new Specials();
+	private Promos getMockSPecials(){
+		Promos specials = new Promos();
 		
 		Promo promo1 = new Promo();
 		promo1.setPromoId(01);
