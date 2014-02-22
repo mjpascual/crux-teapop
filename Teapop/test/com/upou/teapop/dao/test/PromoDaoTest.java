@@ -60,7 +60,7 @@ public class PromoDaoTest {
 	
 	@Ignore
 	@Test
-	public void retrieveCategories() {
+	public void retrievePromos() {
 	
 		PromoDao promoDao = new PromoDao();
 		List <Promo> cat = promoDao.retrieveCategories();
