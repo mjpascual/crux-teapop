@@ -41,3 +41,4 @@
 
 		<img class="category_divider" src="images/category_divider.png" />
 	</s:iterator>
+</div>
