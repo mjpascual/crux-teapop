@@ -30,7 +30,6 @@ var EventHandler = {
 		$(id).bxSlider({
 			hideControlOnEnd: true,
 			infiniteLoop: false,
-			adaptiveHeight: true,
 			pager: false
 		});
 	},
