@@ -1,20 +1,35 @@
 .promoTitle_container {
-	color :#8E8D57 !important;
-	font-size: 25px;
-	margin-left: 20px;
+	color: firebrick;
+	font-size: 60px;
+	/* margin-left: 20px; */
 	padding-top: 30px;
 	float: left;
 	width: 215px;
 	font-weight: bold;
+	border-bottom: 1px solid gray;
 }
 
 .promo_photo {
-	width: 600px;
-	height: 450px;
+	max-height: 430px;
+	max-width: 470px !important;
+	float: left;
+}
+
+.promo_photo_container {
+	background-color: #FFFFFF;
+	float: left;
+	margin-right: 20px;
+	padding: 10px;
 }
 
 .promoDetails {
-	border-top: 1px solid #666666;
-	font-size: 14px;
+	font-family: matchbook;
+	font-size: 30px;
 	color: #5A5C5D;
+	clear: left;
+	width: 340px;
+}
+
+.promo_title_desc_container {
+	float: left;
 }

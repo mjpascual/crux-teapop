@@ -17,16 +17,28 @@ var EventHandler = {
 		});
 	},
 	
-	initMenuSliderLinks : function(id){
-		$(".contentSliderMenu").bxSlider({
-			pagerCustom : id,
-			controls: false
+	initMenuSliderLinks : function(id, pagerId){
+		$(id).bxSlider({
+			mode: 'fade',
+			pagerCustom : pagerId,
+			adaptiveHeight: true,
+			controls: false,
 		});
-		
+	},
+	
+	initSpecialsSliderLinks : function(id){
+		$(id).bxSlider({
+			hideControlOnEnd: true,
+			infiniteLoop: false,
+			adaptiveHeight: true,
+			pager: false
+		});
+	},
+	
+	initScrollbar : function(id){
 	    $(function() {
-	        $('#menu_categories').perfectScrollbar();
+	        $(id).perfectScrollbar();
 	    });
-		
 	},
 	
 	scrollAfterLoading : function(){

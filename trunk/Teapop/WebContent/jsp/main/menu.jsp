@@ -7,17 +7,6 @@
 <div id="menu_box">
 	<div id="menu_wrapper" class="menu">
 
-		<!-- 				<div id="categories" class="categories"> -->
-		<!-- 					<ul id="menu_category_links" class="category_links"> -->
-		<%-- 						<s:iterator status="status" value="menu.beveragesSection.categories"> --%>
-		<!-- 							<li><a class="category_link" -->
-		<%-- 								data-slide-index='<s:property value="%{#status.index}" />'> <s:property --%>
-		<%-- 		 								value="name" />  --%>
-		<!-- 							</a></li> -->
-		<%-- 						</s:iterator> --%>
-		<!-- 					</ul> -->
-		<!-- 				</div> -->
-
 		<div id="categories" class="categories">
 			<ul id="menu_category_links" class="category_links">
 				<li><a class="category_link"> Beverage </a></li>
@@ -37,7 +26,7 @@
 			</s:iterator>
 		</div>
 
-		<div class="retro_border">
+		<div class="menu_border">
 			<ul id="contentSliderMenu" class="contentSliderMenu">
 				<s:iterator status="status" value="menu.beveragesSection.categories">
 					<li>
@@ -141,7 +130,8 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		EventHandler.initMenuSliderLinks("#menu_categories");
+		EventHandler.initMenuSliderLinks(".contentSliderMenu", "#menu_categories");
+		EventHandler.initScrollbar("#menu_categories");
 	});
 
 	
