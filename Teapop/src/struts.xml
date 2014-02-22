@@ -75,9 +75,9 @@
 			<result name="success">/jsp/admin/login.jsp</result>
 		</action>
 		
-		<action name="displayMenuItems" class="com.upou.teapop.action.DisplayMenuAction">
+		<action name="displayMenuItems">
 			<interceptor-ref name="loginInterceptor" />
-			<result name="success">/jsp/admin/menuList.jsp</result>
+			<result>/jsp/admin/menuList.jsp</result>
 		</action>
 		
 		<action name="displayAddMenu">
