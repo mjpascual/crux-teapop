@@ -21,7 +21,7 @@
 		<div class="category" id="#promolink<s:property value="%{#status.index}"/>">
 			<div>
 				<div style="float: left">
-					<img class="promo_photo" src="<s:property value="image"/>">
+					<img class="promo_photo" src="images/promos/<s:property value="image"/>">
 				</div>
 			</div>
 

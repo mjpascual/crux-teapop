@@ -13,8 +13,7 @@ public class DisplaySpecialsAction extends ActionSupport {
 	
 	public String execute(){
 		PromoDao dao = new PromoDao();
-//		specials = dao.retrievePromos();
-		specials = getMockSPecials();
+		specials = dao.retrievePromos();
 		return SUCCESS;
 	}
 
