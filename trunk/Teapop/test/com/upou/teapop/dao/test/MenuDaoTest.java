@@ -31,7 +31,7 @@ public class MenuDaoTest {
 		price.setSmall(3.00);
 		price.setLarge(7.00);
 		menu.setPrice(price);
-		menu.setFeatured("Y");
+		menu.setFeatured(true);
 		menu.setDispPosition(3);
 		
 		MenuItemDao menuItemDao = new MenuItemDao();
@@ -56,9 +56,9 @@ public class MenuDaoTest {
 		price.setSmall(3.00);
 		price.setLarge(7.00);
 		menu.setPrice(price);
-		menu.setFeatured("Y");
+		menu.setFeatured(true);
 		menu.setDispPosition(3);
-		menu.setHidden("Y");
+		menu.setHidden(true);
 
 		MenuItemDao menuItemDao = new MenuItemDao();
 		boolean result = menuItemDao.createItem(menu);

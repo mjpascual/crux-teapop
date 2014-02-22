@@ -14,9 +14,9 @@ public class MenuItem {
 
 	private String desc;
 
-	private String featured;
+	private boolean featured;
 
-	private String hidden;
+	private boolean hidden;
 	
 	private String size;
 	
@@ -70,22 +70,22 @@ public class MenuItem {
 		this.desc = desc;
 	}
 
-	public String getFeatured() {
+	public boolean getFeatured() {
 		return featured;
 	}
 
-	public void setFeatured(String featured) {
+	public void setFeatured(boolean featured) {
 		this.featured = featured;
 	}
 
-	public String getHidden() {
+	public boolean getHidden() {
 		return hidden;
 	}
 
-	public void setHidden(String hidden) {
+	public void setHidden(boolean hidden) {
 		this.hidden = hidden;
 	}
-	
+
 	public String getSize() {
 		return size;
 	}

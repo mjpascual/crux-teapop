@@ -39,8 +39,8 @@ public class MenuItemDao extends BaseDao {
 			stmt.setDouble(8, menuItem.getPrice().getSmall());
 			stmt.setDouble(9, menuItem.getPrice().getLarge());
 			stmt.setInt(10, menuItem.getDispPosition());
-			stmt.setString(11, menuItem.getFeatured());
-			stmt.setString(12, menuItem.getHidden());
+			stmt.setBoolean(11, menuItem.getFeatured());
+			stmt.setBoolean(12, menuItem.getHidden());
 			stmt.execute();
 			result = true;
 		} catch (Exception e) {
@@ -70,8 +70,8 @@ public class MenuItemDao extends BaseDao {
 				price.setLarge(rs.getDouble("price_big"));
 				menuItem.setPrice(price);
 				menuItem.setDispPosition(rs.getInt("position"));
-				menuItem.setFeatured(rs.getString("featured"));
-				menuItem.setHidden(rs.getString("hidden"));
+				menuItem.setFeatured(rs.getBoolean("featured"));
+				menuItem.setHidden(rs.getBoolean("hidden"));
 			}
 			conn.close();
 			stmt.close();
@@ -107,8 +107,8 @@ public class MenuItemDao extends BaseDao {
 				price.setLarge(rs.getDouble("price_big"));
 				menuItem.setPrice(price);
 				menuItem.setDispPosition(rs.getInt("position"));
-				menuItem.setFeatured(rs.getString("featured"));
-				menuItem.setHidden(rs.getString("hidden"));
+				menuItem.setFeatured(rs.getBoolean("featured"));
+				menuItem.setHidden(rs.getBoolean("hidden"));
 				menuItems.add(menuItem);
 			}
 			

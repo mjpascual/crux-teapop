@@ -15,7 +15,7 @@ public class Category {
 	
 	private String desc;
 	
-	private String showSML;
+	private boolean showSML;
 	
 	private List<MenuItem> items;
 
@@ -59,11 +59,11 @@ public class Category {
 		this.desc = desc;
 	}
 
-	public String getShowSML() {
+	public boolean getShowSML() {
 		return showSML;
 	}
 
-	public void setShowSML(String showSML) {
+	public void setShowSML(boolean showSML) {
 		this.showSML = showSML;
 	}
 
