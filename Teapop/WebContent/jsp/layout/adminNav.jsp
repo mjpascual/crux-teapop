@@ -21,8 +21,8 @@
  <div class="menu-item">
    <h4>Promo Management</h4>
    <ul>
-     <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Manage Promo</a></li>
-     <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Add New Promo</a></li>
+     <li><a class="bodySwitcher" href=javascript:void(0) id="displayPromos">Manage Promo</a></li>
+     <li><a class="bodySwitcher" href=javascript:void(0) id="displayAddPromo">Add New Promo</a></li>
      <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Print Report</a></li>
    </ul>
 </div>

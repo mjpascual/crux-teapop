@@ -1,21 +1,12 @@
 <div id="contactInfoHeader" class="short_header">Location</div>
 
 
-<div class="contactUsEastSide">
-	<header id="contactUsHeaderContainer"> Tea-Pop Information</header>
-
-	<!--  end header -->
-
+<div class="contactUsEastSide" id="locationEastSide">
 	<!-- start customer info -->
-	<div id="customerInfoContainer">
+	<div id="locationImage">
 		<img src="images/map-location.jpg">
-
 	</div>
-
-</div>
-
-<div class="locationEestSide">
-	<div class="contactInfoContainer">
+	<div class="scheduleTableContainer">
 		<table id="scheduleTable" border="1">
 			<tr>
 				<th colspan="3">Hours</th>
@@ -60,24 +51,20 @@
 				<td>10am - 10pm</td>
 				<td>10am - 10pm</td>
 			</tr>
-
-
 		</table>
 	</div>
-
 </div>
 
 <!-- end menu -->
 <br>
 <br>
 <br>
-<div class="contactUsInfoContainer grid_16">
+<div class="locationDeliveryDiv grid_16">
 	<br> <br>
-	<div id="contactUsHeaderContainer" class="addressLocation">
-		Address</div>
+	<div class="addressLocation">Address</div>
 	<div id="">Cenel Bldg. Burgos Concepcion, 1478 Malabon City</div>
 	<br> <br>
-	<div id="contactUsHeaderContainer" class="addressLocation">Minimum
+	<div class="addressLocation">Minimum
 		Order Amount</div>
 	<div class="minimumOrder">
 		Order must be minimum of 500Php for Delivery (No min. for pickup) <br>
@@ -88,7 +75,7 @@
 	<div class="locationWestSide">
 
 		<div id="deliveryAreaLocation">
-			<div id="contactUsHeaderContainer" class="addressLocation">
+			<div class="addressLocation">
 				Delivery Area</div>
 			<div class="minimumOrder">
 				Laguna, Malabon, Pangasinan, Baguio, Davao, Cebu <br> Bulacan,

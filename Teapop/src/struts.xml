@@ -63,6 +63,12 @@
 			<result name="success" type="redirectAction">dashboard</result>
 			<result name="login">/jsp/admin/login.jsp</result>
 		</action>
+		
+		<action name="addPromo" class="com.upou.teapop.action.AddPromoAction"
+			method="addPromo">
+			<result name="success">/jsp/admin/blank.jsp</result>
+			<result name="FAILED">/jsp/admin/blank.jsp</result>
+		</action>
 
 		<action name="dashboard" class="com.upou.teapop.action.LoginAction"
 			method="dashboard">
@@ -95,6 +101,16 @@
 			<result>/jsp/admin/categoryForm.jsp</result>
 		</action>
 
+		<action name="displayPromos"  class="com.upou.teapop.action.DisplaySpecialsAction">
+			<interceptor-ref name="loginInterceptor" />
+			<result>/jsp/admin/promoList.jsp</result>
+		</action>
+		
+		<action name="displayAddPromo">
+			<interceptor-ref name="loginInterceptor" />
+			<result>/jsp/admin/promoForm.jsp</result>
+		</action>
+		
 		<action name="displayBlank">
 			<interceptor-ref name="loginInterceptor" />
 			<result>/jsp/admin/blank.jsp</result>
