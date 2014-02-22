@@ -18,7 +18,7 @@
 <div id="specials_wrapper" class="grid_16 menu">
 	<s:iterator status="status" value="specials.promos">
 		<!-- category item -->
-		<div class="category" id="#promolink<s:property value="%{#status.index}"/>">
+		<div class="category" id="promolink<s:property value="%{#status.index}"/>">
 			<div>
 				<div style="float: left">
 					<img class="promo_photo" src="images/promos/<s:property value="image"/>">
@@ -42,3 +42,9 @@
 		<img class="category_divider" src="images/category_divider.png" />
 	</s:iterator>
 </div>
+
+<script type="text/javascript">
+	 $(document).ready( function(){
+		 EventHandler.initCategoryLinks("specials_category_links");
+	 });
+</script>
