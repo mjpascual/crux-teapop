@@ -9,6 +9,7 @@
 <title>Tea Pop Online</title>
 
 <!-- Our CSS stylesheet file -->
+<link rel="stylesheet" href="css/fonts.css" />
 <link rel="stylesheet" href="css/960.css" />
 <link rel="stylesheet" href="css/header.css" />
 <link rel="stylesheet" href="css/teapop.css" />
@@ -16,6 +17,7 @@
 <link rel="stylesheet" href="css/contactus.css" />
 <link rel="stylesheet" href="css/location.css" />
 <link rel="stylesheet" href="css/promo.css" />
+
 
 
 
