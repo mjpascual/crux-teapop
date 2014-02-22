@@ -44,6 +44,10 @@ a {
 	margin-bottom: 26px;
 }
 
+.menu_border {
+	background: #BC8F8F url('../images/backgrounds/dirteffect.png')
+}
+
 .long_header {
 	font-family: 'Lobster10Regular';
 	font-size: 25px;
@@ -79,16 +83,15 @@ a {
 }
 
 #menu_box {
-/* 	background-color: rosybrown; */
-/* 	background-image: url("../images/backgrounds/dirteffect.png"); */
-/* 	box-shadow: inset 0px 0px 59px 0px sienna; */
-/* 	border-radius: 8px; */
-/* 	margin-bottom: 25px; */
-/* 	padding-top: 50px; */
-/* 	padding-bottom: 50px; */
-/* 	text-align: center; */
-/* 	color: ghostwhite; */
-
+	/* 	background-color: rosybrown; */
+	/* 	background-image: url("../images/backgrounds/dirteffect.png"); */
+	/* 	box-shadow: inset 0px 0px 59px 0px sienna; */
+	/* 	border-radius: 8px; */
+	/* 	margin-bottom: 25px; */
+	/* 	padding-top: 50px; */
+	/* 	padding-bottom: 50px; */
+	/* 	text-align: center; */
+	/* 	color: ghostwhite; */
 	/* 	background-color: blueviolet; */
 	/* 	border: 1px solid #B84427; */
 	/* 	box-shadow: 0px 0px 59px 0px rgba(0, 0, 0, 0.6); */
@@ -98,6 +101,7 @@ a {
 	/* 	padding-bottom: 50px; */
 	/* 	text-align: center; */
 	/* 	color: ghostwhite; */
+	
 }
 
 }
@@ -135,12 +139,16 @@ a {
 }
 
 .menu_categories {
+/* 	overflow-y: scroll; */
 	overflow: hidden;
-	height: 480px;
+	height: 280px;
 	width: 230px;
 	position: absolute;
 	z-index: 5;
-	right: 0;
+	right: -5px;
+	background: ghostwhite;
+	box-shadow: 2px 4px 34px 0px pink;
+	top: 45px;
 }
 
 .menu_categories div {
@@ -148,17 +156,16 @@ a {
 	border: 1px solid #DDD;
 	color: #000;
 	line-height: 36px;
-	margin: 0px 4px 0px 0px;
 	padding: 5px 10px;
 	cursor: pointer;
 }
 
-.menu_categories .active div{
+.menu_categories .active div {
 	background: #A52A2A;
 	color: #FFFFFF;
 }
 
-.menu_categories a:not(.active) div:hover{
+.menu_categories a:not (.active ) div:hover {
 	color: #A52A2A;
 }
 
@@ -187,7 +194,7 @@ a {
 	cursor: pointer;
 }
 
-#categories .category_links li a.active{
+#categories .category_links li a.active {
 	border: 1px solid brown;
 }
 
@@ -334,17 +341,19 @@ a {
 }
 
 /* OVERWRITE PLUGINS */
+.bx-wrapper {
+	margin: 0;
+}
 .bx-wrapper .bx-viewport {
-	left: -5px;
-	
-background-color: #BC8F8F;
-background-image: url('../images/backgrounds/dirteffect.png');
-box-shadow: 0px 0px 59px 0px #A0522D inset;
-border-radius: 8px;
-margin-bottom: 25px;
-padding-top: 50px;
-padding-bottom: 50px;
-text-align: center;
-border: none;
-color: #F8F8FF;
+	left: 0px;
+	background-color: #BC8F8F;
+	background-image: url('../images/backgrounds/dirteffect.png');
+	box-shadow: 0px 0px 59px 0px #A0522D inset;
+/* 	border-radius: 8px; */
+/* 	margin-bottom: 25px; */
+/* 	padding-top: 50px; */
+	padding-bottom: 50px;
+	text-align: center;
+	border: none;
+	color: #F8F8FF;
 }

@@ -21,13 +21,18 @@ var EventHandler = {
 		$(".contentSliderMenu").bxSlider({
 			pagerCustom : id,
 			controls: false
-			
 		});
+		
+	    $(function() {
+	        $('#menu_categories').perfectScrollbar();
+	    });
+		
 	},
 	
 	scrollAfterLoading : function(){
 		$("body,html").animate({
 			scrollTop: $("#content_wrapper").offset().top
-		}, 1000, "swing");
+		}, 500, "swing");
 	}
+	
 };

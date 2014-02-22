@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="css/jquery.bxslider.css" />
 <link rel="stylesheet" href="css/fonts.css" />
 <link rel="stylesheet" href="css/960.css" />
+<link rel="stylesheet" href="css/perfect-scrollbar-0.4.8.min.css" />
 
 <!-- Our CSS stylesheet file -->
 <link rel="stylesheet" href="css/header.css" />
@@ -20,8 +21,6 @@
 <link rel="stylesheet" href="css/contactus.css" />
 <link rel="stylesheet" href="css/location.css" />
 <link rel="stylesheet" href="css/promo.css" />
-
-
 
 <!-- Including the Lobster font from Google's Font Directory -->
 <!-- <link rel="stylesheet" -->
@@ -35,6 +34,8 @@
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="js/EventHandler.js"></script>
 <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="js/perfect-scrollbar-0.4.8.with-mousewheel.min.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){
 	EventHandler.scrollAfterLoading();
