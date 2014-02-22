@@ -8,12 +8,9 @@ import java.util.List;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import com.upou.teapop.dao.CategoryDao;
 import com.upou.teapop.dao.MenuItemDao;
-import com.upou.teapop.data.Category;
 import com.upou.teapop.data.MenuItem;
 import com.upou.teapop.data.Price;
-
 
 
 public class MenuDaoTest {
