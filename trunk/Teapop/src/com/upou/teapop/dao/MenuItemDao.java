@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.upou.teapop.data.Category;
+import com.upou.teapop.data.Menu;
 import com.upou.teapop.data.MenuItem;
+import com.upou.teapop.data.MenuSection;
 import com.upou.teapop.data.Price;
 
 public class MenuItemDao extends BaseDao {
@@ -23,6 +25,8 @@ public class MenuItemDao extends BaseDao {
 	private static final String MENU_VIEW_ALL = "SELECT * FROM teapop.menu";
 	
 	private static final String MENU_DELETE	  = "DELETE FROM teapop.menu WHERE menu_id = ?";
+	
+	public static final String MENU_CATEGORY = "SELECT * FROM teapop.category";
 	
 	public boolean createItem(MenuItem menuItem) {
 		boolean result = false;
@@ -122,7 +126,9 @@ public class MenuItemDao extends BaseDao {
 		return menuItems;
 	}
 
-
+	
+	
+	
 	public boolean deleteItem(int id) {
 		boolean result = false;
 		try {
@@ -136,6 +142,100 @@ public class MenuItemDao extends BaseDao {
 			e.printStackTrace();
 		}
 		return result;
+	}
+	
+	// RETRIEVE
+	public List<Category> retrieveCategories() {
+
+		List<Category> categories = new ArrayList<Category>();
+		try {
+			Connection conn = createConnection();
+
+			// get category info
+			PreparedStatement stmt = conn.prepareStatement(MENU_CATEGORY);
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				Category category = new Category();
+				category.setDesc(rs.getString("description"));
+				category.setCategoryId(rs.getInt("category_id"));
+				category.setMain(rs.getString("main_category"));
+				category.setName(rs.getString("name"));
+				category.setImage(rs.getString("image_name"));
+				category.setShowSML(rs.getBoolean("show_sml"));
+				categories.add(category);
+			}
+			conn.close();
+			stmt.close();
+			rs.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+			return categories;
+		}
+	
+	
+	
+	public Menu retrieveMenu() {
+
+		Menu menu = new Menu();
+		MenuSection beverages = new MenuSection();
+		MenuSection otherMenu = new MenuSection();
+		List<Category> categories = retrieveCategories();
+		try {
+
+			Connection conn = createConnection();
+
+			// get items info
+			PreparedStatement stmt = conn.prepareStatement(MENU_VIEW_ALL);
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				MenuItem item = new MenuItem();
+				item.setDesc(rs.getString("description"));
+				item.setItemId(rs.getInt("menu_id"));
+				item.setName(rs.getString("name"));
+				item.setCatId(rs.getInt("category_id"));
+				item.setHidden(rs.getBoolean("hidden"));
+				item.setFeatured(rs.getBoolean("featured"));
+				item.setDispPosition(rs.getInt("position"));
+				
+				Price price = new Price();
+				price.setSmall((rs.getDouble("price_small")));
+				price.setLarge((rs.getDouble("price_big")));
+				price.setRegular((rs.getDouble("price_big")));
+				price.setCurrency(rs.getString("currency"));
+				item.setPrice(price);
+				
+				for (Category category : categories){
+					if(category.getCategoryId() == item.getCatId() ){
+						category.getItems().add(item);
+					}
+				}
+			}		
+			
+			for(Category category : categories){
+				if(category.getMain().equalsIgnoreCase("beverage")){
+					beverages.getCategories().add(category);
+				} else {
+					otherMenu.getCategories().add(category);
+				}
+			}
+			
+			conn.close();
+			stmt.close();
+			rs.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		menu.setAdditionalSection(otherMenu);
+		menu.setBeveragesSection(beverages);
+		
+		return menu;
 	}
 
 	

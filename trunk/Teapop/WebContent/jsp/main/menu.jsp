@@ -21,7 +21,7 @@
 			<div class="category"
 				id="itemlink<s:property value="%{#status.index}"/>">
 				<div class="category_photo">
-					<img src="<s:property value="image"/>">
+					<img src="images/categories/<s:property value="image"/>">
 				</div>
 				<div class="category_info">
 					<div class="category_name">
