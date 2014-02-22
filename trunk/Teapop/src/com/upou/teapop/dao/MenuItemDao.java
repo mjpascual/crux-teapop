@@ -13,8 +13,10 @@ import com.upou.teapop.data.Price;
 
 public class MenuItemDao extends BaseDao {
 	
-	private static final String MENU_CREATE   = "INSERT INTO teapop.menu (menu_id, menu_code, category_id, name, description, currency, regular_price, small_price, large_price, position, featured, hidden) on duplicate key update" +
-                                                "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	private static final String MENU_CREATE   = "INSERT INTO teapop.menu (menu_id, menu_code, category_id, name, description, currency, price, price_small, price_big, position, featured, hidden) " +
+                                                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) " +
+                                                "ON DUPLICATE KEY UPDATE menu_id = VALUES(menu_id), menu_code = VALUES(menu_code), category_id = VALUES(category_id), name=VALUES(name), description = VALUES(description), " +
+                                                "currency = VALUES(currency), price=VALUES(price), price_small=VALUES(price_small), price_big=VALUES(price_big), position=VALUES(position), featured=VALUES(featured), hidden=VALUES(hidden) ";
 	
 	private static final String MENU_VIEW     = "SELECT * FROM teapop.menu WHERE menu_id = ?";
 	
@@ -88,7 +90,7 @@ public class MenuItemDao extends BaseDao {
 		try {
 			Connection conn = createConnection();
 
-			PreparedStatement stmt = conn.prepareStatement(MENU_VIEW);
+			PreparedStatement stmt = conn.prepareStatement(MENU_VIEW_ALL);
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
