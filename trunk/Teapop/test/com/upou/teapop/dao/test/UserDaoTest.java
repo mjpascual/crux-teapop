@@ -50,7 +50,7 @@ public class UserDaoTest {
 			}
 			
 			assertNotNull(user.getDisplayName());
-//			assertEquals(user.getDisplayName(), "Tim Josef Tan");
+			assertEquals(user.getDisplayName(), "Tim Josef Tan");
 
 			stmt.close();
 			rs.close();
