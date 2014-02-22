@@ -8,9 +8,12 @@
 
 <title>Tea Pop Online</title>
 
-<!-- Our CSS stylesheet file -->
+<!-- fonts, frameworks and components -->
+<link rel="stylesheet" href="css/jquery.bxslider.css" />
 <link rel="stylesheet" href="css/fonts.css" />
 <link rel="stylesheet" href="css/960.css" />
+
+<!-- Our CSS stylesheet file -->
 <link rel="stylesheet" href="css/header.css" />
 <link rel="stylesheet" href="css/teapop.css" />
 <link rel="stylesheet" href="css/footer.css" />
@@ -20,10 +23,9 @@
 
 
 
-
 <!-- Including the Lobster font from Google's Font Directory -->
-<link rel="stylesheet"
-	href="http://fonts.googleapis.com/css?family=Lobster" />
+<!-- <link rel="stylesheet" -->
+<!-- 	href="http://fonts.googleapis.com/css?family=Lobster" /> -->
 
 <!-- Enabling HTML5 support for Internet Explorer -->
 <!--[if lt IE 9]>
@@ -32,7 +34,12 @@
 
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="js/EventHandler.js"></script>
-
+<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	EventHandler.scrollAfterLoading();
+});
+</script>
 
 </head>
 
