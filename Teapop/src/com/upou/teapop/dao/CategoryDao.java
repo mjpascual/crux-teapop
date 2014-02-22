@@ -32,8 +32,8 @@ public class CategoryDao extends BaseDao {
 			stmt.setString(3, category.getName());
 			stmt.setString(4, category.getDesc());
 			stmt.setString(5, category.getImage());
-			stmt.setString(6, category.getShowSML());
-	
+			stmt.setBoolean(6, category.getShowSML());
+
 			stmt.executeUpdate();
 			result = true;
 		} catch (Exception e) {
@@ -57,7 +57,7 @@ public class CategoryDao extends BaseDao {
 				category.setName(rs.getString("name"));
 				category.setMain(rs.getString("main_category"));
 				category.setImage(rs.getString("image_name"));
-				category.setShowSML(rs.getString("show_sml"));
+				category.setShowSML(rs.getBoolean("show_sml"));
 			}
 			conn.close();
 			stmt.close();
@@ -85,7 +85,7 @@ public class CategoryDao extends BaseDao {
 				category.setName(rs.getString("name"));
 				category.setMain(rs.getString("main_category"));
 				category.setImage(rs.getString("image_name"));
-				category.setShowSML(rs.getString("show_sml"));
+				category.setShowSML(rs.getBoolean("show_sml"));
 				categories.add(category);
 			}
 			conn.close();

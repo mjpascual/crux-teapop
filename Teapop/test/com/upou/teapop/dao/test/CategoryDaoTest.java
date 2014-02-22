@@ -24,7 +24,7 @@ public class CategoryDaoTest {
 		category.setName("Italian Soda");
 		category.setDesc("Sweet");
 		category.setImage("candy.jpg");
-		category.setShowSML("Y");
+		category.setShowSML(true);
 		
 		CategoryDao categoryDao = new CategoryDao();
 		boolean result = categoryDao.createCategory(category);
@@ -42,8 +42,8 @@ public class CategoryDaoTest {
 		category.setName("Italian Soda");
 		category.setDesc("Sweet");
 		category.setImage("sweet.jpg");
-		category.setShowSML("Y");
-		
+		category.setShowSML(true);
+	
 		CategoryDao categoryDao = new CategoryDao();
 		boolean result = categoryDao.createCategory(category);
         assertTrue(result);   
