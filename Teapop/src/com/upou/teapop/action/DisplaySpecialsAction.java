@@ -13,7 +13,6 @@ public class DisplaySpecialsAction extends ActionSupport {
 	public String execute(){
 		PromoDao dao = new PromoDao();
 		specials = dao.retrievePromos();
-		System.out.println(specials.getPromos().get(0).getPromoCode());
 		return SUCCESS;
 	}
 
