@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.upou.teapop.data.Promo;
+import com.upou.teapop.data.Promos;
 
 public class PromoDao extends BaseDao {
 	
@@ -111,4 +112,34 @@ public class PromoDao extends BaseDao {
 		}
 		return result;
 	}
+	
+	// RETRIEVE
+	public Promos retrievePromos() {
+
+			Promos promos = new Promos();
+			try {
+				Connection conn = createConnection();
+
+				// get category info
+				PreparedStatement stmt = conn.prepareStatement(PROMO_VIEW_ALL);
+				ResultSet rs = stmt.executeQuery();
+
+				while (rs.next()) {
+					Promo promo = new Promo();
+					promo.setDesc(rs.getString("description"));
+					promo.setName(rs.getString("name"));
+					promo.setImage(rs.getString("image_name"));
+					promo.setPromoId(rs.getInt("promo_id"));
+					promos.getPromos().add(promo);
+				}
+				conn.close();
+				stmt.close();
+				rs.close();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+			return promos;
+		}
 }
