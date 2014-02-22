@@ -45,7 +45,11 @@ a {
 }
 
 .menu_border {
-	background: #BC8F8F url('../images/backgrounds/dirteffect.png')
+	box-shadow: 0px 6px 10px #888888;
+}
+
+#specials_wrapper {
+	margin-top: 20px;
 }
 
 .long_header {
@@ -144,7 +148,7 @@ a {
 	height: 280px;
 	width: 230px;
 	position: absolute;
-	z-index: 5;
+	z-index: 9999;
 	right: -5px;
 	background: ghostwhite;
 	box-shadow: 2px 4px 34px 0px pink;
@@ -234,9 +238,6 @@ a {
 	background: white;
 }
 
-/* .menu .category .category_photo img:hover { */
-/* 	opacity: 0.7; */
-/* } */
 .menu .category .category_name {
 	color: #F8F8FF;
 	float: left;
@@ -340,11 +341,13 @@ a {
 	width: 500px;
 }
 
-/* OVERWRITE PLUGINS */
-.bx-wrapper {
+/* OVERWRITE PLUGINS  */
+
+/* for menu */
+.menu_border .bx-wrapper {
 	margin: 0;
 }
-.bx-wrapper .bx-viewport {
+.menu_border .bx-wrapper .bx-viewport {
 	left: 0px;
 	background-color: #BC8F8F;
 	background-image: url('../images/backgrounds/dirteffect.png');
@@ -353,6 +356,15 @@ a {
 /* 	margin-bottom: 25px; */
 /* 	padding-top: 50px; */
 	padding-bottom: 50px;
+	text-align: center;
+	border: none;
+	color: #F8F8FF;
+}
+
+#specials_wrapper .bx-wrapper .bx-viewport {
+	background-color: white;
+	background-image: url('../images/backgrounds/dirteffect.png');
+	box-shadow: 0px 0px 20px 0px slategray inset;
 	text-align: center;
 	border: none;
 	color: #F8F8FF;
