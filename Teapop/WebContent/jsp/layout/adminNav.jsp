@@ -7,7 +7,7 @@
    <ul>
 	 <li><a class="bodySwitcher" href=javascript:void(0) id="displayCategories">Manage Categories</a></li>
      <li><a class="bodySwitcher" href=javascript:void(0) id="displayAddCategory">Add New Category</a></li>
-     <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Move Item to Category</a></li>
+     <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Print Report</a></li>
    </ul>
  </div>
  <div class="menu-item">
@@ -15,14 +15,14 @@
    <ul>
 	 <li><a class="bodySwitcher" href=javascript:void(0) id="displayMenuItems">Manage Menu</a></li>
      <li><a class="bodySwitcher" href=javascript:void(0) id="displayAddMenu">Add New Menu</a></li>
-     <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Print Menu List</a></li>
+     <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Print Report</a></li>
    </ul>
  </div>
  <div class="menu-item">
-   <h4>Administration Settings</h4>
+   <h4>Promo Management</h4>
    <ul>
-     <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Manage Admin Users</a></li>
-     <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Add New Admin User</a></li>
-     <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Print Admin Users</a></li>
+     <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Manage Promo</a></li>
+     <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Add New Promo</a></li>
+     <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Print Report</a></li>
    </ul>
 </div>
