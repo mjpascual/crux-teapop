@@ -11,8 +11,9 @@ import com.upou.teapop.data.Promo;
 
 public class PromoDao extends BaseDao {
 	
-	private static final String PROMO_CREATE   = "INSERT INTO teapop.promo (promo_id, promo_code, name, description, image_name) on duplicate key update " +
-												 "VALUES (?, ?, ?, ?, ?)";
+	private static final String PROMO_CREATE   = "INSERT INTO teapop.promo (promo_id, promo_code, name, description, image_name) " +
+												 "VALUES (?, ?, ?, ?, ?) " +
+												 "ON DUPLICATE KEY UPDATE promo_id=VALUES(promo_id), promo_code=VALUES(promo_code), name=VALUES(name), description=VALUES(description), image_name=VALUES(image_name) ";
 
 	private static final String PROMO_VIEW     = "SELECT * FROM teapop.promo WHERE promo_id = ?";
 	
@@ -103,8 +104,7 @@ public class PromoDao extends BaseDao {
 			PreparedStatement stmt = conn.prepareStatement(PROMO_DELETE);
 			stmt.setInt(1, id);
 			stmt.executeUpdate();
- 
-			stmt.executeQuery();
+
 			result = true;
 		} catch (Exception e) {
 			e.printStackTrace();
