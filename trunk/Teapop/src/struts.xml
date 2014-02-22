@@ -111,6 +111,11 @@
 			<result>/jsp/admin/promoForm.jsp</result>
 		</action>
 		
+		<action name="displayDashboard">
+			<interceptor-ref name="loginInterceptor" />
+			<result>/jsp/admin/dashboard.jsp</result>
+		</action>
+		
 		<action name="displayBlank">
 			<interceptor-ref name="loginInterceptor" />
 			<result>/jsp/admin/blank.jsp</result>
