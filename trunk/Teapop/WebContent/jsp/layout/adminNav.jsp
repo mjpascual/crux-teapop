@@ -1,6 +1,6 @@
 <div class="menu-item alpha">
    <h4><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Tea-Pop Dashboard</a></h4>
-   <p> ADMINISTRATION PANEL <br> This administration page allows you to create, edit, delete and rearrange items for your stores.</p>
+   <p> <strong>ADMINISTRATION PANEL</strong> <br> This administration page allows you to create, edit, delete and rearrange items for your stores.</p>
  </div>
  <div class="menu-item">
    <h4>Category Management</h4>

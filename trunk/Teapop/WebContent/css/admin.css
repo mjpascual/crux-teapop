@@ -204,6 +204,7 @@ article.main aside nav .alpha p {
     color: black;
     margin-top:-8%; 
   	margin-bottom:-8%;
+  	font-weight: normal;
 }
 
 /*ul Styles*/
