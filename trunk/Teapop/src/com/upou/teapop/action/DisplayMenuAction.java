@@ -38,14 +38,14 @@ public class DisplayMenuAction extends ActionSupport{
 		category1.setDesc("A Serenitea specialty! Our best seller drinks have the goodness of milk combined with unique tea blends.");
 		category1.setImage("images/categories/cat1.png");
 		category1.setName("Milk Tea Classics");
-		category1.setShowSML("Y");
+		category1.setShowSML(true);
 		
 		Category category2 = new Category();
 		category2.setCategoryId(2);
 		category2.setDesc("Fruit flavored tea creations that is sure to delight your taste buds!");
 		category2.setImage("images/categories/cat2.png");
 		category2.setName("Fruit Tea");
-		category2.setShowSML("Y");
+		category2.setShowSML(true);
 		
 		MenuItem item1 = new MenuItem();
 		item1.setDesc("black  tea flavor");
