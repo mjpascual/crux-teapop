@@ -14,6 +14,7 @@
 		<script type="text/javascript">
 	        $(document).ready( function(){
 	        	BodySwitcher.initBodySwitcher();
+	        	AdminBehavour.initialize();
 	        });
         </script>
 	</head>

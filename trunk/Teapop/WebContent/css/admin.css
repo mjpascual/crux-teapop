@@ -201,12 +201,13 @@ article.main aside nav .menu-item h4:hover {
 article.main aside nav .alpha p {
     font-size: 13px;
     padding: 8px 12px;
-    color: #b04939;
+    color: black;
     margin-top:-8%; 
   	margin-bottom:-8%;
 }
 
 /*ul Styles*/
+
 article.main aside nav .menu-item ul {
 	background: #fff;
 	font-size: 13px;
@@ -216,6 +217,10 @@ article.main aside nav .menu-item ul {
 	padding: 0px;
 	margin-top:-8%; 
 	margin-bottom:-8%;
+}
+
+article.main aside nav .menu-item{
+	cursor: pointer;
 }
  
 article.main aside nav .menu-item ul a {
@@ -253,17 +258,10 @@ article.main aside nav .menu-item ul {
 	list-style-type: none;
 	overflow: hidden;
 	padding: 0px;
-   
-  /*Animation*/
-  -webkit-transition: height 1s ease;
-     -moz-transition: height 1s ease;
-       -o-transition: height 1s ease;
-      -ms-transition: height 1s ease;
-          transition: height 1s ease;
 }
 
-article.main aside nav .menu-item:hover ul {
-	height: 93px;
+.open {
+	height: 93px!important;
 }
 
 article.main section{

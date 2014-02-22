@@ -43,3 +43,18 @@ var BodySwitcher = {
 	}
 	
 };
+
+var AdminBehavour = {
+		
+		initialize : function(){
+			this.navClick();
+		},
+
+		navClick : function(){
+			$(document).on("click", ".menu-item", function(){
+				$(".menu-item").find("ul").removeClass("open");
+				$(this).find("ul").addClass("open");
+			});
+		}  
+		
+};
