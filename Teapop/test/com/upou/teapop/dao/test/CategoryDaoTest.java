@@ -70,8 +70,7 @@ public class CategoryDaoTest {
 		
 	}
 	
-	
-	
+	@Ignore
 	@Test
 	public void deleteCategory() {
 	

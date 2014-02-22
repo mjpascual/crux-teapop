@@ -20,8 +20,6 @@ public class MenuItem {
 	
 	private String size;
 	
-	private String image;
-	
 	private Price price;
 	
 	public int getItemId() {
@@ -94,14 +92,6 @@ public class MenuItem {
 
 	public void setSize(String size) {
 		this.size = size;
-	}
-
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
 	}
 
 	public Price getPrice() {
