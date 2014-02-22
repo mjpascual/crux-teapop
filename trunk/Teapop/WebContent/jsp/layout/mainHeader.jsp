@@ -3,21 +3,8 @@
 	<div id="fixed_header">
 		<!-- BACKGROUND ONLY -->
 	</div>
-
-
-	<div id="sunrays">
-		<embed width="1002" height="410" src="components/rays.swf"
-			quality="high" wmode="transparent"
-			pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"
-			type="application/x-shockwave-flash">
-	</div>
-	<hr />
-
-	<div id="teapop_logo">
-		<img src="images/teapop_logo.png" />
-	</div>
-
-	<div id="fixed_header" class="content">
+	
+	<div id="fixed_header_content">
 		<div id="main_menu">
 			<ul>
 				<li><a href="home">HOME</a></li>
@@ -30,7 +17,15 @@
 	</div>
 
 
-	<div id="header_text">The Capital Milktea of Malabon</div>
+	<div id="sunrays">
+		<embed width="1002" height="410" src="components/rays.swf"
+			quality="high" wmode="transparent"
+			pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"
+			type="application/x-shockwave-flash">
+	</div>
 
+	<div id="teapop_logo">
+		<img src="images/teapop_logo.png" />
+	</div>
 
 </header>

@@ -1,15 +1,11 @@
-@font-face {
-	font-family: 'matchbook';
-	src: url('../fonts/matchbook.ttf');
-}
-
 body {
-	font-family: Arial, sans-serif;
 	color: #5A5C5D;
-	background: url(../images/background.jpg);
+	background: url(../images/backgrounds/background.jpg);
 	margin: 0px !important;
 	display: block;
 	padding-top: 72px;
+	font-family: canterBold;
+	font-size: 28px;
 }
 
 hr {
@@ -83,15 +79,25 @@ a {
 }
 
 #menu_box {
-	background-color: blueviolet;
-	border: 1px solid #B84427;
+	background-color: rosybrown;
+	background-image: url("../images/backgrounds/dirteffect.png");
+	box-shadow: inset 0px 0px 59px 0px sienna;
 	border-radius: 8px;
 	margin-bottom: 25px;
 	padding-top: 50px;
 	padding-bottom: 50px;
 	text-align: center;
-	box-shadow: 0px 0px 59px 0px rgba(0, 0, 0, 0.6);
 	color: ghostwhite;
+
+	/* 	background-color: blueviolet; */
+	/* 	border: 1px solid #B84427; */
+	/* 	box-shadow: 0px 0px 59px 0px rgba(0, 0, 0, 0.6); */
+	/* 	border-radius: 8px; */
+	/* 	margin-bottom: 25px; */
+	/* 	padding-top: 50px; */
+	/* 	padding-bottom: 50px; */
+	/* 	text-align: center; */
+	/* 	color: ghostwhite; */
 }
 
 }
@@ -162,7 +168,7 @@ a {
 
 .menu .category {
 	text-align: left;
-	padding-left: 200px;
+	padding-left: 70px;
 	padding-top: 20px;
 	padding-bottom: 15px;
 	color: ghostwhite;
@@ -191,35 +197,16 @@ a {
 /* .menu .category .category_photo img:hover { */
 /* 	opacity: 0.7; */
 /* } */
-
 .menu .category .category_name {
-/* 	FULL */
-/* 	border-bottom: 1px solid #666666; */
-/* 	color: ghostwhite; */
-/* 	float: left; */
-/* 	margin-bottom: 10px; */
-/* 	padding-bottom: 2px; */
-/* 	margin-top: 50px; */
-/* 	width: 454px; */
-/* 	padding-left: 545px; */
-/* 	font-size: 25px; */
-/* 	font-weight: bold; */
-/* 	margin-left: -530px; */
-/* 	background: brown; */
-/* 	z-index: 1; */
-/* 	position: relative; */
-
-/* NON-FULL */
 	color: #F8F8FF;
 	float: left;
 	margin-bottom: 10px;
 	padding-bottom: 2px;
 	margin-top: 50px;
-	width: 399px;
-	padding-left: 500px;
-	font-size: 25px;
+	width: 300px;
+	padding-left: 15px;
+	font-size: 45px;
 	font-weight: bold;
-	margin-left: -481px;
 	z-index: 1;
 	position: relative;
 	border-bottom: 1px solid #666;

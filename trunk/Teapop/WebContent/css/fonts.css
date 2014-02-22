@@ -1,0 +1,64 @@
+@font-face {
+	font-family: 'matchbook';
+	src: url('../fonts/matchbook.ttf');
+}
+
+@font-face
+{
+	font-family: bazar;
+	src: url('../fonts/Bazar.ttf');
+}
+
+@font-face
+{
+	font-family: rispaRegular;
+	src: url('../fonts/Rispa_Regular.ttf');
+}
+
+@font-face
+{
+	font-family: vincentRegular;
+	src: url('../fonts/Vincent-Regular.otf');
+}
+
+@font-face
+{
+	font-family: vincentRegular;
+	src: url('../fonts/CanterBold.otf');
+}
+
+@font-face
+{
+	font-family: canterBold;
+	src: url('../fonts/CanterBold.otf');
+}
+
+@font-face
+{
+	font-family: canterBold3D;
+	src: url('../fonts/CanterBold3D.otf');
+}
+
+@font-face
+{
+	font-family: canterBoldShadow;
+	src: url('../fonts/CanterBoldShadow.otf');
+}
+
+@font-face
+{
+	font-family: canterBoldStrips;
+	src: url('../fonts/CanterBoldStrips.otf');
+}
+
+@font-face
+{
+	font-family: canterLight;
+	src: url('../fonts/CanterLight.otf');
+}
+
+@font-face
+{
+	font-family: canterOutline;
+	src: url('../fonts/CanterOutline.otf');
+}
