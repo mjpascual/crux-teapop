@@ -15,5 +15,19 @@ var EventHandler = {
 		        window.location.hash = target;
 		    });
 		});
+	},
+	
+	initMenuSliderLinks : function(id){
+		$(".contentSliderMenu").bxSlider({
+			pagerCustom : id,
+			controls: false
+			
+		});
+	},
+	
+	scrollAfterLoading : function(){
+		$("body,html").animate({
+			scrollTop: $("#content_wrapper").offset().top
+		}, 1000, "swing");
 	}
 };

@@ -1,5 +1,5 @@
-<div id="contactInfoHeader" class="short_header">Contact Us</div>
-
+<!-- <div id="contactInfoHeader" class="short_header">Contact Us</div> -->
+<div id="header_text">Contact Us</div>
 <div class="contactUsWestSide">
 	<header id="contactUsHeaderContainer"> MAIL US </header>
 
