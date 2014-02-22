@@ -30,7 +30,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		User us = userDAO.retrieveUser(user.getUsername(), user.getPassword());
 
 		if(us.getUserId() != 0){
-			session.put(DisplayConstants.SESSION_USER, user.getDisplayName());
+			session.put(DisplayConstants.SESSION_USER, us.getDisplayName());
 			return SUCCESS;
 		} else{
 			addActionError(ErrorConstants.LOGIN_ERROR);
