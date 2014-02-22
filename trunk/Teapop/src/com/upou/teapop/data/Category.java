@@ -1,5 +1,6 @@
 package com.upou.teapop.data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Category {
@@ -67,6 +68,9 @@ public class Category {
 	}
 
 	public List<MenuItem> getItems() {
+		if (items == null){
+			items = new ArrayList<MenuItem>();
+		}
 		return items;
 	}
 
