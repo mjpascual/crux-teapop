@@ -1,3 +1,5 @@
+<div id="header_text">Location</div>
+
 <div id="contactInfoHeader" class="short_header">Location</div>
 
 
