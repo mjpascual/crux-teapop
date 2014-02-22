@@ -11,8 +11,9 @@ import com.upou.teapop.data.Category;
 
 public class CategoryDao extends BaseDao {
 	
-	private static final String CATEGORY_CREATE   = "INSERT INTO teapop.category (category_id, main_category, name, description, image_name, show_sml) on duplicate key update " +
-												    "VALUES (?, ?, ?, ?, ?, ?)";
+	private static final String CATEGORY_CREATE   = "INSERT INTO teapop.category (category_id, main_category, name, description, image_name, show_sml) " +
+												    "VALUES (?, ?, ?, ?, ?, ?) " +
+												    "ON DUPLICATE KEY UPDATE category_id=VALUES(category_id), main_category=VALUES(main_category), name=VALUES(name),  description=VALUES(description), image_name=VALUES(image_name), show_sml=VALUES(show_sml)";
 
 	private static final String CATEGORY_VIEW     = "SELECT * FROM teapop.category WHERE category_id = ?";
 	
@@ -106,8 +107,7 @@ public class CategoryDao extends BaseDao {
 			PreparedStatement stmt = conn.prepareStatement(CATEGORY_DELETE);
 			stmt.setInt(1, id);
 			stmt.executeUpdate();
- 
-			stmt.executeQuery();
+
 			result = true;
 		} catch (Exception e) {
 			e.printStackTrace();
