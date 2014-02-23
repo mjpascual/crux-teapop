@@ -38,6 +38,10 @@ public class AddCategoryAction extends ActionSupport {
 			e.printStackTrace();
 			addActionError(ErrorConstants.SEV_ERROR + e);
 			return ERROR;
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+			addActionError(ErrorConstants.INPUT_ERROR + e);
+			return ERROR;
 		} catch (IOException e) {
 			e.printStackTrace();
 			addActionError(ErrorConstants.SEV_ERROR + e);
