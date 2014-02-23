@@ -109,6 +109,11 @@
 			<result name="success">/jsp/admin/categoryList.jsp</result>
 		</action>
 		
+		<action name="displayPrintCategory" class="com.upou.teapop.action.DisplayCategoryAction">
+		    <interceptor-ref name="loginInterceptor" />
+			<result name="success">/jsp/admin/categoryPrint.jsp</result>
+		</action>
+		
 		<action name="displayAddCategory">
 		    <interceptor-ref name="loginInterceptor" />
 			<result>/jsp/admin/categoryForm.jsp</result>
@@ -131,6 +136,7 @@
 		    <result name="error">/jsp/admin/categoryList.jsp</result>
         	<result name="done">/jsp/admin/blank.jsp</result>
 		</action>
+		
 		
 		<action name="displayPromos"  class="com.upou.teapop.action.DisplaySpecialsAction">
 			<interceptor-ref name="loginInterceptor" />

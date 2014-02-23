@@ -52,30 +52,30 @@ var BodySwitcher = {
 	initCall: function(data){
 		var $container = $("#body_container");
 		
-		while ($container.firstChild) {
-		    myNode.removeChild(myNode.firstChild);
-		}
-		
-		var $table = $container.find(".table");
+		var $table = $container.find(".table");															//SET CLASS
 		if ($table.length > 0){ 
 			BodySwitcher.initDataTable($table);
 		}
+		
 		var $form = $container.find("form#add");
 		if ($form.length > 0){ 
 			$(document).off('click','#submitAddBtn');
-			BodySwitcher.initForm($form, "#submitAddBtn");										    //SET THIS ID
+			BodySwitcher.initForm($form, "#submitAddBtn");										    	//SET THIS ID
+		}
+		
+		var $print = $container.find(".printIt");														//SET CLASS
+		if ($print.length > 0){ 
+			BodySwitcher.initPrint($print);										    
 		}
 		
 	},
 	
 	initDataTable : function($table){
 		
-		if ($table.length > 0){ 
-			$("#"+$table.attr("id")).dataTable( {
-				"sPaginationType": "full_numbers"
-			} );
-		}
-
+		$("#"+$table.attr("id")).dataTable( {
+			"sPaginationType": "full_numbers"
+		} );
+		
 		var self = BodySwitcher;
 		var action = $table.find("#addSubmit").attr("forward");                                      	//SET THIS ID
 		
@@ -105,12 +105,7 @@ var BodySwitcher = {
 		var $checkBox = $form.find(".checkbox");                                                		//SET THIS CLASS
 
 		$checkBox.change(function() {
-			var state = $(this).is(':checked');
-		    if (state) {
-		    	$(this).val(true);
-		    } else {
-		    	$(this).val(false);
-			}
+			$(this).is(':checked') ? $(this).val(true) : $(this).val(false);
 		});
 		
 		var $fileTemp = $form.find(".fileTemp");											    		//SET THIS CLASS
@@ -131,12 +126,32 @@ var BodySwitcher = {
 			} 
 		});
 		
+	},
+	
+	initPrint: function($print){
+		var $table = $print.find("table");
+		$("#"+$table.attr("id")).dataTable( {
+	        "bInfo": false,
+	        "bScrollCollapse": false,
+	        "bDestroy": true,
+	        "bPaginate" : false,
+	        "aLengthMenu": [
+	                          [25, 50, 100, 200, -1],
+	                          [25, 50, 100, 200, "All"]
+	                      ], 
+	        "iDisplayLength" : -1,
+	        "sDom": 'T<"clear">lfrtip',
+	        "oTableTools": {
+	            "sSwfPath": "swf/copy_cvs_xls_pdf.swf"
+	        }
+		} );
+	
 	}
 	
 };
 
 
-var AdminBehavour = {
+var AdminNavBehavour = {
 		
 		initialize : function(){
 			this.navClick();
@@ -151,13 +166,12 @@ var AdminBehavour = {
 		
 };
 
+
 (function( $ ){
 	$.fn.removeChildrenFromDom = function (i) {
 	    if (!this) return;
 	    this.find('input[type="submit"]').unbind(); 
-	    this.children()
-	       .empty() 
-	       .each(function (index, domEle) {
+	    this.children().empty().each(function (index, domEle) {
 	           try { domEle.innerHTML = ""; } catch (e) {}  
 	       });
 	    this.empty(); 

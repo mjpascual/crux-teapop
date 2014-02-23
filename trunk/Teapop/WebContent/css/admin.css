@@ -351,7 +351,7 @@ article.main section article table td:nth-child(1) {
 }
 
 article.main section article table tr:first-child th:first-child{
-	background: white!important;
+	background: white;
 }
 
 article.main section article table tr:nth-child(1), 
@@ -372,6 +372,7 @@ article.main section article div.formAdd {
 article.main section article div div {
 	padding-top:20px;
 }
+
 
 article.main section article div label {
 	display: inline-block;
@@ -777,6 +778,7 @@ div.dataTables_paginate span>a {
  * Sorting
  */
 table thead th.sorting_asc {
+	background: #66A9BD!important;
 	background: #66A9BD url('../images/admin/sort_asc.png') no-repeat right center;
 	cursor: pointer;
 }
@@ -857,4 +859,12 @@ form.smallForm{
 	font-weight: bold;
 	position: relative;
 	right: 290px;
+}
+
+input[type="file"]  {
+	color: white!important;
+}
+
+.DTTT_container div{
+	padding-top: 0px!important;
 }
