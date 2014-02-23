@@ -2,137 +2,279 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <div id="header_text">Our Menu</div>
-<!-- <div id="contactInfoHeader" class="short_header">Our Menu</div> -->
 
 <div id="menu_box">
 	<div id="menu_wrapper" class="menu">
 
 		<div id="categories" class="categories">
-			<ul id="menu_category_links" class="category_links">
-				<li><a class="category_link"> Beverage </a></li>
-				<li><a class="category_link"> Food </a></li>
+			<ul id="menu_section_links" class="category_links">
+				<li><a title="bevearge_wrapper" class="category_link active">
+						Beverage </a></li>
+				<li><a title="additional_wrapper" class="category_link">
+						Additional </a></li>
 			</ul>
 		</div>
-
-
-		<div id="menu_categories" class="menu_categories">
-			<s:iterator status="status" value="menu.beveragesSection.categories">
-				<a class="category_link"
-					data-slide-index='<s:property value="%{#status.index}" />'>
-					<div>
-						<s:property value="name" />
-					</div>
-				</a>
-			</s:iterator>
-		</div>
-
-		<div class="menu_border">
-			<ul id="contentSliderMenu" class="contentSliderMenu">
+		<div id="bevearge_wrapper" class="menu_section_wrapper initialdisplay">
+			<div id="beverage_menu_categories" class="menu_categories">
 				<s:iterator status="status" value="menu.beveragesSection.categories">
-					<li>
-						<!-- category item -->
-						<div class="category"
-							id="itemlink<s:property value="%{#status.index}"/>">
-							<div class="category_photo">
-								<img src="images/categories/<s:property value="image"/>">
-							</div>
-							<div class="category_info">
-								<div class="category_name">
-									<s:property value="name" />
-								</div>
-								<div class="category_description">
-									<s:property value="desc" />
-								</div>
-								<div class="clear"></div>
-							</div>
-							<div class="clear"></div>
-							<s:if test="showSML='Y'">
-								<div class="serving">
-									<div class="price">L</div>
-									<div class="price">M</div>
-									<div class="price">S</div>
-									<div class="clear"></div>
-								</div>
-							</s:if>
+					<a class="category_link"
+						data-slide-index='<s:property value="%{#status.index}" />'>
+						<div>
+							<s:property value="name" />
+						</div>
+					</a>
+				</s:iterator>
+			</div>
 
-							<s:iterator value="items">
-
-								<div class="item">
-									<div class="name">
-										<strong><s:property value="name" /> </strong>
+			<div class="menu_border" class="">
+				<ul id="beverage_content_slider" class="contentSliderMenu">
+					<s:iterator status="status"
+						value="menu.beveragesSection.categories">
+						<li>
+							<!-- category item -->
+							<div class="category"
+								id="itemlink<s:property value="%{#status.index}"/>">
+								<div class="category_photo">
+									<img src="images/categories/<s:property value="image"/>">
+								</div>
+								<div class="category_info">
+									<div class="category_name">
+										<s:property value="name" />
 									</div>
-									<div class="description">
+									<div class="category_description">
 										<s:property value="desc" />
 									</div>
-
-									<s:if test="showSML='Y'">
-										<div class="price">
-											<s:if test="price.large == 0">
-									-
-								</s:if>
-											<s:else>
-												<s:text name="format.money">
-													<s:param value="price.large" />
-												</s:text>
-											</s:else>
-
-										</div>
-										<div class="price">
-											<s:if test="price.regular == 0">
-									-
-								</s:if>
-											<s:else>
-												<s:text name="format.money">
-													<s:param value="price.regular" />
-												</s:text>
-											</s:else>
-										</div>
-										<div class="price">
-											<s:if test="price.small == 0">
-									-
-								</s:if>
-											<s:else>
-												<s:text name="format.money">
-													<s:param value="price.small" />
-												</s:text>
-											</s:else>
-										</div>
-									</s:if>
-									<s:else>
-										<div class="price">
-											<s:if test="price.regular == 0">
-									-
-							</s:if>
-											<s:else>
-												<s:text name="format.money">
-													<s:param value="price.regular" />
-												</s:text>
-											</s:else>
-										</div>
-									</s:else>
 									<div class="clear"></div>
 								</div>
-							</s:iterator>
-							<div class="clear"></div>
+								<div class="clear"></div>
+								<s:if test="showSML">
+									<div class="serving">
+										<div class="price">L</div>
+										<div class="price">M</div>
+										<div class="price">S</div>
+										<div class="clear"></div>
+									</div>
+								</s:if>
 
-							<!-- end category item -->
-							<br />
+								<s:iterator value="items">
 
+									<div class="item">
+										<div class="name">
+											<strong><s:property value="name" /> </strong>
+										</div>
+										<div class="description">
+											<s:property value="desc" />
+										</div>
+
+										<s:if test="showSML">
+											<div class="price">
+												<s:if test="price.large == 0">
+										-
+									</s:if>
+												<s:else>
+													<s:text name="format.money">
+														<s:param value="price.large" />
+													</s:text>
+												</s:else>
+
+											</div>
+											<div class="price">
+												<s:if test="price.regular == 0">
+										-
+									</s:if>
+												<s:else>
+													<s:text name="format.money">
+														<s:param value="price.regular" />
+													</s:text>
+												</s:else>
+											</div>
+											<div class="price">
+												<s:if test="price.small == 0">
+										-
+									</s:if>
+												<s:else>
+													<s:text name="format.money">
+														<s:param value="price.small" />
+													</s:text>
+												</s:else>
+											</div>
+										</s:if>
+										<s:else>
+											<div class="price">
+												<s:if test="price.regular == 0">
+										-
+								</s:if>
+												<s:else>
+													<s:text name="format.money">
+														<s:param value="price.regular" />
+													</s:text>
+												</s:else>
+											</div>
+										</s:else>
+										<div class="clear"></div>
+									</div>
+								</s:iterator>
+								<div class="clear"></div>
+
+								<!-- end category item -->
+								<br />
+
+							</div>
+						</li>
+					</s:iterator>
+				</ul>
+			</div>
+		</div>
+
+
+		<%-- ADDITIONAL WRAPPER --%>
+
+		<div id="additional_wrapper" class="menu_section_wrapper">
+			<div id="additional_menu_categories" class="menu_categories">
+				<s:iterator status="status"
+					value="menu.additionalSection.categories">
+					<a class="category_link"
+						data-slide-index='<s:property value="%{#status.index}" />'>
+						<div>
+							<s:property value="name" />
 						</div>
-					</li>
+					</a>
 				</s:iterator>
-			</ul>
+			</div>
+
+			<div class="menu_border">
+				<ul id="additional_content_slider" class="contentSliderMenu">
+					<s:iterator status="status"
+						value="menu.additionalSection.categories">
+						<li>
+							<!-- category item -->
+							<div class="category"
+								id="itemlink<s:property value="%{#status.index}"/>">
+								<div class="category_photo">
+									<img src="images/categories/<s:property value="image"/>">
+								</div>
+								<div class="category_info">
+									<div class="category_name">
+										<s:property value="name" />
+									</div>
+									<div class="category_description">
+										<s:property value="desc" />
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="clear"></div>
+								<s:if test="showSML">
+									<div class="serving">
+										<div class="price">L</div>
+										<div class="price">M</div>
+										<div class="price">S</div>
+										<div class="clear"></div>
+									</div>
+								</s:if>
+
+								<s:iterator value="items">
+
+									<div class="item">
+										<div class="name">
+											<strong><s:property value="name" /> </strong>
+										</div>
+										<div class="description">
+											<s:property value="desc" />
+										</div>
+
+										<s:if test="showSML">
+											<div class="price">
+												<s:if test="price.large == 0">
+										-
+									</s:if>
+												<s:else>
+													<s:text name="format.money">
+														<s:param value="price.large" />
+													</s:text>
+												</s:else>
+
+											</div>
+											<div class="price">
+												<s:if test="price.regular == 0">
+										-
+									</s:if>
+												<s:else>
+													<s:text name="format.money">
+														<s:param value="price.regular" />
+													</s:text>
+												</s:else>
+											</div>
+											<div class="price">
+												<s:if test="price.small == 0">
+										-
+									</s:if>
+												<s:else>
+													<s:text name="format.money">
+														<s:param value="price.small" />
+													</s:text>
+												</s:else>
+											</div>
+										</s:if>
+										<s:else>
+											<div class="price">
+												<s:if test="price.regular == 0">
+										-
+								</s:if>
+												<s:else>
+													<s:text name="format.money">
+														<s:param value="price.regular" />
+													</s:text>
+												</s:else>
+											</div>
+										</s:else>
+										<div class="clear"></div>
+									</div>
+								</s:iterator>
+								<div class="clear"></div>
+
+								<!-- end category item -->
+								<br />
+
+							</div>
+
+						</li>
+					</s:iterator>
+				</ul>
+			</div>
 		</div>
 	</div>
-
-	<div class="clear"></div>
 </div>
 
 <script type="text/javascript">
-	$(document).ready(function() {
-		EventHandler.initMenuSliderLinks(".contentSliderMenu", "#menu_categories");
-		EventHandler.initScrollbar("#menu_categories");
-	});
+	var beverageSlider;
+	var additionalSlider;
+
+	$(document).ready(
+			function() {
+					EventHandler.initMenuSliderLinks("#beverage_content_slider",
+					"#beverage_menu_categories", 
+
+					function(){
+						EventHandler.initMenuSliderLinks("#additional_content_slider",
+						"#additional_menu_categories", 
+
+						function(){
+							EventHandler.initContentToggler("#menu_section_links", ".menu_section_wrapper");
+						});
+
+					});
+
+// 				beverageSlider = EventHandler
+// 						.initMenuSliderLinks("#beverage_content_slider",
+// 								"#beverage_menu_categories");
+// 				console.dir(beverageSlider);
+// 				additionalSlider = EventHandler.initMenuSliderLinks(
+// 						"#additional_content_slider",
+// 						"#additional_menu_categories");
+// 				EventHandler.initContentToggler("#menu_section_links",
+// 						".menu_section_wrapper", beverageSlider,
+// 						additionalSlider);
+			});
 
 	
 </script>
