@@ -8,13 +8,13 @@
 
 		<div id="categories" class="categories">
 			<ul id="menu_section_links" class="category_links">
-				<li><a title="bevearge_wrapper" class="category_link active">
+				<li><a title="beverge_wrapper" id="initial_load" class="category_link beverage active">
 						Beverage </a></li>
-				<li><a title="additional_wrapper" class="category_link">
+				<li><a title="additional_wrapper" class="category_link additional">
 						Additional </a></li>
 			</ul>
 		</div>
-		<div id="bevearge_wrapper" class="menu_section_wrapper initialdisplay">
+		<div id="beverge_wrapper" class="menu_section_wrapper initialdisplay">
 			<div id="beverage_menu_categories" class="menu_categories">
 				<s:iterator status="status" value="menu.beveragesSection.categories">
 					<a class="category_link"
@@ -246,37 +246,20 @@
 </div>
 
 <script type="text/javascript">
-	var beverageSlider;
-	var additionalSlider;
-
-	$(document).ready(
-			function() {
-					EventHandler.initMenuSliderLinks("#beverage_content_slider",
-					"#beverage_menu_categories", 
-
-					function(){
-						EventHandler.initMenuSliderLinks("#additional_content_slider",
-						"#additional_menu_categories", 
-
-						function(){
-							EventHandler.initContentToggler("#menu_section_links", ".menu_section_wrapper");
-						});
-
-					});
-
-// 				beverageSlider = EventHandler
-// 						.initMenuSliderLinks("#beverage_content_slider",
-// 								"#beverage_menu_categories");
-// 				console.dir(beverageSlider);
-// 				additionalSlider = EventHandler.initMenuSliderLinks(
-// 						"#additional_content_slider",
-// 						"#additional_menu_categories");
-// 				EventHandler.initContentToggler("#menu_section_links",
-// 						".menu_section_wrapper", beverageSlider,
-// 						additionalSlider);
-			});
-
+	var sliderConfig = [ {
+		id : "#beverage_content_slider",
+		pagerId : "#beverage_menu_categories",
+		slider : null
+	}, {
+		id : "#additional_content_slider",
+		pagerId : "#additional_menu_categories",
+		slider : null
+	}, ];
 	
+	$(document).ready(function() {
+		EventHandler.initContentToggler("#menu_section_links",
+						".menu_section_wrapper");
+	});
 </script>
 
 

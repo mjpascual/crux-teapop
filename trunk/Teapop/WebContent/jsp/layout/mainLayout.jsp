@@ -33,8 +33,10 @@
 
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="js/EventHandler.js"></script>
-<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="js/jquery.bxslider.js"></script>
 <script type="text/javascript" src="js/perfect-scrollbar-0.4.8.with-mousewheel.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.js"></script>
+
 
 <script type="text/javascript">
 $(document).ready(function(){
