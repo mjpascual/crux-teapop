@@ -7,7 +7,15 @@
 	</header>
 	<article>
 		<div class="formAdd category_add">
-			<h3><span class="changeHeader">Add</span> Menu Category</h3><hr><br>
+			<h3>
+			<s:if test="%{edit}">
+					Edit Category
+				</s:if>
+				<s:else>
+					Add New Category
+				</s:else>				
+			</h3>
+			<hr><br>
 			<form id="add" action="addCategory">
 				<div class="idContainer">
 					<label for="categoryId">Id:</label>

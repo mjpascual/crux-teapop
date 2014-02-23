@@ -23,6 +23,6 @@
    <ul>
      <li><a class="bodySwitcher" href=javascript:void(0) id="displayPromos">Manage Promo</a></li>
      <li><a class="bodySwitcher" href=javascript:void(0) id="displayAddPromo">Add New Promo</a></li>
-     <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Print Promo Master List</a></li>
+     <li><a class="bodySwitcher" href=javascript:void(0) id="displayPrintPromos">Print Promo Master List</a></li>
    </ul>
 </div>
