@@ -12,8 +12,9 @@
 					<th>ID</th>
 					<th>Code</th>
 					<th>Name</th>
+					<th>Image</th>
 					<th>Description</th>
-					<th>Code</th>
+					
 				</tr>
 			</thead>
 			<tbody>
@@ -22,8 +23,8 @@
 						<td id="promoId<s:property value='%{#status.index}'/>"><s:property value="promoId"/></td>
 						<td id="promoCode<s:property value='%{#status.index}'/>"><s:property value="promoCode"/></td>
 						<td id="promoName<s:property value='%{#status.index}'/>"><s:property value="name"/></td>
-						<td id="promoDesc<s:property value='%{#status.index}'/>"><s:property value="desc"/></td>
 						<td id="promoCode<s:property value='%{#status.index}'/>"><s:property value="promoCode"/></td>
+						<td id="promoDesc<s:property value='%{#status.index}'/>"><s:property value="desc"/></td>
 					</tr>
 				</s:iterator>
 			</tbody>
