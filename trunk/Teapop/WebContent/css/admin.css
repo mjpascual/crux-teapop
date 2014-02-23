@@ -607,6 +607,8 @@ input[type=text], input[type=password], input[type=email], input[type=number], t
 	padding: 0px;
 	margin: 0px; 
 	padding-top: 6px!important;
+	margin-right: auto;
+	margin-left: auto;
 }
 .login_errors li{ 
 	list-style: none; 
@@ -633,6 +635,8 @@ input[type=text], input[type=password], input[type=email], input[type=number], t
 	padding: 0px;
 	margin: 0px; 
 	padding-top: 6px;
+	margin-right: auto;
+	margin-left: auto;
 }
 .success_form li{ 
 	list-style: none; 
