@@ -120,10 +120,11 @@ var BodySwitcher = {
 		
 		$(document).on("click", btn, function(e){                                            			//SET THIS ID
 			if($form[0].checkValidity()) {
+				var disabled = $form.find(':input:disabled').removeAttr('disabled');
 				var action = $form.attr("action");
 				var data = $form.serialize();
+				disabled.attr('disabled','disabled');
 				e.preventDefault();
-				
 				self.ajaxCall(action, data, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
 			} 
 		});
