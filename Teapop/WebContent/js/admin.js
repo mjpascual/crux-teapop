@@ -62,6 +62,7 @@ var BodySwitcher = {
 		}
 		var $form = $container.find("form#add");
 		if ($form.length > 0){ 
+			$(document).off('click','#submitAddBtn');
 			BodySwitcher.initForm($form, "#submitAddBtn");										    //SET THIS ID
 		}
 		
@@ -77,6 +78,8 @@ var BodySwitcher = {
 
 		var self = BodySwitcher;
 		var action = $table.find("#addSubmit").attr("forward");                                      	//SET THIS ID
+		
+		$(document).off('click','#addSubmit, #submitEditBtn, #submitDelBtn');
 		
 		$(document).on("click", "#addSubmit", function(e){
 			self.ajaxCall(action, null, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
