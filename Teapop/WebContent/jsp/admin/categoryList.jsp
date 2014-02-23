@@ -46,16 +46,17 @@
 						</td>
 					</tr>
 				</s:iterator>
+				<s:if test="hasActionErrors()">
+					<div class="login_errors">
+						<s:actionerror/>
+					</div>
+				</s:if>
 				<s:if test="hasActionMessages()">
 					<div class="success_form">
 						<s:actionmessage/>
 					</div>
 				</s:if>
-				<s:if test="hasErrorMessages()">
-					<div class="login_errors">
-						<s:actionerror/>
-					</div>
-				</s:if>
+				
 			</tbody>
 		</table>
 	</article>

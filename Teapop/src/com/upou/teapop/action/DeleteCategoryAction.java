@@ -23,28 +23,31 @@ private static final long serialVersionUID = 1L;
 		boolean result = false;
 		
 		try {
+			
+			categoryList = categoryDao.retrieveCategories();
+
 			result = categoryDao.deleteCategory(catergoryId);
+			
 			
 			if(result == false){
 				addActionError(ErrorConstants.SEV_ERROR);
 				return ERROR;
 			} 
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			addActionError(ErrorConstants.SEV_ERROR + e.getMessage());
+			addActionError(ErrorConstants.SEV_ERROR + e);
 			return ERROR;
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
-			addActionError(ErrorConstants.INPUT_ERROR + e.getMessage());
+			addActionError(ErrorConstants.INPUT_ERROR + e);
 			return ERROR;
 		} catch (Exception e){
-			addActionError(ErrorConstants.SEV_ERROR + e.getMessage());
+			addActionError(ErrorConstants.SEV_ERROR + e);
 			return ERROR;
 		}
-		
-		categoryList = categoryDao.retrieveCategories();
+
 		addActionMessage("Data #" + catergoryId + DisplayConstants.DELETE_SUCCESS);
-		
 		return SUCCESS;
 	}
 
