@@ -10,15 +10,15 @@
 			<form action="addPromo" method="post" id="addPromo">
 				<div>
 					<label for="promoName">Promo Name:</label>
-					<input type="text" id="promoName" name="promo.name" maxlength="35" autofocus required>
+					<input type="text" id="promoName" name="promo.name" maxlength="35" autofocus required value="<s:property value='promoName'/>">
 				</div>
 				<div>
 					<label for="promoCode">Promo Code:</label>
-					<input type="text" id="promoCode" name="promo.promoCode" maxlength="35">
+					<input type="text" id="promoCode" name="promo.promoCode" maxlength="35" value="<s:property value='promoCode'/>">
 				</div>
 				<div>
 					<label for="promoDesc">Promo Description:</label>
-					<textarea name="promo.desc" rows="6" maxlength="250" required></textarea>
+					<textarea  name="promo.desc" rows="6" maxlength="250" required><s:property value='promoDesc'/></textarea>
 				</div>
 				<div>
 				 	<label for="image_file">Category Image: </label>
