@@ -1,11 +1,13 @@
-<section class="category">
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<section class="category" id="category">
 	<header>
 		Category Management
 	</header>
 	<article>
 		<div class="formAdd category_add">
 			<h3>Add New Promo</h3><hr><br>
-			<form action="addPromo" method="post">
+			<form action="addPromo" method="post" id="addPromo">
 				<div>
 					<label for="promoName">Promo Name:</label>
 					<input type="text" id="promoName" name="promo.name" maxlength="35" autofocus required>
@@ -22,8 +24,47 @@
 				 	<label for="image_file">Category Image: </label>
 				 	<input type="file" name="promo.image" id="image_file" />
 				</div>
-				<input class="button" type="submit" value="Save">
+				<input class="button" onclick="javascript:addPromo()" value="Save">
 			</form>
 		</div>
+		<s:if test="%{addSuccessful}">
+			<div id="addPromoMessage" class="addSuccessful">
+				ADDING PROMO SUCCESSFUL
+			</div>
+		</s:if>
+		<s:if test="%{addFailed}">
+			<div id="addPromoMessage" class="addFailed">
+				ADDING PROMO FAILED
+			</div>
+		</s:if>
 	</article>
 </section>
+
+<script>
+function addPromoPost(action, data){
+	$.ajax({
+		url: action,
+	    type: "POST",
+	    data: data,
+	    error: function(){
+	        alert('Admin Error');
+	    },
+	    success: function(data){         
+	    	var $container = $("#body_container");
+			$container.empty();
+			$container.html(data);
+	    },
+	    complete: function (data){
+	    }
+	});
+}
+
+function addPromo(){
+	var form = $('#addPromo').serialize();
+	var action = "addPromo";
+	addPromoPost(action, form);
+}
+
+
+
+</script>
