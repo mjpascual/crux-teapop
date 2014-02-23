@@ -14,9 +14,11 @@ public class DisplayEditPromoAction extends ActionSupport {
 	
 	private String promoName;
 	
+	private boolean edit;
+	
 	public String editPromo(){
 		try {
-			
+			edit = true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -65,6 +67,15 @@ public class DisplayEditPromoAction extends ActionSupport {
 	public void setPromoImage(String promoImage) {
 		this.promoImage = promoImage;
 	}
+
+	public boolean isEdit() {
+		return edit;
+	}
+
+	public void setEdit(boolean edit) {
+		this.edit = edit;
+	}
+	
 	
 	
 }

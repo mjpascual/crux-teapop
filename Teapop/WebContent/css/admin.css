@@ -801,3 +801,9 @@ div.dataTables_info {
 .addFailed {
 	color: red;
 }
+
+#editPromoMessage {
+	font-weight: bold;
+	position: relative;
+	right: 290px;
+}

@@ -9,7 +9,20 @@
 		<table id="category-table" class="table">
 			<thead>
 				<tr>
-					<th colspan="5"><button class="btn pull-right"><span class="icon-plus"></span>&nbsp;Add New Promo</button></th>
+					<th colspan="5">
+						<s:if test="%{editSuccessful}">
+							<span id="editPromoMessage"class="addSuccessful">
+							 	EDIT SUCCESSFUL
+						</span>
+						</s:if>
+						<s:if test="%{editFailed}">
+							<span id="editPromoMessage"class="addFailed">
+							 	EDIT FAILED
+						</span>
+						</s:if>	
+						
+						<button class="btn pull-right"><span class="icon-plus"></span>&nbsp;Add New Promo</button>
+					</th>
 				</tr>
 				<tr>
 					<th>ID</th>
@@ -47,7 +60,7 @@
 		var promoDesc = $("#promoDesc" + index).text();
 		var promoCode = $("#promoCode" + index).text();
 		
-		addPromoPost("editPromo", {promoId : promoId, promoName : promoName, promoDesc : promoDesc, promoCode : promoCode});
+		addPromoPost("displayEditPromo", {promoId : promoId, promoName : promoName, promoDesc : promoDesc, promoCode : promoCode});
 	};
 	
 	function addPromoPost(action, data){
