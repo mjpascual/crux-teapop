@@ -19,6 +19,8 @@ public class UpdateCategoryAction extends ActionSupport {
 	
 	private String catergoryId;
 	
+	private boolean edit;
+	
 	public String execute(){
 		
 		CategoryDao categoryDao = new CategoryDao();
@@ -44,6 +46,7 @@ public class UpdateCategoryAction extends ActionSupport {
 			return ERROR;
 		}
 		
+		edit = true;
 		return SUCCESS;
 	}
 
@@ -61,6 +64,14 @@ public class UpdateCategoryAction extends ActionSupport {
 
 	public void setCatergoryId(String catergoryId) {
 		this.catergoryId = catergoryId;
+	}
+
+	public boolean isEdit() {
+		return edit;
+	}
+
+	public void setEdit(boolean edit) {
+		this.edit = edit;
 	}
 
 

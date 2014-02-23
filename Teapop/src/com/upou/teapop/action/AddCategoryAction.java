@@ -16,8 +16,10 @@ public class AddCategoryAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 	
 	private List<Category> categoryList;
+	
 	private Category category;
 	
+
 	public String execute(){
 		
 		CategoryDao categoryDao = new CategoryDao();
@@ -52,7 +54,7 @@ public class AddCategoryAction extends ActionSupport {
 		}
 		
 		categoryList = categoryDao.retrieveCategories();
-		addActionMessage(DisplayConstants.ADD_SUCCESS);
+		addActionMessage(DisplayConstants.CAT_ADD_SUCCESS);
 		
 		return SUCCESS;
 	}
@@ -72,7 +74,6 @@ public class AddCategoryAction extends ActionSupport {
 	public void setCategoryList(List<Category> categoryList) {
 		this.categoryList = categoryList;
 	}
-	
-	
+
 
 }
