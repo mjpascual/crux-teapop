@@ -6,8 +6,15 @@
 	</header>
 	<article>
 		<div class="formAdd category_add">
-			<h3>Add New Promo</h3><hr><br>
-			<form action="addPromo" method="post" id="addPromo">
+			<h3>
+				<s:if test="%{edit}">
+					Edit New Promo
+				</s:if>
+				<s:else>
+					Add New Promo
+				</s:else>				
+			</h3><hr><br>
+			<form method="post" id="promoForm">
 				<div>
 					<label for="promoName">Promo Name:</label>
 					<input type="text" id="promoName" name="promo.name" maxlength="35" autofocus required value="<s:property value='promoName'/>">
@@ -23,18 +30,23 @@
 				<div>
 				 	<label for="image_file">Category Image: </label>
 				 	<input type="file" name="promo.image" id="image_file" />
-				</div>
-				<input class="button" onclick="javascript:addPromo()" value="Save">
+				</div>	<s:if test="%{edit}">
+					<input class="button" onclick="javascript:editPromo()" value="Save Edit">
+				</s:if>
+				<s:else>
+					<input class="button" onclick="javascript:addPromo()" value="Save">
+				</s:else>
+				<input type="hidden" value="<s:property value='promoId'/>" name="promo.promoId"/>
 			</form>
 		</div>
 		<s:if test="%{addSuccessful}">
 			<div id="addPromoMessage" class="addSuccessful">
-				ADDING PROMO SUCCESSFUL
+			 	SAVE SUCCESSFUL
 			</div>
 		</s:if>
 		<s:if test="%{addFailed}">
 			<div id="addPromoMessage" class="addFailed">
-				ADDING PROMO FAILED
+				SAVE FAILED
 			</div>
 		</s:if>
 	</article>
@@ -49,7 +61,7 @@ function addPromoPost(action, data){
 	    error: function(){
 	        alert('Admin Error');
 	    },
-	    success: function(data){         
+	    success: function(data){ 
 	    	var $container = $("#body_container");
 			$container.empty();
 			$container.html(data);
@@ -60,9 +72,13 @@ function addPromoPost(action, data){
 }
 
 function addPromo(){
-	var form = $('#addPromo').serialize();
-	var action = "addPromo";
-	addPromoPost(action, form);
+	var form = $('#promoForm').serialize();
+	addPromoPost("addPromo", form);
+}
+
+function editPromo(){
+	var form = $('#promoForm').serialize();
+	addPromoPost("editPromo", form);
 }
 
 

@@ -22,6 +22,8 @@ public class PromoDao extends BaseDao {
 	
 	private static final String PROMO_DELETE   = "DELETE FROM teapop.promo WHERE promo_id = ?";
 	
+	private static final String PROMO_EDIT = "UPDATE teapop.promo SET promo_code = ?, name = ?, description = ? WHERE promo_id = ?";
+	
 	public boolean createPromo(Promo promo) {
 		boolean result = false;
 		try {
@@ -33,6 +35,25 @@ public class PromoDao extends BaseDao {
 			stmt.setString(3, promo.getDesc());
 			stmt.setString(4, promo.getImage());
 	
+			stmt.executeUpdate();
+			result = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	public boolean editPromo(Promo promo) {
+		boolean result = false;
+		try {
+			Connection conn = createConnection();
+			PreparedStatement stmt = conn.prepareStatement(PROMO_EDIT);
+
+			stmt.setString(1, promo.getPromoCode());
+			stmt.setString(2, promo.getName());
+			stmt.setString(3, promo.getDesc());
+			stmt.setInt(4, promo.getPromoId());
+			
 			stmt.executeUpdate();
 			result = true;
 		} catch (Exception e) {

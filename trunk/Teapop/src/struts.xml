@@ -69,6 +69,18 @@
 			<result name="success">/jsp/admin/promoForm.jsp</result>
 			<result name="FAILED">/jsp/admin/blank.jsp</result>
 		</action>
+		
+		<action name="displayEditPromo" class="com.upou.teapop.action.DisplayEditPromoAction"
+			method="editPromo">
+			<result name="success">/jsp/admin/promoForm.jsp</result>
+			<result name="FAILED">/jsp/admin/blank.jsp</result>
+		</action>
+		
+		<action name="editPromo" class="com.upou.teapop.action.EditPromoAction"
+			method="editPromo">
+			<result name="success">/jsp/admin/promoList.jsp</result>
+			<result name="FAILED">/jsp/admin/blank.jsp</result>
+		</action>
 
 		<action name="dashboard" class="com.upou.teapop.action.LoginAction"
 			method="dashboard">
