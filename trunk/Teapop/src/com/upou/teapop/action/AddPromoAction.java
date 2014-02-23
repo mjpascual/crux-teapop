@@ -21,11 +21,17 @@ public class AddPromoAction extends ActionSupport{
 			if(promo.getImage() == null){
 				promo.setImage("default.png");
 			}
-			if(dao.createPromo(promo)){
-				addSuccessful = true;
+			
+			if(!promo.getName().isEmpty() && !promo.getDesc().isEmpty()){
+				if(dao.createPromo(promo)){
+					addSuccessful = true;
+				} else {
+					addFailed = true;
+				}
 			} else {
 				addFailed = true;
 			}
+			
 		} catch (Exception e) {
 			return ERROR;
 		}
