@@ -11,18 +11,26 @@ public class AddPromoAction extends ActionSupport{
 	 */
 	private static final long serialVersionUID = 1L;
 	private Promo promo;
+	private boolean addSuccessful;
+	private boolean addFailed;
 	
 	public String addPromo(){
 		
 		PromoDao dao = new PromoDao();
-		if(promo.getImage() == null){
-			promo.setImage("default.png");
+		try {
+			if(promo.getImage() == null){
+				promo.setImage("default.png");
+			}
+			if(dao.createPromo(promo)){
+				addSuccessful = true;
+			} else {
+				addFailed = true;
+			}
+		} catch (Exception e) {
+			return ERROR;
 		}
-		if(dao.createPromo(promo)){
-			return SUCCESS;
-		} else {
-			return "FAILED";
-		}
+		
+		return SUCCESS;
 	}
 
 	public Promo getPromo() {
@@ -32,6 +40,24 @@ public class AddPromoAction extends ActionSupport{
 	public void setPromo(Promo promo) {
 		this.promo = promo;
 	}
+
+	public boolean isAddSuccessful() {
+		return addSuccessful;
+	}
+
+	public void setAddSuccessful(boolean addSuccessful) {
+		this.addSuccessful = addSuccessful;
+	}
+
+	public boolean isAddFailed() {
+		return addFailed;
+	}
+
+	public void setAddFailed(boolean addFailed) {
+		this.addFailed = addFailed;
+	}
+	
+	
 	
 	
 }

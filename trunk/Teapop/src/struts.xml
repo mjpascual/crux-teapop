@@ -66,7 +66,7 @@
 		
 		<action name="addPromo" class="com.upou.teapop.action.AddPromoAction"
 			method="addPromo">
-			<result name="success">/jsp/admin/blank.jsp</result>
+			<result name="success">/jsp/admin/promoForm.jsp</result>
 			<result name="FAILED">/jsp/admin/blank.jsp</result>
 		</action>
 

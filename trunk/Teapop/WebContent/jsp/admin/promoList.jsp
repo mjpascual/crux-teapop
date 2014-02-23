@@ -21,19 +21,19 @@
 			</thead>
 			<tbody>
 				<s:iterator status="status" value="specials.promos">
-					<tr>
-						<td><s:property value="promoId"/></td>
-						<td><s:property value="name"/></td>
-						<td><s:property value="desc"/></td>
-						<td><s:property value="promoCode"/></td>
-						<td>
-							<div class="btn-group">
-								<a class="btn btn-mini"><span class="icon-pencil"></span></a>
-								<a class="btn btn-mini"><span class="icon-trash"></span></a>
-							</div>
-						</td>
-						
-					</tr>
+						<tr>
+							<td><s:property value="promoId"/></td>
+							<td><s:property value="name"/></td>
+							<td><s:property value="desc"/></td>
+							<td><s:property value="promoCode"/></td>
+							<td>
+								<div class="btn-group">
+									<a class="btn btn-mini"><span class="icon-pencil"></span></a>
+									<a class="btn btn-mini"><span class="icon-trash"></span></a>
+								</div>
+							</td>
+							
+						</tr>
 				</s:iterator>
 			</tbody>
 		</table>

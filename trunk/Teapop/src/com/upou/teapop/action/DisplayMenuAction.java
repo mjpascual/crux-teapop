@@ -25,8 +25,8 @@ public class DisplayMenuAction extends ActionSupport{
 	
 	public String execute(){
 		MenuItemDao dao = new MenuItemDao();
-//		menu = dao.retrieveMenu();
-		menu = getMockMenu();
+		menu = dao.retrieveMenu();
+//		menu = getMockMenu();
 		return SUCCESS;
 	}
 	
