@@ -63,6 +63,7 @@
 			<result name="success" type="redirectAction">dashboard</result>
 			<result name="login">/jsp/admin/login.jsp</result>
 		</action>
+	
 		
 		<action name="addPromo" class="com.upou.teapop.action.AddPromoAction"
 			method="addPromo">
@@ -103,16 +104,34 @@
 			<result>/jsp/admin/menuForm.jsp</result>
 		</action>
 		
-		<action name="displayCategories">
+		<action name="displayCategories" class="com.upou.teapop.action.DisplayCategoryAction">
 			<interceptor-ref name="loginInterceptor" />
-			<result>/jsp/admin/categoryList.jsp</result>
+			<result name="success">/jsp/admin/categoryList.jsp</result>
 		</action>
 		
 		<action name="displayAddCategory">
 		    <interceptor-ref name="loginInterceptor" />
 			<result>/jsp/admin/categoryForm.jsp</result>
 		</action>
-
+		
+		<action name="addCategory" class="com.upou.teapop.action.AddCategoryAction" >
+		   	<result name="success">/jsp/admin/categoryList.jsp</result>
+		    <result name="error">/jsp/admin/categoryForm.jsp</result>
+        	<result name="done">/jsp/admin/blank.jsp</result>
+		</action>
+		
+		<action name="deleteCategory" class="com.upou.teapop.action.DeleteCategoryAction" >
+		   	<result name="success">/jsp/admin/categoryList.jsp</result>
+		    <result name="error">/jsp/admin/categoryList.jsp</result>
+        	<result name="done">/jsp/admin/blank.jsp</result>
+		</action>
+		
+		<action name="updateCategory" class="com.upou.teapop.action.UpdateCategoryAction" >
+		   	<result name="success">/jsp/admin/categoryForm.jsp</result>
+		    <result name="error">/jsp/admin/categoryList.jsp</result>
+        	<result name="done">/jsp/admin/blank.jsp</result>
+		</action>
+		
 		<action name="displayPromos"  class="com.upou.teapop.action.DisplaySpecialsAction">
 			<interceptor-ref name="loginInterceptor" />
 			<result>/jsp/admin/promoList.jsp</result>

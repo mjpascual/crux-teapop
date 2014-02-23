@@ -158,7 +158,7 @@ public class MenuItemDao extends BaseDao {
 			while (rs.next()) {
 				Category category = new Category();
 				category.setDesc(rs.getString("description"));
-				category.setCategoryId(rs.getInt("category_id"));
+				category.setCategoryId(String.valueOf(rs.getInt("category_id")));
 				category.setMain(rs.getString("main_category"));
 				category.setName(rs.getString("name"));
 				category.setImage(rs.getString("image_name"));
@@ -210,7 +210,7 @@ public class MenuItemDao extends BaseDao {
 				item.setPrice(price);
 				
 				for (Category category : categories){
-					if(category.getCategoryId() == item.getCatId() ){
+					if(Integer.parseInt(category.getCategoryId()) == item.getCatId() ){
 						category.getItems().add(item);
 					}
 				}
