@@ -8,7 +8,7 @@
    <ul>
 	 <li><a class="bodySwitcher" href=javascript:void(0) id="displayCategories">Manage Categories</a></li>
      <li><a class="bodySwitcher" href=javascript:void(0) id="displayAddCategory">Add New Category</a></li>
-     <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Print Report</a></li>
+     <li><a class="bodySwitcher" href=javascript:void(0) id="displayPrintCategory">Print Category Master List</a></li>
    </ul>
  </div>
  <div class="menu-item">
@@ -16,7 +16,7 @@
    <ul>
 	 <li><a class="bodySwitcher" href=javascript:void(0) id="displayMenuItems">Manage Menu</a></li>
      <li><a class="bodySwitcher" href=javascript:void(0) id="displayAddMenu">Add New Menu</a></li>
-     <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Print Report</a></li>
+     <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Print Menu Master List</a></li>
    </ul>
  </div>
  <div class="menu-item">
@@ -24,7 +24,7 @@
    <ul>
      <li><a class="bodySwitcher" href=javascript:void(0) id="displayPromos">Manage Promo</a></li>
      <li><a class="bodySwitcher" href=javascript:void(0) id="displayAddPromo">Add New Promo</a></li>
-     <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Print Report</a></li>
+     <li><a class="bodySwitcher" href=javascript:void(0) id="displayPrintPromos">Print Promo Master List</a></li>
    </ul>
 </div>
 	</article>
