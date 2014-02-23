@@ -44,12 +44,17 @@ var BodySwitcher = {
 	
 	showBody : function(data){
 		var $container = $("#body_container");
+		$container.removeChildrenFromDom();
 		$container.empty();
 		$container.html(data);
 	},
 	
 	initCall: function(data){
 		var $container = $("#body_container");
+		
+		while ($container.firstChild) {
+		    myNode.removeChild(myNode.firstChild);
+		}
 		
 		var $table = $container.find(".table");
 		if ($table.length > 0){ 
@@ -95,21 +100,22 @@ var BodySwitcher = {
 	initForm: function($form, btn){
 		var self = BodySwitcher;
 		var $formId = $form.find("formId").val();														//SET THIS CLASS
+		var $checkBox = $form.find(".checkbox");                                                		//SET THIS CLASS
 		
-		if($formId === null | $formId === "") {
-			var $checkBox = $form.find(".checkbox");                                                	//SET THIS CLASS
-			$checkBox.change(function() {
-				var state = $(this).is(':checked');
-			    if (state) {
-			    	$(this).val(true);
-			    } else {
-			    	$(this).val(false);
-				}
-			});
-		} else {
+		if($formId !== null | $formId !== "") {
 			var $header = $form.closest(".changeHeader");												//ADD SPAN
 			$header.empty().html("Update");
-		}
+			
+		} 
+		
+		$checkBox.change(function() {
+			var state = $(this).is(':checked');
+		    if (state) {
+		    	$(this).val(true);
+		    } else {
+		    	$(this).val(false);
+			}
+		});
 		
 		var $fileTemp = $form.find(".fileTemp");											    		//SET THIS CLASS
 		var $file 	  = $form.find(".file");															//SET THIS CLASS
@@ -149,4 +155,16 @@ var AdminBehavour = {
 		
 };
 
-
+(function( $ ){
+	$.fn.removeChildrenFromDom = function (i) {
+	    if (!this) return;
+	    this.find('input[type="submit"]').unbind(); 
+	    this.children()
+	       .empty() 
+	       .each(function (index, domEle) {
+	           try { domEle.innerHTML = ""; } catch (e) {}  
+	       });
+	    this.empty(); 
+	    try { this.get().innerHTML = ""; } catch (e) {} 
+	};
+})( jQuery );

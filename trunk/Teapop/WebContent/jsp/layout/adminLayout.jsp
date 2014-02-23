@@ -15,6 +15,9 @@
 	        $(document).ready( function(){
 	        	BodySwitcher.initBodySwitcher();
 	        	AdminBehavour.initialize();
+	        	$(document).ready(function () {
+	                $.ajaxSetup({ cache: false });
+	            });
 	        });
         </script>
 	</head>

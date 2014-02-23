@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.upou.teapop.constants.DBConstants;
 import com.upou.teapop.constants.DisplayConstants;
 import com.upou.teapop.constants.ErrorConstants;
 import com.upou.teapop.dao.CategoryDao;
@@ -37,14 +36,14 @@ public class AddCategoryAction extends ActionSupport {
 			} 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			addActionError(ErrorConstants.SEV_ERROR + e.getMessage());
+			addActionError(ErrorConstants.SEV_ERROR + e);
 			return ERROR;
 		} catch (IOException e) {
 			e.printStackTrace();
-			addActionError(ErrorConstants.SEV_ERROR + e.getMessage());
+			addActionError(ErrorConstants.SEV_ERROR + e);
 			return ERROR;
 		} catch (Exception e){
-			addActionError(ErrorConstants.SEV_ERROR + e.getMessage());
+			addActionError(ErrorConstants.SEV_ERROR + e);
 			return ERROR;
 		}
 		

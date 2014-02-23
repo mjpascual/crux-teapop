@@ -33,14 +33,14 @@ public class UpdateCategoryAction extends ActionSupport {
 			} 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			addActionError(ErrorConstants.SEV_ERROR + e.getMessage());
+			addActionError(ErrorConstants.SEV_ERROR + e);
 			return ERROR;
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
-			addActionError(ErrorConstants.INPUT_ERROR + e.getMessage());
+			addActionError(ErrorConstants.INPUT_ERROR + e);
 			return ERROR;
 		} catch (Exception e){
-			addActionError(ErrorConstants.SEV_ERROR + e.getMessage());
+			addActionError(ErrorConstants.SEV_ERROR + e);
 			return ERROR;
 		}
 		
