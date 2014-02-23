@@ -101,16 +101,9 @@ var BodySwitcher = {
 	},
 	
 	initForm: function($form, btn){
-		var self = BodySwitcher;
-		var $formId = $form.find("formId").val();														//SET THIS CLASS
+		var self = BodySwitcher;												
 		var $checkBox = $form.find(".checkbox");                                                		//SET THIS CLASS
-		
-		if($formId !== null | $formId !== "") {
-			var $header = $form.closest(".changeHeader");												//ADD SPAN
-			$header.empty().html("Update");
-			
-		} 
-		
+
 		$checkBox.change(function() {
 			var state = $(this).is(':checked');
 		    if (state) {
