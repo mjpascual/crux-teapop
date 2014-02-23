@@ -10,7 +10,7 @@
 			<h3><span class="changeHeader">Add</span> Menu Category</h3><hr><br>
 			<form id="add" action="addCategory">
 				<div class="idContainer">
-					<label for="categoryId">Category Id:</label>
+					<label for="categoryId">Id:</label>
 					<input type="text" class="formId" name="category.categoryId" value="<s:property value='category.categoryId'/>" disabled />
 				</div>
 				<div>
@@ -35,7 +35,7 @@
 				 	<input type="file" class="fileTemp" value="<s:property value='category.image'/>"/>
 				</div>
 				<div>
-					<label for="Position">Category Display Position: </label>
+					<label for="Position">Display Position: </label>
 					<input type="text" class="displayPosition" name="category.disp" value="<s:property value='category.disp'/>" maxlength="35" required>
 				</div>
 				<div>

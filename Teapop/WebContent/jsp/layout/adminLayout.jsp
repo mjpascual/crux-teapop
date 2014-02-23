@@ -8,13 +8,17 @@
 		<meta charset="utf-8">
 		<title>Tea-Pop Admin</title>
 		<link href="css/admin.css" rel="stylesheet">
+		<link href="css/TableTools.css" rel="stylesheet">
+		<link href="css/TableTools_JUI.css" rel="stylesheet">
         <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="js/TableTools.min.js"></script>
+        <script type="text/javascript" src="js/ZeroClipboard.js"></script>
 		<script src="js/admin.js"></script>
 		<script type="text/javascript">
 	        $(document).ready( function(){
 	        	BodySwitcher.initBodySwitcher();
-	        	AdminBehavour.initialize();
+	        	AdminNavBehavour.initialize();
 	        	$(document).ready(function () {
 	                $.ajaxSetup({ cache: false });
 	            });
