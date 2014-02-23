@@ -14,16 +14,13 @@ var EventHandler = {
 		});
 	},
 
-	initMenuSliderLinks : function(id, pagerId, callback) {
+	initMenuSlider : function(id, pagerId, callback) {
 		var slider = $(id).bxSlider({
 			mode : 'fade',
 			pagerCustom : pagerId,
 			adaptiveHeight : true,
 			controls : false,
 			onSliderLoad: function(){
-				if (callback){
-					callback();	
-				}
 				EventHandler.initScrollbar(pagerId);
 			}
 		});
@@ -39,38 +36,47 @@ var EventHandler = {
 		});
 	},
 
-	initContentToggler : function(elementClass, contentClass, beverageSlider, additionalSlider) {
+	initContentToggler : function(elementClass, contentClass) {
 		var $selectors = $(elementClass + " a");
-		$selectors.each(function() {
+		$selectors.each(function(index) {
 			var $currentSelector = $(this);
 			$currentSelector.click(function(){
 				if (!$currentSelector.hasClass("active")){
-					var contentId = $currentSelector.attr("title");
-					EventHandler.toggleContent(contentClass, contentId);
-					
-					// remove the active class
-					$selectors.each(function(){
-						$(this).removeClass("active");
-					});
-					
-					// add active class to clicked selector
-					$currentSelector.addClass("active");		
-					
-					// reload sliders
-//					beverageSlider.reloadSlider();
-//					additionalSlider.reloadSlider();
+					var config = sliderConfig[index];
+					EventHandler.showContent($selectors, $currentSelector, contentClass, config);
 				}
 			});
 		});
 		
 		// hide other content
-		$(contentClass).not($(".initialdisplay")).hide();
+		$(contentClass).hide();
+		EventHandler.showContent($selectors, $("#initial_load"), contentClass, sliderConfig[0]);
+	},
+	
+	showContent : function($selectors, $currentSelector, contentClass, config){
+		var contentId = $currentSelector.attr("title");
+		EventHandler.toggleContent(contentClass, contentId);
 
+		// remove the active class
+		$selectors.each(function(){
+			$(this).removeClass("active");
+		});
+		
+		// add active class to clicked selector
+		$currentSelector.addClass("active");		
+		
+		// load sliders
+		if (config.slider != null){
+			config.slider.destroySlider();
+			config.slider.reloadSlider();
+		} else {
+			config.slider = EventHandler.initMenuSlider(config.id, config.pagerId);	
+		}
 	},
 
 	toggleContent : function(contentClass, contentId) {
-		$(contentClass).hide(500);
-		$("#"+contentId).show(500);
+		$(contentClass).hide(0, function(){});
+		$("#"+contentId).toggle("slide");
 	},
 
 	initScrollbar : function(id) {
