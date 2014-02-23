@@ -22,13 +22,13 @@
 			<tbody>
 				<s:iterator status="status" value="specials.promos">
 						<tr>
-							<td><s:property value="promoId"/></td>
-							<td><s:property value="name"/></td>
-							<td><s:property value="desc"/></td>
-							<td><s:property value="promoCode"/></td>
+							<td id="promoId<s:property value='%{#status.index}'/>"><s:property value="promoId"/></td>
+							<td id="promoName<s:property value='%{#status.index}'/>"><s:property value="name"/></td>
+							<td id="promoDesc<s:property value='%{#status.index}'/>"><s:property value="desc"/></td>
+							<td id="promoCode<s:property value='%{#status.index}'/>"><s:property value="promoCode"/></td>
 							<td>
 								<div class="btn-group">
-									<a class="btn btn-mini"><span class="icon-pencil"></span></a>
+									<a class="btn btn-mini" onclick="javascript:editPromo(<s:property value='%{#status.index}'/>)"><span class="icon-pencil"></span></a>
 									<a class="btn btn-mini"><span class="icon-trash"></span></a>
 								</div>
 							</td>
@@ -39,3 +39,30 @@
 		</table>
 	</article>
 </section>
+
+<script type="text/javascript">
+	function editPromo(index){
+		var promoId = $("#promoId" + index).text();
+		var promoName = $("#promoName" + index).text();
+		var promoDesc = $("#promoDesc" + index).text();
+		var promoCode = $("#promoCode" + index).text();
+		
+		addPromoPost("editPromo", {promoId : promoId, promoName : promoName, promoDesc : promoDesc, promoCode : promoCode});
+	};
+	
+	function addPromoPost(action, data){
+		$.ajax({
+			url: action,
+		    type: "POST",
+		    data: data,
+		    error: function(){
+		        alert('Admin Error');
+		    },
+		    success: function(data){         
+		    	var $container = $("#body_container");
+				$container.empty();
+				$container.html(data);
+		    }
+		});
+	};
+</script>

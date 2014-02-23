@@ -35,10 +35,9 @@ public class AddPromoAction extends ActionSupport{
 		} catch (Exception e) {
 			return ERROR;
 		}
-		
 		return SUCCESS;
 	}
-
+	
 	public Promo getPromo() {
 		return promo;
 	}
