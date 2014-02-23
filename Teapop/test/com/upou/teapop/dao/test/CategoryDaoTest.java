@@ -2,6 +2,8 @@ package com.upou.teapop.dao.test;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 
@@ -19,15 +21,22 @@ public class CategoryDaoTest {
 	public void createCategory() {
 
 		Category category = new Category();
-		category.setCategoryId(0);
+		category.setCategoryId("0");
 		category.setMain("Bevarage");
 		category.setName("Italian Soda");
 		category.setDesc("Sweet");
-		category.setImage("candy.jpg");
 		category.setShowSML(true);
+		category.setDisp("3");
 		
 		CategoryDao categoryDao = new CategoryDao();
-		boolean result = categoryDao.createCategory(category);
+		boolean result = false;
+		try {
+			result = categoryDao.createCategory(category);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
         assertTrue(result);   
         
 	}
@@ -37,15 +46,22 @@ public class CategoryDaoTest {
 	public void updateCategory() {
 	
 		Category category = new Category();
-		category.setCategoryId(3);
+		category.setCategoryId("3");
 		category.setMain("Bevarage");
 		category.setName("Italian Soda");
 		category.setDesc("Sweet");
-		category.setImage("sweet.jpg");
+		category.setDisp("3");
 		category.setShowSML(true);
 	
 		CategoryDao categoryDao = new CategoryDao();
-		boolean result = categoryDao.createCategory(category);
+		boolean result = false;
+		try {
+			result = categoryDao.createCategory(category);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
         assertTrue(result);   
 
 	}
@@ -55,9 +71,16 @@ public class CategoryDaoTest {
 	public void retrieveCategory() {
 	
 		CategoryDao categoryDao = new CategoryDao();
-		Category cat = categoryDao.retrieveCategory(3);
-        assertEquals(cat.getName(), "Italian Soda");
-		
+		Category cat = null;
+		try {
+			cat = categoryDao.retrieveCategory("3");
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		assertEquals(cat.getName(), "Italian Soda");
+			
 	}
 	
 	@Ignore
@@ -75,7 +98,16 @@ public class CategoryDaoTest {
 	public void deleteCategory() {
 	
 		CategoryDao categoryDao = new CategoryDao();
-		Boolean result = categoryDao.deleteCategory(3);
+		Boolean result = false;
+		try {
+			result = categoryDao.deleteCategory("3");
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		assertTrue(result);   
 		
 	}

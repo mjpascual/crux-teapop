@@ -7,7 +7,7 @@ body.login {
 	width: 500px;
 	margin-right: auto;
 	margin-left: auto;
-	background: url(../images/background.jpg);
+	background: url(../images/backgrounds/background.jpg);
 }
 
 body.login div.login{
@@ -62,7 +62,7 @@ body.main{
 	width: 1300px;	
 	margin-left:auto;
 	margin-right:auto;
-	background: url(../images/background.jpg);
+	background: url(../images/backgrounds/background.jpg);
 }
 
 header.main {
@@ -259,6 +259,13 @@ article.main aside nav .menu-item ul {
 	list-style-type: none;
 	overflow: hidden;
 	padding: 0px;
+	
+	  /*Animation*/
+  -webkit-transition: height 1s ease;
+     -moz-transition: height 1s ease;
+       -o-transition: height 1s ease;
+      -ms-transition: height 1s ease;
+          transition: height 1s ease;
 }
 
 .open {
@@ -352,8 +359,8 @@ article.main section article table tr:nth-child(1) th:nth-child(1){
 	width:100%px;
 }
 
-article.main section article table.table-striped tbody>tr:nth-child(odd)>td, 
-article.main section article table.table-striped tbody>tr:nth-child(odd)>th {
+article.main section article table tbody>tr:nth-child(odd)>td, 
+article.main section article table tbody>tr:nth-child(odd)>th {
 	background-color: #f9f9f9;
 }
 
@@ -584,16 +591,21 @@ input[type=text], input[type=password], input[type=email], input[type=number], t
 
 /* error */
 .login_errors {
+	margin-right: auto;
+	margin-left: auto;
 	background-color:#FFCCCC;
 	border:1px solid #CC0000;
 	margin-bottom:8px;
 	text-align: center;
-	width: 100%;
+	width: 100%!important;
 	clear:both;
+	padding-top: 0px!important;
+	width: 30px;
 }
 .login_errors ul{ 
 	padding: 0px;
 	margin: 0px; 
+	padding-top: 6px!important;
 }
 .login_errors li{ 
 	list-style: none; 
@@ -602,6 +614,31 @@ input[type=text], input[type=password], input[type=email], input[type=number], t
 	display: block;
 }
 
+/* success */
+.success_form{
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #d5eaf0;
+	border:1px solid #66a9bd;
+	margin-bottom:8px;
+	text-align: center;
+	width: 100%;
+	clear:both;
+	display: inline-block;
+  	vertical-align: middle;
+  	height: 30px;
+}
+.success_form ul{ 
+	padding: 0px;
+	margin: 0px; 
+	padding-top: 6px;
+}
+.success_form li{ 
+	list-style: none; 
+	padding: 0px;
+	margin: 0px; 
+	display: block;
+}
 
 /* tables */
 /*
@@ -785,6 +822,15 @@ div.dataTables_paginate span>span {
 
 div.dataTables_info {
 	padding: 9px 6px 6px 6px;
+}
+
+input.displayPosition{
+	width: 100px!important;
+}
+
+form.smallForm{
+	width: 30px;
+	display: inline
 }
 
 #addPromoMessage {

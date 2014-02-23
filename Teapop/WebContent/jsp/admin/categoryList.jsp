@@ -1,3 +1,7 @@
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <section class="category">
 	<header>
 		Category Management
@@ -6,54 +10,52 @@
 		<table id="category-table" class="table">
 			<thead>
 				<tr>
-					<th colspan="5"><button class="btn pull-right"><span class="icon-plus"></span>&nbsp;Add Menu Category</button></th>
+					<th colspan="7"><button class="btn pull-right"id="addSubmit" forward="displayAddCategory" ><span class="icon-plus"></span>&nbsp;Add Menu Category</button></th>
 				</tr>
 				<tr>
 					<th>ID</th>
 					<th>Category Name</th>
 					<th>Category Description</th>
+					<th>Category Group</th>
 					<th>Position</th>
+					<th>Show SML</th>
 					<th>Functions</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>1</td>
-					<td>Milk Tea</td>
-					<td>Milk Tea is a healthy drink that is gaining popularity.</td>
-					<td>1</td>
-					<td>
-						<div class="btn-group">
-							<a class="btn btn-mini"><span class="icon-pencil"></span></a>
-							<a class="btn btn-mini"><span class="icon-trash"></span></a>
-						</div>
-					</td>
-					
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>Snacks</td>
-					<td>Delicious and tasty food delight for everyone!.</td>
-					<td>2</td>
-					<td>
-						<div class="btn-group">
-							<a class="btn btn-mini"><span class="icon-pencil"></span></a>
-							<a class="btn btn-mini"><span class="icon-trash"></span></a>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>Value Meals</td>
-					<td>Sumptuous value-saving meals.</td>
-					<td>3</td>
-					<td>
-						<div class="btn-group">
-							<a class="btn btn-mini"><span class="icon-pencil"></span></a>
-							<a class="btn btn-mini"><span class="icon-trash"></span></a>
-						</div>
-					</td>
-				</tr>
+				<s:iterator value="categoryList" status="category">
+					<tr>
+						<td><s:property value="categoryId" /></td>
+						<td><s:property value="name" /></td>
+						<td><s:property value="desc" /></td>
+						<td><s:property value="main" /></td>
+						<td><s:property value="disp"/></td>
+						<td><s:property value="showSML"/></td>
+						<td>
+							<div class="btn-group">
+								<form id="update" class="smallForm" action="updateCategory">
+									<input type="hidden" name="catergoryId" value='<s:property value="categoryId" />' />
+									<a class="btn btn-mini" id="submitEditBtn"><span class="icon-pencil"></span></a>
+								</form>
+								<form id="delete" class="smallForm" action="deleteCategory">
+									<input type="hidden" name="catergoryId" value='<s:property value="categoryId" />' />
+									<a class="btn btn-mini" id="submitDelBtn"><span class="icon-trash"></span></a>
+								</form>
+
+							</div>
+						</td>
+					</tr>
+				</s:iterator>
+				<s:if test="hasActionMessages()">
+					<div class="success_form">
+						<s:actionmessage/>
+					</div>
+				</s:if>
+				<s:if test="hasErrorMessages()">
+					<div class="login_errors">
+						<s:actionerror/>
+					</div>
+				</s:if>
 			</tbody>
 		</table>
 	</article>

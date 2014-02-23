@@ -21,7 +21,7 @@ public class MenuDao extends BaseDao{
 		HashMap<Integer, Category> categoryMap = new HashMap<Integer, Category>();
 		CategoryDao categoryDao = new CategoryDao();
 		for (Category category : categoryDao.retrieveCategories()) {
-			categoryMap.put(category.getCategoryId(), category);
+			categoryMap.put(Integer.parseInt(category.getCategoryId()), category);
 		}
 
 		try {
