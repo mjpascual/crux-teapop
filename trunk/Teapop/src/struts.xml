@@ -159,6 +159,10 @@
 			<result>/jsp/admin/menuList.jsp</result>
 		</action>
 		
+		<action name="deleteMenu"  class="com.upou.teapop.action.DeleteMenuAction" method="deleteMenu">
+			<interceptor-ref name="loginInterceptor" />
+			<result>/jsp/admin/menuList.jsp</result>
+		</action>
 		
 		<action name="displayAddPromo">
 			<interceptor-ref name="loginInterceptor" />
