@@ -16,7 +16,7 @@
 					<th>Menu Name</th>
 					<th>Menu Code</th>
 					<th>Category</th>
-					<th>Price</th>
+					<th>Price (S-R-L)</th>
 					<th>Featured</th>
 					<th>Hidden</th>
 					<th>Functions</th>
@@ -30,7 +30,7 @@
 							<td><s:property value="name"/></td>
 							<td><s:property value="itemCode"/></td>
 							<td><s:property value="category"/></td>
-							<td><s:property value="price.small"/>-<s:property value="price.large"/></td>
+							<td><s:property value="price.small"/>-<s:property value="price.regular"/>-<s:property value="price.large"/></td>
 							<td>
 								<s:if test="%{featured}">
 									Y
@@ -63,7 +63,7 @@
 							<td><s:property value="name"/></td>
 							<td><s:property value="itemCode"/></td>
 							<td><s:property value="category"/></td>
-							<td><s:property value="price.small"/>-<s:property value="price.large"/></td>
+							<td><s:property value="price.small"/>-<s:property value="price.regular"/>-<s:property value="price.large"/></td>
 							<td>
 								<s:if test="%{featured}">
 									Y
