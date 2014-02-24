@@ -13,14 +13,23 @@
 						<s:if test="%{editSuccessful}">
 							<span id="editPromoMessage"class="addSuccessful">
 							 	EDIT SUCCESSFUL
-						</span>
+							</span>
 						</s:if>
 						<s:if test="%{editFailed}">
 							<span id="editPromoMessage"class="addFailed">
 							 	EDIT FAILED
-						</span>
+							</span>
 						</s:if>	
-						
+						<s:if test="%{deleteFailed}">
+							<span id="editPromoMessage"class="addFailed">
+							 	DELETE FAILED
+							</span>
+						</s:if>	
+							<s:if test="%{deleteSuccessful}">
+							<span id="editPromoMessage"class="addSuccessful">
+							 	DELETE SUCCESS
+							</span>
+						</s:if>	
 						<button class="btn pull-right"><span class="icon-plus"></span>&nbsp;Add New Promo</button>
 					</th>
 				</tr>
@@ -42,7 +51,7 @@
 							<td>
 								<div class="btn-group">
 									<a class="btn btn-mini" onclick="javascript:editPromo(<s:property value='%{#status.index}'/>)"><span class="icon-pencil"></span></a>
-									<a class="btn btn-mini"><span class="icon-trash"></span></a>
+									<a class="btn btn-mini" onclick="javascript:deletePromo(<s:property value='%{#status.index}'/>)"><span class="icon-trash"></span></a>
 								</div>
 							</td>
 							
@@ -60,10 +69,10 @@
 		var promoDesc = $("#promoDesc" + index).text();
 		var promoCode = $("#promoCode" + index).text();
 		
-		addPromoPost("displayEditPromo", {promoId : promoId, promoName : promoName, promoDesc : promoDesc, promoCode : promoCode});
+		promoPost("displayEditPromo", {promoId : promoId, promoName : promoName, promoDesc : promoDesc, promoCode : promoCode});
 	};
 	
-	function addPromoPost(action, data){
+	function promoPost(action, data){
 		$.ajax({
 			url: action,
 		    type: "POST",
@@ -78,4 +87,9 @@
 		    }
 		});
 	};
+	
+	function deletePromo(index){
+		var promoId = $("#promoId" + index).text();
+		promoPost("deletePromo", {promoId : promoId});
+	}
 </script>
