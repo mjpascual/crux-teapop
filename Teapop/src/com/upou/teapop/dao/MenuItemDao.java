@@ -110,7 +110,7 @@ public class MenuItemDao extends BaseDao {
 				price.setSmall(rs.getDouble("price_small"));
 				price.setLarge(rs.getDouble("price_big"));
 				menuItem.setPrice(price);
-				menuItem.setDispPosition(rs.getInt("position"));
+//				menuItem.setDispPosition(rs.getInt("position"));
 				menuItem.setFeatured(rs.getBoolean("featured"));
 				menuItem.setHidden(rs.getBoolean("hidden"));
 				menuItems.add(menuItem);
