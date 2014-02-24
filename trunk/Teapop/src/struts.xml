@@ -178,6 +178,11 @@
 			<result>/jsp/admin/menuList.jsp</result>
 		</action>
 		
+		<action name="displayPrintMenu" class="com.upou.teapop.action.DisplayMenuAction">
+		    <interceptor-ref name="loginInterceptor" />
+			<result name="success">/jsp/admin/menuPrint.jsp</result>
+		</action>
+		
 		<action name="displayAddPromo">
 			<interceptor-ref name="loginInterceptor" />
 			<result>/jsp/admin/promoForm.jsp</result>

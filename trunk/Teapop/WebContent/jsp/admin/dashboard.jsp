@@ -16,7 +16,7 @@
    <ul>
 	 <li><a class="bodySwitcher" href=javascript:void(0) id="displayMenuItems">Manage Menu</a></li>
      <li><a class="bodySwitcher" href=javascript:void(0) id="displayAddMenu">Add New Menu</a></li>
-     <li><a class="bodySwitcher" href=javascript:void(0) id="displayBlank">Print Menu Master List</a></li>
+     <li><a class="bodySwitcher" href=javascript:void(0) id="displayPrintMenu">Print Menu Master List</a></li>
    </ul>
  </div>
  <div class="menu-item">
