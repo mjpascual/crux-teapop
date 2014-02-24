@@ -79,7 +79,7 @@ var BodySwitcher = {
 		var self = BodySwitcher;
 		var action = $table.find("#addSubmit").attr("forward");                                      	//SET THIS ID
 		
-		$(document).off('click','#addSubmit, #submitEditBtn, #submitDelBtn');
+		$(document).off('click','#addSubmit, #submitEditBtn, #submitDelBtn, #submitPromoDelBtn, #submitPromoEditBtn, #submitMenuDelBtn');
 		
 		$(document).on("click", "#addSubmit", function(e){
 			self.ajaxCall(action, null, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
@@ -94,6 +94,34 @@ var BodySwitcher = {
 		
 		$(document).on("click", "#submitDelBtn", function(e){          
 			var $form = $(this).closest("form#delete");
+			var data = $form.serialize();
+			var action = $form.attr("action");
+			self.ajaxCall(action, data, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
+		});
+		
+		$(document).on("click", "#submitPromoEditBtn", function(e){          
+			var $form = $(this).closest("form#editPromo");
+			var data = $form.serialize();
+			var action = $form.attr("action");
+			self.ajaxCall(action, data, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
+		});
+		
+		$(document).on("click", "#submitPromoDelBtn", function(e){          
+			var $form = $(this).closest("form#deletePromo");
+			var data = $form.serialize();
+			var action = $form.attr("action");
+			self.ajaxCall(action, data, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
+		});
+		
+		$(document).on("click", "#submitMenuDelBtn", function(e){          
+			var $form = $(this).closest("form#deleteBeverageMenu");
+			var data = $form.serialize();
+			var action = $form.attr("action");
+			self.ajaxCall(action, data, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
+		});
+		
+		$(document).on("click", "#submitMenuEditBtn", function(e){          
+			var $form = $(this).closest("form#editBeverageMenu");
 			var data = $form.serialize();
 			var action = $form.attr("action");
 			self.ajaxCall(action, data, $.proxy(self.showBody, this), $.proxy(self.initCall, this));

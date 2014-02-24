@@ -1,6 +1,7 @@
 package com.upou.teapop.action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.upou.teapop.constants.DisplayConstants;
 import com.upou.teapop.dao.MenuItemDao;
 import com.upou.teapop.data.Menu;
 
@@ -18,10 +19,12 @@ public class DeleteMenuAction extends ActionSupport {
 	public String deleteMenu(){
 		MenuItemDao dao = new MenuItemDao();
 		if(dao.deleteItem(itemId)){
-			menu = dao.retrieveMenu();
+			addActionMessage("Item #" + itemId  + DisplayConstants.DELETE_SUCCESS);
 		} else {
-			System.out.println("FAILED");
+			addActionError("Failed to Delete Promo #" + itemId);
 		}
+		
+		menu = dao.retrieveMenu();
 		
 		return SUCCESS;
 	}

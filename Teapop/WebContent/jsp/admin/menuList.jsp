@@ -56,7 +56,6 @@
 						</tr>
 					</s:iterator>
 				</s:iterator>
-				
 				<s:iterator status="status" value="menu.beveragesSection.categories">
 					<s:iterator value="items" status="itemStatus">
 						<tr>
@@ -83,36 +82,30 @@
 							</td>
 							<td>
 								<div class="btn-group">
-										<a class="btn btn-mini" ><span class="icon-pencil"></span></a>
-										<a class="btn btn-mini" onclick="javascript:deleteMenu(<s:property value='itemId'/>)"><span class="icon-trash"></span></a>
+									 <form id="editBeverageMenu" class="smallForm" action="displayUpdateMenu">
+								   		<input type="hidden" name="itemId" value='<s:property value="itemId" />' />
+										<a class="btn btn-mini" id="submitMenuEditBtn"><span class="icon-pencil"></span></a>
+									</form>
+									<form id="deleteBeverageMenu" class="smallForm" action="deleteMenu">
+										<input type="hidden" name="itemId" value='<s:property value="itemId" />' />
+										<a class="btn btn-mini" id="submitMenuDelBtn"><span class="icon-trash"></span></a>
+									</form>
 								</div>
 							</td>
 						</tr>
 					</s:iterator>
 				</s:iterator>
+				<s:if test="hasActionErrors()">
+					<div class="login_errors">
+						<s:actionerror/>
+					</div>
+				</s:if>
+				<s:if test="hasActionMessages()">
+					<div class="success_form">
+						<s:actionmessage/>
+					</div>
+				</s:if>
 			</tbody>
 		</table>
 	</article>
 </section>
-<script type="text/javascript">
-function menuPost(action, data){
-	alert(data);
-	$.ajax({
-		url: action,
-	    type: "POST",
-	    data: data,
-	    error: function(){
-	        alert('Admin Error');
-	    },
-	    success: function(data){         
-	    	var $container = $("#body_container");
-			$container.empty();
-			$container.html(data);
-	    }
-	});
-};
-
-function deleteMenu(itemId){
-	menuPost("deleteMenu", {itemId : itemId});
-}
-</script>

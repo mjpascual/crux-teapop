@@ -1,39 +1,32 @@
 package com.upou.teapop.action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.upou.teapop.dao.PromoDao;
+import com.upou.teapop.data.Promo;
 
 public class DisplayEditPromoAction extends ActionSupport {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private int promoId;
 	
-	private String promoDesc;
-	
-	private String promoCode;
-	
-	private String promoImage;
-	
-	private String promoName;
+	private Promo promo;
 	
 	private boolean edit;
 	
 	public String editPromo(){
 		try {
+			PromoDao dao = new PromoDao();
+			promo = dao.retrievePromo(promoId);
 			edit = true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return SUCCESS;
 	}
-
-	public String getPromoName() {
-		return promoName;
-	}
-
-	public void setPromoName(String promoName) {
-		this.promoName = promoName;
-	}
-
-
 
 
 	public int getPromoId() {
@@ -44,30 +37,6 @@ public class DisplayEditPromoAction extends ActionSupport {
 		this.promoId = promoId;
 	}
 
-	public String getPromoDesc() {
-		return promoDesc;
-	}
-
-	public void setPromoDesc(String promoDesc) {
-		this.promoDesc = promoDesc;
-	}
-
-	public String getPromoCode() {
-		return promoCode;
-	}
-
-	public void setPromoCode(String promoCode) {
-		this.promoCode = promoCode;
-	}
-
-	public String getPromoImage() {
-		return promoImage;
-	}
-
-	public void setPromoImage(String promoImage) {
-		this.promoImage = promoImage;
-	}
-
 	public boolean isEdit() {
 		return edit;
 	}
@@ -75,7 +44,14 @@ public class DisplayEditPromoAction extends ActionSupport {
 	public void setEdit(boolean edit) {
 		this.edit = edit;
 	}
-	
-	
-	
+
+
+	public Promo getPromo() {
+		return promo;
+	}
+
+
+	public void setPromo(Promo promo) {
+		this.promo = promo;
+	}
 }

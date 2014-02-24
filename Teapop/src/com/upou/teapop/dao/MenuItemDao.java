@@ -15,10 +15,8 @@ import com.upou.teapop.data.Price;
 
 public class MenuItemDao extends BaseDao {
 	
-	private static final String MENU_CREATE   = "INSERT INTO teapop.menu (menu_id, menu_code, category_id, name, description, currency, price, price_small, price_big, position, featured, hidden) " +
-                                                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) " +
-                                                "ON DUPLICATE KEY UPDATE menu_id = VALUES(menu_id), menu_code = VALUES(menu_code), category_id = VALUES(category_id), name=VALUES(name), description = VALUES(description), " +
-                                                "currency = VALUES(currency), price=VALUES(price), price_small=VALUES(price_small), price_big=VALUES(price_big), position=VALUES(position), featured=VALUES(featured), hidden=VALUES(hidden) ";
+	private static final String MENU_CREATE   = "INSERT INTO teapop.menu (menu_code, category_id, name, description, currency, price, price_small, price_big, position, featured, hidden) " +
+                                                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
 	
 	private static final String MENU_VIEW     = "SELECT * FROM teapop.menu WHERE menu_id = ?";
 	
@@ -28,23 +26,24 @@ public class MenuItemDao extends BaseDao {
 	
 	public static final String MENU_CATEGORY = "SELECT * FROM teapop.category";
 	
+	public static final String MENU_UPDATE = "UPDATE teapop.menu SET menu_code=?, category_id=?, name=?, description=?, price=?, price_small=?, price_big=?, featured=?, hidden=? WHERE menu_id=?";
+	
 	public boolean createItem(MenuItem menuItem) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();
 			PreparedStatement stmt = conn.prepareStatement(MENU_CREATE);
-			stmt.setInt(1, menuItem.getItemId());
-			stmt.setString(2, menuItem.getItemCode());
-			stmt.setInt(3, menuItem.getCatId());
-			stmt.setString(4, menuItem.getName());
-			stmt.setString(5, menuItem.getDesc());
-			stmt.setString(6, menuItem.getPrice().getCurrency());
-			stmt.setDouble(7, menuItem.getPrice().getRegular());
-			stmt.setDouble(8, menuItem.getPrice().getSmall());
-			stmt.setDouble(9, menuItem.getPrice().getLarge());
-			stmt.setInt(10, menuItem.getDispPosition());
-			stmt.setBoolean(11, menuItem.getFeatured());
-			stmt.setBoolean(12, menuItem.getHidden());
+			stmt.setString(1, menuItem.getItemCode());
+			stmt.setInt(2, menuItem.getCatId());
+			stmt.setString(3, menuItem.getName());
+			stmt.setString(4, menuItem.getDesc());
+			stmt.setString(5, menuItem.getPrice().getCurrency());
+			stmt.setDouble(6, menuItem.getPrice().getRegular());
+			stmt.setDouble(7, menuItem.getPrice().getSmall());
+			stmt.setDouble(8, menuItem.getPrice().getLarge());
+			stmt.setInt(9, menuItem.getDispPosition());
+			stmt.setBoolean(10, menuItem.isFeatured());
+			stmt.setBoolean(11, menuItem.isHidden());
 			stmt.execute();
 			result = true;
 		} catch (Exception e) {
@@ -63,6 +62,7 @@ public class MenuItemDao extends BaseDao {
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
+				menuItem.setItemId(rs.getInt("menu_id"));
 				menuItem.setItemCode(rs.getString("menu_code"));
 				menuItem.setCatId(rs.getInt("category_id"));
 				menuItem.setName(rs.getString("name"));
@@ -239,5 +239,33 @@ public class MenuItemDao extends BaseDao {
 		return menu;
 	}
 
+	
+	public boolean updateMenu(MenuItem item, Category category){
+		boolean result = false;
+		try {
+			Connection conn = createConnection();
+			PreparedStatement stmt = conn.prepareStatement(MENU_UPDATE);
+			
+			stmt.setString(1, item.getItemCode());
+			stmt.setInt(2, Integer.valueOf(category.getCategoryId()));
+			stmt.setString(3, item.getName());
+			stmt.setString(4, item.getDesc());
+			stmt.setDouble(5, item.getPrice().getRegular());
+			stmt.setDouble(6, item.getPrice().getSmall());
+			stmt.setDouble(7, item.getPrice().getLarge());
+			stmt.setBoolean(8, item.isFeatured());
+			stmt.setBoolean(9, item.isHidden());
+			stmt.setInt(10, item.getItemId());
+			
+			stmt.executeUpdate();
+			result = true;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+		
+	}
 	
 }
