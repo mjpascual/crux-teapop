@@ -1,6 +1,7 @@
 package com.upou.teapop.action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.upou.teapop.constants.DisplayConstants;
 import com.upou.teapop.dao.PromoDao;
 import com.upou.teapop.data.Promos;
 
@@ -15,18 +16,22 @@ public class DeletePromoAction extends ActionSupport{
 	
 	private Promos specials;
 	
-	private boolean deleteSuccessful;
-	
-	private boolean deleteFailed;
-	
 	public String deletePromo(){
 		PromoDao dao = new PromoDao();
-		if(dao.deletePromo(promoId)){
+		
+		try {
+			if(dao.deletePromo(promoId)){
+				addActionMessage("Promo #" + promoId  + DisplayConstants.DELETE_SUCCESS);
+			} else {
+				addActionError("Failed to Delete Promo #" + promoId);
+			}
+			
 			specials = dao.retrievePromos();
-			deleteSuccessful = true;
-		} else {
-			deleteFailed = true;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+		
 		return SUCCESS;
 	}
 	
@@ -48,28 +53,4 @@ public class DeletePromoAction extends ActionSupport{
 	public void setSpecials(Promos specials) {
 		this.specials = specials;
 	}
-
-
-	public boolean isDeleteSuccessful() {
-		return deleteSuccessful;
-	}
-
-
-	public void setDeleteSuccessful(boolean deleteSuccessful) {
-		this.deleteSuccessful = deleteSuccessful;
-	}
-
-
-	public boolean isDeleteFailed() {
-		return deleteFailed;
-	}
-
-
-	public void setDeleteFailed(boolean deleteFailed) {
-		this.deleteFailed = deleteFailed;
-	}
-	
-	
-	
-
 }

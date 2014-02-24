@@ -6,42 +6,34 @@ import com.upou.teapop.dao.PromoDao;
 import com.upou.teapop.data.Promo;
 import com.upou.teapop.data.Promos;
 
-public class AddPromoAction extends ActionSupport{
-	
-	/**
-	 * 
-	 */
+public class UpdatePromoAction extends ActionSupport{
 	private static final long serialVersionUID = 1L;
 	private Promo promo;
 	private Promos specials;
 	
-	
-	public String addPromo(){
-		
+	public String editPromo(){
 		PromoDao dao = new PromoDao();
+		
 		try {
-			if(promo.getImage() == null){
-				promo.setImage("default.png");
-			}
-			
-			if(!promo.getName().isEmpty() && !promo.getDesc().isEmpty()){
-				if(dao.createPromo(promo)){
-					addActionMessage("Promo #" + promo.getName() + DisplayConstants.UPDATE_SUCCESS);
+			if(!promo.getName().isEmpty() && !promo.getDesc().isEmpty() && promo.getPromoId() > 0){
+				if(dao.editPromo(promo)){
+					addActionMessage("Promo #" + promo.getPromoId() + DisplayConstants.UPDATE_SUCCESS);
 				} else {
-					addActionError("Promo #" + promo.getName() + " Update Failed");
+					addActionError("Failed to Update Promo #" + promo.getPromoId());
 				}
+				
 			} else {
-				addActionError("Promo #" + promo.getName() + " Update Failed");
+				addActionError("Failed to Update Promo #" + promo.getPromoId());
 			}
 			
+			specials = dao.retrievePromos();
 		} catch (Exception e) {
-			return ERROR;
+			e.printStackTrace();
 		}
 		
-		specials = dao.retrievePromos();
 		return SUCCESS;
 	}
-	
+
 	public Promo getPromo() {
 		return promo;
 	}
@@ -57,7 +49,7 @@ public class AddPromoAction extends ActionSupport{
 	public void setSpecials(Promos specials) {
 		this.specials = specials;
 	}
-	
-	
 
+	
+	
 }

@@ -17,26 +17,27 @@
 			<form method="post" id="promoForm">
 				<div>
 					<label for="promoName">Promo Name:</label>
-					<input type="text" id="promoName" name="promo.name" maxlength="35" autofocus required value="<s:property value='promoName'/>">
+					<input type="text" value="<s:property value='promo.name'/>" id="promoName" name="promo.name" maxlength="35" autofocus required>
 				</div>
 				<div>
 					<label for="promoCode">Promo Code:</label>
-					<input type="text" id="promoCode" name="promo.promoCode" maxlength="35" value="<s:property value='promoCode'/>">
+					<input type="text" id="promoCode" name="promo.promoCode" maxlength="35" value="<s:property value='promo.promoCode'/>">
 				</div>
 				<div>
 					<label for="promoDesc">Promo Description:</label>
-					<textarea  name="promo.desc" rows="6" maxlength="250" required><s:property value='promoDesc'/></textarea>
+					<textarea  name="promo.desc" rows="6" maxlength="250" required><s:property value='promo.desc'/></textarea>
 				</div>
 				<div>
 				 	<label for="image_file">Category Image: </label>
 				 	<input type="file" name="promo.image" id="image_file" />
-				</div>	<s:if test="%{edit}">
+				</div>	
+				<s:if test="%{edit}">
+					<input type="hidden" value="<s:property value='promo.promoId'/>" name="promo.promoId"/>
 					<input class="button" onclick="javascript:editPromo()" value="Save Edit">
 				</s:if>
 				<s:else>
 					<input class="button" onclick="javascript:addPromo()" value="Save">
 				</s:else>
-				<input type="hidden" value="<s:property value='promoId'/>" name="promo.promoId"/>
 			</form>
 		</div>
 		<s:if test="%{addSuccessful}">

@@ -840,31 +840,14 @@ form.smallForm{
 	display: inline
 }
 
-#addPromoMessage {
-	font-weight: bold;
-	position: relative;
-	bottom: 370px;
-	left: 50px;
-}
-
-.addSuccessful {
-	color: green;
-}
-
-.addFailed {
-	color: red;
-}
-
-#editPromoMessage {
-	font-weight: bold;
-	position: relative;
-	right: 290px;
-}
-
 input[type="file"]  {
 	color: white!important;
 }
 
 .DTTT_container div{
 	padding-top: 0px!important;
+}
+
+#sizePrice {
+	width: 85px !important;
 }

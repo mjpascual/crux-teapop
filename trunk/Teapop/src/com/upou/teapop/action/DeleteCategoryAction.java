@@ -28,7 +28,6 @@ private static final long serialVersionUID = 1L;
 
 			result = categoryDao.deleteCategory(catergoryId);
 			
-			
 			if(result == false){
 				addActionError(ErrorConstants.SEV_ERROR);
 				return ERROR;

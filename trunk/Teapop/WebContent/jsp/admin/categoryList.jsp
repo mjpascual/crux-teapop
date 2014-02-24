@@ -56,7 +56,6 @@
 						<s:actionmessage/>
 					</div>
 				</s:if>
-				
 			</tbody>
 		</table>
 	</article>

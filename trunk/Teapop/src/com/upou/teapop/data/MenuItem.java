@@ -23,7 +23,7 @@ public class MenuItem {
 	private Price price;
 	
 	private String category;
-	
+
 	public int getItemId() {
 		return itemId;
 	}
@@ -72,7 +72,7 @@ public class MenuItem {
 		this.desc = desc;
 	}
 
-	public boolean getFeatured() {
+	public boolean isFeatured() {
 		return featured;
 	}
 
@@ -80,7 +80,7 @@ public class MenuItem {
 		this.featured = featured;
 	}
 
-	public boolean getHidden() {
+	public boolean isHidden() {
 		return hidden;
 	}
 
@@ -111,6 +111,8 @@ public class MenuItem {
 	public void setCategory(String category) {
 		this.category = category;
 	}
+	
+	
 
 	
 	

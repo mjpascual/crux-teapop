@@ -10,26 +10,6 @@
 			<thead>
 				<tr>
 					<th colspan="5">
-						<s:if test="%{editSuccessful}">
-							<span id="editPromoMessage"class="addSuccessful">
-							 	EDIT SUCCESSFUL
-							</span>
-						</s:if>
-						<s:if test="%{editFailed}">
-							<span id="editPromoMessage"class="addFailed">
-							 	EDIT FAILED
-							</span>
-						</s:if>	
-						<s:if test="%{deleteFailed}">
-							<span id="editPromoMessage"class="addFailed">
-							 	DELETE FAILED
-							</span>
-						</s:if>	
-							<s:if test="%{deleteSuccessful}">
-							<span id="editPromoMessage"class="addSuccessful">
-							 	DELETE SUCCESS
-							</span>
-						</s:if>	
 						<button class="btn pull-right"><span class="icon-plus"></span>&nbsp;Add New Promo</button>
 					</th>
 				</tr>
@@ -50,46 +30,29 @@
 							<td id="promoCode<s:property value='%{#status.index}'/>"><s:property value="promoCode"/></td>
 							<td>
 								<div class="btn-group">
-									<a class="btn btn-mini" onclick="javascript:editPromo(<s:property value='%{#status.index}'/>)"><span class="icon-pencil"></span></a>
-									<a class="btn btn-mini" onclick="javascript:deletePromo(<s:property value='%{#status.index}'/>)"><span class="icon-trash"></span></a>
+								   <form id="editPromo" class="smallForm" action="displayEditPromo">
+								   		<input type="hidden" name="promoId" value='<s:property value="promoId" />' />
+										<a class="btn btn-mini" id="submitPromoEditBtn"><span class="icon-pencil"></span></a>
+									</form>
+									<form id="deletePromo" class="smallForm" action="deletePromo">
+										<input type="hidden" name="promoId" value='<s:property value="promoId" />' />
+										<a class="btn btn-mini" id="submitPromoDelBtn"><span class="icon-trash"></span></a>
+									</form>
 								</div>
 							</td>
-							
 						</tr>
 				</s:iterator>
+				<s:if test="hasActionErrors()">
+					<div class="login_errors">
+						<s:actionerror/>
+					</div>
+				</s:if>
+				<s:if test="hasActionMessages()">
+					<div class="success_form">
+						<s:actionmessage/>
+					</div>
+				</s:if>
 			</tbody>
 		</table>
 	</article>
 </section>
-
-<script type="text/javascript">
-	function editPromo(index){
-		var promoId = $("#promoId" + index).text();
-		var promoName = $("#promoName" + index).text();
-		var promoDesc = $("#promoDesc" + index).text();
-		var promoCode = $("#promoCode" + index).text();
-		
-		promoPost("displayEditPromo", {promoId : promoId, promoName : promoName, promoDesc : promoDesc, promoCode : promoCode});
-	};
-	
-	function promoPost(action, data){
-		$.ajax({
-			url: action,
-		    type: "POST",
-		    data: data,
-		    error: function(){
-		        alert('Admin Error');
-		    },
-		    success: function(data){         
-		    	var $container = $("#body_container");
-				$container.empty();
-				$container.html(data);
-		    }
-		});
-	};
-	
-	function deletePromo(index){
-		var promoId = $("#promoId" + index).text();
-		promoPost("deletePromo", {promoId : promoId});
-	}
-</script>
