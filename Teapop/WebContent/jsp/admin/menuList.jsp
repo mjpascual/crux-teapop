@@ -1,3 +1,6 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+
 <section class="menu">
 	<header>
 		Menu Management
@@ -20,51 +23,73 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>1</td>
-					<td>Dark Chocolate Milk Tea</td>
-					<td>DCH-MT</td>
-					<td>Milk Tea</td>
-					<td>P70-80</td>
-					<td>Y</td>
-					<td>Y</td>
-					<td>
-						<div class="btn-group">
-							<a class="btn btn-mini"><span class="icon-pencil"></span></a>
-							<a class="btn btn-mini"><span class="icon-trash"></span></a>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>Strawberry Chocolate Milk Tea</td>
-					<td>SCH-MT</td>
-					<td>Milk Tea</td>
-					<td>P80</td>
-					<td>N</td>
-					<td>N</td>
-					<td>
-						<div class="btn-group">
-							<a class="btn btn-mini"><span class="icon-pencil"></span></a>
-							<a class="btn btn-mini"><span class="icon-trash"></span></a>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>Vanilla Milk Tea</td>
-					<td>VNL-MT</td>
-					<td>Milk Tea</td>
-					<td>P70</td>
-					<td>N</td>
-					<td>N</td>
-					<td>
-						<div class="btn-group">
-							<a class="btn btn-mini"><span class="icon-pencil"></span></a>
-							<a class="btn btn-mini"><span class="icon-trash"></span></a>
-						</div>
-					</td>
-				</tr>
+				<s:iterator status="status" value="menu.additionalSection.categories">
+					<s:iterator value="items" status="itemStatus">
+						<tr>
+							<td><s:property value="itemId"/></td>
+							<td><s:property value="name"/></td>
+							<td><s:property value="itemCode"/></td>
+							<td><s:property value="category"/></td>
+							<td><s:property value="price.small"/>-<s:property value="price.large"/></td>
+							<td>
+								<s:if test="%{featured}">
+									Y
+								</s:if>
+								<s:else>
+									N
+								</s:else>
+							</td>
+							<td>	
+								<s:if test="%{hidden}">
+									Y
+								</s:if>
+								<s:else>
+									N
+								</s:else>
+							</td>
+							<td>
+								<div class="btn-group">
+									<a class="btn btn-mini"><span class="icon-pencil"></span></a>
+									<a class="btn btn-mini"><span class="icon-trash"></span></a>
+								</div>
+							</td>
+						</tr>
+					</s:iterator>
+				</s:iterator>
+				
+				<s:iterator status="status" value="menu.beveragesSection.categories">
+					<s:iterator value="items" status="itemStatus">
+						<tr>
+							<td><s:property value="itemId"/></td>
+							<td><s:property value="name"/></td>
+							<td><s:property value="itemCode"/></td>
+							<td><s:property value="category"/></td>
+							<td><s:property value="price.small"/>-<s:property value="price.large"/></td>
+							<td>
+								<s:if test="%{featured}">
+									Y
+								</s:if>
+								<s:else>
+									N
+								</s:else>
+							</td>
+							<td>	
+								<s:if test="%{hidden}">
+									Y
+								</s:if>
+								<s:else>
+									N
+								</s:else>
+							</td>
+							<td>
+								<div class="btn-group">
+									<a class="btn btn-mini"><span class="icon-pencil"></span></a>
+									<a class="btn btn-mini"><span class="icon-trash"></span></a>
+								</div>
+							</td>
+						</tr>
+					</s:iterator>
+				</s:iterator>
 			</tbody>
 		</table>
 	</article>

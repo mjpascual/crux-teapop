@@ -22,6 +22,8 @@ public class MenuItem {
 	
 	private Price price;
 	
+	private String category;
+	
 	public int getItemId() {
 		return itemId;
 	}
@@ -100,6 +102,14 @@ public class MenuItem {
 
 	public void setPrice(Price price) {
 		this.price = price;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	

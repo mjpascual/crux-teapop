@@ -201,7 +201,7 @@ public class MenuItemDao extends BaseDao {
 				item.setHidden(rs.getBoolean("hidden"));
 				item.setFeatured(rs.getBoolean("featured"));
 				item.setDispPosition(rs.getInt("position"));
-				
+				item.setItemCode(rs.getString("menu_code"));
 				Price price = new Price();
 				price.setSmall((rs.getDouble("price_small")));
 				price.setLarge((rs.getDouble("price_big")));
@@ -211,6 +211,7 @@ public class MenuItemDao extends BaseDao {
 				
 				for (Category category : categories){
 					if(Integer.parseInt(category.getCategoryId()) == item.getCatId() ){
+						item.setCategory(category.getName());
 						category.getItems().add(item);
 					}
 				}
