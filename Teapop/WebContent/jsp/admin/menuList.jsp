@@ -49,14 +49,8 @@
 							</td>
 							<td>
 								<div class="btn-group">
-									<form id="update" class="smallForm" action="updateMenu">
-										<input type="hidden" name="itemId" value='<s:property value="itemId" />' />
-										<a class="btn btn-mini" id="submitEditBtn"><span class="icon-pencil"></span></a>
-									</form>
-									<form id="delete" class="smallForm" action="deleteMenu">
-										<input type="hidden" name="itemId" value='<s:property value="itemId" />' />
-										<a class="btn btn-mini" id="submitDelMenuBtn" onclick="javascript:deleteMenu(<s:property value='itemId'/>)"><span class="icon-trash"></span></a>
-									</form>
+										<a class="btn btn-mini"><span class="icon-pencil"></span></a>
+										<a class="btn btn-mini"><span class="icon-trash"></span></a>
 								</div>
 							</td>
 						</tr>
@@ -89,14 +83,8 @@
 							</td>
 							<td>
 								<div class="btn-group">
-									<form id="update" class="smallForm">
-										<input type="hidden" name="itemId" value='<s:property value="itemId" />' />
-										<a class="btn btn-mini" id="submitEditBtn"><span class="icon-pencil"></span></a>
-									</form>
-									<form id="delete" class="smallForm">
-										<input type="hidden" name="itemId" id="itemId<s:property value='%{itemStatus.index}'/>" value='<s:property value="itemId" />' />
-										<a class="btn btn-mini" id="submitDelMenuBtn" onclick="javascript:deleteMenu(<s:property value='%{itemStatus.index}'/>)"><span class="icon-trash"></span></a>
-									</form>
+										<a class="btn btn-mini" ><span class="icon-pencil"></span></a>
+										<a class="btn btn-mini" onclick="javascript:deleteMenu(<s:property value='itemId'/>)"><span class="icon-trash"></span></a>
 								</div>
 							</td>
 						</tr>
@@ -107,12 +95,8 @@
 	</article>
 </section>
 <script type="text/javascript">
-function deleteMenu(index){
-	var itemId = $("#itemId" + index).text();
-	menuPost("deleteMenu", {itemId : 2});
-}
-
 function menuPost(action, data){
+	alert(data);
 	$.ajax({
 		url: action,
 	    type: "POST",
@@ -127,4 +111,8 @@ function menuPost(action, data){
 	    }
 	});
 };
+
+function deleteMenu(itemId){
+	menuPost("deleteMenu", {itemId : itemId});
+}
 </script>

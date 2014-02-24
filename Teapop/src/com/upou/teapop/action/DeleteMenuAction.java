@@ -16,7 +16,6 @@ public class DeleteMenuAction extends ActionSupport {
 	private Menu menu;
 	
 	public String deleteMenu(){
-		System.out.println("TIM" + itemId);
 		MenuItemDao dao = new MenuItemDao();
 		if(dao.deleteItem(itemId)){
 			menu = dao.retrieveMenu();
@@ -42,6 +41,7 @@ public class DeleteMenuAction extends ActionSupport {
 	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
+	
 	
 	
 }
