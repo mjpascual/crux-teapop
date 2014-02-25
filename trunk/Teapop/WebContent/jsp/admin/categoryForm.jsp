@@ -27,7 +27,7 @@
 				</div>
 				<div>
 					<label for="categoryDesc">Category Description:</label>
-					<textarea name="category.desc" srows="6" maxlength="250" required><s:property value='category.desc'/></textarea>
+					<textarea name="category.desc" rows="6" maxlength="250" required><s:property value='category.desc'/></textarea>
 				</div>
 				<div>
 					<label for="categoryGroup">Category Group: </label>
