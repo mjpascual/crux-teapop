@@ -13,7 +13,7 @@
 				<s:else>
 					Add Menu Item
 				</s:else>	</h3><hr><br>
-			<form method="post" id="addMenuForm">
+			<form method="post" id="addMenuForm"  action="<s:property value='action'/>">
 				<div>
 					<label for="menuName">Menu Name:</label>
 					<input type="text" value="<s:property value='menuItem.name'/>" id="menuName" name="menuItem.name" maxlength="35" autofocus required>
@@ -28,7 +28,7 @@
 				</div>
 				<div>
 					<label for="menuDesc">Category:</label>
-					<select id = "category" name="category.categoryId">
+					<select id="category" name="category.categoryId">
 						<s:iterator value="categories" status="itemStatus">
 			               <option value="<s:property value='categoryId'/>"><s:property value="name"/> </option>
 		                 </s:iterator>
@@ -46,11 +46,11 @@
 				</div>
 				<div>
 					<label for="menuPrice">Featured:</label>
-					<s:checkbox  id="menuHidden" name="featured"/>
+					<input type="checkbox" class="checkbox" name="menuItem.featured" value="<s:property value='menuItem.featured'/>" <s:if test="%{menuItem.featured}">checked</s:if>>
 				</div>
 				<div>
 					<label for="menuPrice">Hidden:</label>
-					<s:checkbox  id="menuHidden" name="hidden"/>
+					<input type="checkbox" class="checkbox" name="menuItem.hidden" value="<s:property value='menuItem.hidden'/>" <s:if test="%{menuItem.hidden}">checked</s:if>>
 				</div>
 				<div>
 				 	<label for="image_file">Image: </label>
@@ -58,47 +58,12 @@
 				</div>
 				<s:if test="%{edit}">
 					<input type="hidden" name="menuItem.itemId" value="<s:property value='menuItem.itemId'/>"/>
-					<input id="editMenuBtn" class="button" type="submit" value="Save" onclick="javascript:updateMenu()"/>
+					<input id="editMenuBtn" class="button" type="submit" value="Save"/>
 				</s:if>
 				<s:else>
-					<input id="addMenuBtn" class="button" type="submit" value="Save"  onclick="javascript:addMenu()"/>
+					<input id="addMenuBtn" class="button" type="submit" value="Save"/>
 				</s:else>
 			</form>
 		</div>
 	</article>
 </section>
-
-<script type="text/javascript">
-function menuPost(action, data, e){
-	 event.preventDefault();
-	$.ajax({
-		url: action,
-	    type: "POST",
-	    data: data,
-	    error: function(){
-	    	alert("error");
-	    },
-	    success: function(data){ 
-	    	var $container = $("#body_container");
-			$container.empty();
-			$container.html(data);
-	    },
-	    complete: function (data){
-	    }
-	});
-}
-
-$checkBox.change(function() {
-	$(this).is(':checked') ? $(this).val(true) : $(this).val(false);
-});
-
-function addMenu(){
-	var form = $('#addMenuForm').serialize();
-	menuPost("addPromo", form);
-}
-
-function updateMenu(){
-	var form = $('#addMenuForm').serialize();
-	menuPost("updateMenu", form);
-}
-</script>

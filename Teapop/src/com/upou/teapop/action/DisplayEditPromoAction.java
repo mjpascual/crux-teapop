@@ -17,7 +17,9 @@ public class DisplayEditPromoAction extends ActionSupport {
 	
 	private boolean edit;
 	
-	public String editPromo(){
+	private String action;
+	
+	public String execute(){
 		try {
 			PromoDao dao = new PromoDao();
 			promo = dao.retrievePromo(promoId);
@@ -25,6 +27,7 @@ public class DisplayEditPromoAction extends ActionSupport {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		action = "updatePromo";
 		return SUCCESS;
 	}
 
@@ -54,4 +57,16 @@ public class DisplayEditPromoAction extends ActionSupport {
 	public void setPromo(Promo promo) {
 		this.promo = promo;
 	}
+
+
+	public String getAction() {
+		return action;
+	}
+
+
+	public void setAction(String action) {
+		this.action = action;
+	}
+	
+	
 }

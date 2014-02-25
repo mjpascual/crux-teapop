@@ -11,9 +11,9 @@ public class UpdatePromoAction extends ActionSupport{
 	private Promo promo;
 	private Promos specials;
 	
-	public String editPromo(){
+	public String execute(){
 		PromoDao dao = new PromoDao();
-		
+		System.out.println("UPDATING PROMO");
 		try {
 			if(!promo.getName().isEmpty() && !promo.getDesc().isEmpty() && promo.getPromoId() > 0){
 				if(dao.editPromo(promo)){
@@ -26,10 +26,10 @@ public class UpdatePromoAction extends ActionSupport{
 				addActionError("Failed to Update Promo #" + promo.getPromoId());
 			}
 			
-			specials = dao.retrievePromos();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		specials = dao.retrievePromos();
 		
 		return SUCCESS;
 	}

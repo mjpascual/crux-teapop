@@ -1,16 +1,17 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags"%>
-
-<section class="category">
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<section class="promo">
 	<header>
 		Promo Management
 	</header>
 	<article>
-		<table id="category-table" class="table">
+		<table id="promo-table" class="promotable">
 			<thead>
 				<tr>
 					<th colspan="5">
-						<button class="btn pull-right"><span class="icon-plus"></span>&nbsp;Add New Promo</button>
+						<button class="btn pull-right" id="addPromoSubmit" forward="displayAddPromo"><span class="icon-plus"></span>&nbsp;Add New Promo</button>
 					</th>
 				</tr>
 				<tr>

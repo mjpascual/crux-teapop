@@ -23,6 +23,8 @@ public class DisplayUpdateMenuAction extends ActionSupport{
 	
 	private List<Category> categories;
 	
+	private String action;
+	
 	public String execute(){
 		
 		try {
@@ -34,6 +36,7 @@ public class DisplayUpdateMenuAction extends ActionSupport{
 			e.printStackTrace();
 		}
 		edit = true;
+		action = "updateMenu";
 		return SUCCESS;
 	}
 
@@ -68,4 +71,14 @@ public class DisplayUpdateMenuAction extends ActionSupport{
 	public void setCategories(List<Category> categories) {
 		this.categories = categories;
 	}
+
+	public String getAction() {
+		return action;
+	}
+
+	public void setAction(String action) {
+		this.action = action;
+	}
+	
+	
 }

@@ -28,13 +28,13 @@ public class MenuItemDao extends BaseDao {
 	
 	public static final String MENU_UPDATE = "UPDATE teapop.menu SET menu_code=?, category_id=?, name=?, description=?, price=?, price_small=?, price_big=?, featured=?, hidden=? WHERE menu_id=?";
 	
-	public boolean createItem(MenuItem menuItem) {
+	public boolean createItem(MenuItem menuItem, Category category) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();
 			PreparedStatement stmt = conn.prepareStatement(MENU_CREATE);
 			stmt.setString(1, menuItem.getItemCode());
-			stmt.setInt(2, menuItem.getCatId());
+			stmt.setInt(2, Integer.valueOf(category.getCategoryId()));
 			stmt.setString(3, menuItem.getName());
 			stmt.setString(4, menuItem.getDesc());
 			stmt.setString(5, menuItem.getPrice().getCurrency());
@@ -44,6 +44,7 @@ public class MenuItemDao extends BaseDao {
 			stmt.setInt(9, menuItem.getDispPosition());
 			stmt.setBoolean(10, menuItem.isFeatured());
 			stmt.setBoolean(11, menuItem.isHidden());
+			System.out.println(stmt);
 			stmt.execute();
 			result = true;
 		} catch (Exception e) {
