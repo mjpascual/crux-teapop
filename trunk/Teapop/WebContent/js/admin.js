@@ -102,7 +102,9 @@ var BodySwitcher = {
 			self.ajaxCall(action, data, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
 		});
 		
-		$(document).on("click", "#submitDelBtn", function(e){          
+		$(".deleteBtnClass").easyconfirm({locale: { title: 'Delete Item?', button: ['No','Yes']}});
+		
+		$(document).on("click", "#submitDelBtn", function(e){  
 			var $form = $(this).closest("form#delete");
 			var data = $form.serialize();
 			var action = $form.attr("action");

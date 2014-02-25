@@ -94,7 +94,7 @@
 									</form>
 									<form id="delete" class="smallForm" action="deleteMenu">
 										<input type="hidden" name="itemId" value='<s:property value="itemId" />' />
-										<a class="btn btn-mini" id="submitDelBtn"><span class="icon-trash"></span></a>
+										<a class="btn btn-mini deleteBtnClass" id="submitDelBtn"><span class="icon-trash"></span></a>
 									</form>
 								</div>
 							</td>

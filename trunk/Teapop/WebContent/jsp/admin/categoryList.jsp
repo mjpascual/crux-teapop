@@ -39,7 +39,7 @@
 								</form>
 								<form id="delete" class="smallForm" action="deleteCategory">
 									<input type="hidden" name="catergoryId" value='<s:property value="categoryId" />' />
-									<a class="btn btn-mini" id="submitDelBtn"><span class="icon-trash"></span></a>
+									<a class="btn btn-mini deleteBtnClass" id="submitDelBtn"><span class="icon-trash"></span></a>
 								</form>
 
 							</div>
