@@ -43,7 +43,6 @@ var BodySwitcher = {
 	},
 	
 	showBody : function(data){
-		console.log("SHOW");
 		var $container = $("#body_container");
 		$container.removeChildrenFromDom();
 		$container.empty();
@@ -57,45 +56,23 @@ var BodySwitcher = {
 		if ($table.length > 0){ 
 			BodySwitcher.initDataTable($table);
 		}
-		
-		var $promotable = $container.find(".promotable");															//SET CLASS
-		if ($promotable.length > 0){ 
-			BodySwitcher.initDataTable($promotable);
-		}
-		
+
 		var $form = $container.find("form#add");
 		if ($form.length > 0){ 
 			$(document).off('click','#submitAddBtn');
 			BodySwitcher.initForm($form, "#submitAddBtn");										    	//SET THIS ID
 		}
-		
-		var $addPromoForm = $container.find("form#promoForm");
-		if ( $addPromoForm .length > 0){
-			$(document).off('click','#savePromoFormBtn');
-			BodySwitcher.initForm( $addPromoForm, "#savePromoFormBtn");
-		}
-		
-		var $editPromoForm = $container.find("form#promoForm");
-		if ( $editPromoForm .length > 0){
-			$(document).off('click','#editPromoFormBtn');
-			BodySwitcher.initForm($editPromoForm, "#editPromoFormBtn");
+
+		var $formAdd = $container.find("form#add_edit");
+		if ( $formAdd .length > 0){
+			$(document).off('click','#saveAddBtn');
+			BodySwitcher.initForm( $formAdd, "#saveAddBtn");
 		}
 
-		var $addMenuForm = $container.find("form#addMenuForm");
-		if ( $addMenuForm .length > 0){
+		var $formEdit = $container.find("form#add_edit");
+		if ( $formEdit .length > 0){
 			$(document).off('click','#addMenuBtn');
-			BodySwitcher.initForm($addMenuForm, "#addMenuBtn");
-		}
-		
-		var $editMenuForm = $container.find("form#addMenuForm");
-		if ( $editMenuForm .length > 0){
-			$(document).off('click','#editMenuBtn');
-			BodySwitcher.initForm($editMenuForm, "#editMenuBtn");
-		}
-		
-		var $print = $container.find(".printIt");														//SET CLASS
-		if ($print.length > 0){ 
-			BodySwitcher.initPrint($print);										    
+			BodySwitcher.initForm($formEdit, "#addMenuBtn");
 		}
 		
 	},
@@ -108,18 +85,10 @@ var BodySwitcher = {
 		var self = BodySwitcher;
 		var action = $table.find("#addSubmit").attr("forward");                                      	//SET THIS ID
 		
-		$(document).off('click','#addSubmit, #submitEditBtn, #submitDelBtn, #submitPromoDelBtn, #submitPromoEditBtn, #submitMenuDelBtn, #editPromoFormBtn');
+		$(document).off('click','#addSubmit, #submitEditBtn, #submitDelBtn');
 		
 		$(document).on("click", "#addSubmit", function(e){
 			self.ajaxCall(action, null, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
-		});
-		
-		$(document).on("click", "#addMenuSubmit", function(e){
-			self.ajaxCall($table.find("#addMenuSubmit").attr("forward"), null, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
-		});
-		
-		$(document).on("click", "#addPromoSubmit", function(e){
-			self.ajaxCall($table.find("#addPromoSubmit").attr("forward"), null, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
 		});
 		
 		$(document).on("click", "#submitEditBtn", function(e){                                       	//SET THIS ID
@@ -136,56 +105,25 @@ var BodySwitcher = {
 			self.ajaxCall(action, data, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
 		});
 		
-		$(document).on("click", "#submitPromoEditBtn", function(e){          
-			var $form = $(this).closest("form#editPromo");
-			var data = $form.serialize();
-			var action = $form.attr("action");
-			self.ajaxCall(action, data, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
-		});
-		
-		$(document).on("click", "#submitPromoDelBtn", function(e){          
-			var $form = $(this).closest("form#deletePromo");
-			var data = $form.serialize();
-			var action = $form.attr("action");
-			self.ajaxCall(action, data, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
-		});
-		
-		$(document).on("click", "#submitMenuDelBtn", function(e){          
-			var $form = $(this).closest("form#deleteMenu");
-			var data = $form.serialize();
-			var action = $form.attr("action");
-			self.ajaxCall(action, data, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
-		});
-		
-		$(document).on("click", "#submitMenuEditBtn", function(e){          
-			var $form = $(this).closest("form#editMenu");
-			var data = $form.serialize();
-			var action = $form.attr("action");
-			self.ajaxCall(action, data, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
-		});
 	},
 	
 	initForm: function($form, btn){
-		console.log("a");
 		var self = BodySwitcher;												
 		var $checkBox = $form.find(".checkbox");                                                		//SET THIS CLASS
 		$checkBox.change(function() {
 			$(this).is(':checked') ? $(this).val(true) : $(this).val(false);
 		});
-		console.log("b");
 		var $fileTemp = $form.find(".fileTemp");											    		//SET THIS CLASS
 		var $file 	  = $form.find(".file");															//SET THIS CLASS
-		console.log("c");
 		$(document).on("change",".fileTemp", function(){
 			$file.val($fileTemp.val().split('\\').pop());
 		});
-		console.log("d");
 		$(document).on("click", btn, function(e){ 
-			e.preventDefault();
 			if($form[0].checkValidity()) {
 				var disabled = $form.find(':input:disabled').removeAttr('disabled');
 				var action = $form.attr("action");
 				var data = $form.serialize();
+				e.preventDefault();
 				disabled.attr('disabled','disabled');
 				self.ajaxCall(action, data, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
 			}

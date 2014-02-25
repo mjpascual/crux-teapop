@@ -3,7 +3,7 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <section class="category" id="category">
 	<header>
-		Category Management
+		Promo Management
 	</header>
 	<article>
 		<div class="formAdd category_add">
@@ -15,7 +15,7 @@
 					Add New Promo
 				</s:else>				
 			</h3><hr><br>
-			<form method="post" id="promoForm" action="<s:property value='action'/>">
+			<form method="post" id="add_edit" action="<s:property value='action'/>">
 				<div>
 					<label for="promoName">Promo Name:</label>
 					<input type="text" value="<s:property value='promo.name'/>" id="promoName" name="promo.name" maxlength="35" autofocus required>
@@ -35,10 +35,10 @@
 				</div>
 				<s:if test="%{edit}">
 					<input type="hidden" value="<s:property value='promo.promoId'/>" name="promo.promoId"/>
-					<input type="submit" class="button"  value="Save Edit" id="editPromoFormBtn">
+					<input type="submit" class="button"  value="Save Edit" id="saveEditBtn">
 				</s:if>
 				<s:else>
-					<input type="submit" class="button" value="Save" id="savePromoFormBtn">
+					<input type="submit" class="button" value="Save" id="saveAddBtn">
 				</s:else>
 			</form>
 		</div>

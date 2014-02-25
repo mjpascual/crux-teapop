@@ -7,11 +7,11 @@
 		Promo Management
 	</header>
 	<article>
-		<table id="promo-table" class="promotable">
+		<table id="promo-table" class="table">
 			<thead>
 				<tr>
 					<th colspan="5">
-						<button class="btn pull-right" id="addPromoSubmit" forward="displayAddPromo"><span class="icon-plus"></span>&nbsp;Add New Promo</button>
+						<button class="btn pull-right" id="addSubmit" forward="displayAddPromo"><span class="icon-plus"></span>&nbsp;Add New Promo</button>
 					</th>
 				</tr>
 				<tr>
@@ -31,13 +31,13 @@
 							<td id="promoCode<s:property value='%{#status.index}'/>"><s:property value="promoCode"/></td>
 							<td>
 								<div class="btn-group">
-								   <form id="editPromo" class="smallForm" action="displayEditPromo">
+								   <form id="update" class="smallForm" action="displayEditPromo">
 								   		<input type="hidden" name="promoId" value='<s:property value="promoId" />' />
-										<a class="btn btn-mini" id="submitPromoEditBtn"><span class="icon-pencil"></span></a>
+										<a class="btn btn-mini" id="submitEditBtn"><span class="icon-pencil"></span></a>
 									</form>
-									<form id="deletePromo" class="smallForm" action="deletePromo">
+									<form id="delete" class="smallForm" action="deletePromo">
 										<input type="hidden" name="promoId" value='<s:property value="promoId" />' />
-										<a class="btn btn-mini" id="submitPromoDelBtn"><span class="icon-trash"></span></a>
+										<a class="btn btn-mini" id="submitDelBtn"><span class="icon-trash"></span></a>
 									</form>
 								</div>
 							</td>
