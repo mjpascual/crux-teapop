@@ -110,7 +110,7 @@ header.main div.status {
 	font-size: 18px;
 	color: white;
 	float: right;
-	width: 560px;
+	width: 470px;
 	margin-top: 50px;
 }
 
@@ -121,7 +121,7 @@ header.main div.status a{
 
 header.main div.status a:hover{
 	font-size: 18px;
-	color: #a74232;
+	color: #50929B;
 }
 
 article.main {
