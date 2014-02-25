@@ -9,7 +9,7 @@
 		<table id="menu-table" class="table">
 			<thead>
 				<tr>
-					<th colspan="8"><button class="btn pull-right" id="addMenuSubmit" forward="displayAddMenu"><span class="icon-plus"></span>&nbsp;Add Menu Item</button></th>
+					<th colspan="8"><button class="btn pull-right" id="addSubmit" forward="displayAddMenu"><span class="icon-plus"></span>&nbsp;Add Menu Item</button></th>
 				</tr>
 				<tr>
 					<th>ID</th>
@@ -88,13 +88,13 @@
 							</td>
 							<td>
 								<div class="btn-group">
-									 <form id="editMenu" class="smallForm" action="displayUpdateMenu">
+									 <form id="update" class="smallForm" action="displayUpdateMenu">
 								   		<input type="hidden" name="itemId" value='<s:property value="itemId" />' />
-										<a class="btn btn-mini" id="submitMenuEditBtn"><span class="icon-pencil"></span></a>
+										<a class="btn btn-mini" id="submitEditBtn"><span class="icon-pencil"></span></a>
 									</form>
-									<form id="deleteMenu" class="smallForm" action="deleteMenu">
+									<form id="delete" class="smallForm" action="deleteMenu">
 										<input type="hidden" name="itemId" value='<s:property value="itemId" />' />
-										<a class="btn btn-mini" id="submitMenuDelBtn"><span class="icon-trash"></span></a>
+										<a class="btn btn-mini" id="submitDelBtn"><span class="icon-trash"></span></a>
 									</form>
 								</div>
 							</td>

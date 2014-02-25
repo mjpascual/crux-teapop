@@ -13,7 +13,7 @@
 				<s:else>
 					Add Menu Item
 				</s:else>	</h3><hr><br>
-			<form method="post" id="addMenuForm"  action="<s:property value='action'/>">
+			<form method="post" id="add_edit"  action="<s:property value='action'/>">
 				<div>
 					<label for="menuName">Menu Name:</label>
 					<input type="text" value="<s:property value='menuItem.name'/>" id="menuName" name="menuItem.name" maxlength="35" autofocus required>
@@ -54,11 +54,12 @@
 				</div>
 				<div>
 				 	<label for="image_file">Image: </label>
-				 	<input type="file" name="image_file" id="image_file" />
+				 	<input type="text" class="file" name="image_file" value="<s:property value='image_file'/>" disabled />
+				 	<input type="file" class="fileTemp" value="<s:property value='image_file'/>"/>
 				</div>
 				<s:if test="%{edit}">
 					<input type="hidden" name="menuItem.itemId" value="<s:property value='menuItem.itemId'/>"/>
-					<input id="editMenuBtn" class="button" type="submit" value="Save"/>
+					<input id="saveEditBtn" class="button" type="submit" value="Save"/>
 				</s:if>
 				<s:else>
 					<input id="addMenuBtn" class="button" type="submit" value="Save"/>
