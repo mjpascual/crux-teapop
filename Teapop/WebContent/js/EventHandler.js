@@ -86,9 +86,9 @@ var EventHandler = {
 	},
 
 	scrollAfterLoading : function() {
-		$("body,html").animate({
-			scrollTop : $("#content_wrapper").offset().top
-		}, 500, "swing");
+//		$("body,html").animate({
+//			scrollTop : $("#content_wrapper").offset().top
+//		}, 500, "swing");
 	}
 
 };

@@ -5,13 +5,14 @@
 	</div>
 	
 	<div id="fixed_header_content">
+		<div id="teapop_nav"></div>
 		<div id="main_menu">
-			<ul>
-				<li><a href="home">HOME</a></li>
-				<li><a href="menu">MENU</a></li>
-				<li><a href="location">LOCATIONS</a></li>
-				<li class="right"><a href="contactus">CONTACT US</a></li>
-				<li class="right"><a href="specials">SPECIALS & PROMOS</a></li>
+			<ul id="teapop_nav2">
+				<li><a href="home#teapop_nav">HOME</a></li>
+				<li><a href="menu#teapop_nav">MENU</a></li>
+				<li><a href="location#teapop_nav">LOCATIONS</a></li>
+				<li class="right"><a href="contactus#teapop_nav">CONTACT US</a></li>
+				<li class="right"><a href="specials#teapop_nav">SPECIALS & PROMOS</a></li>
 			</ul>
 		</div>
 	</div>
@@ -29,8 +30,12 @@
 		<img src="images/teapopGirl_smaller.png" />
 	</div>
 
+
+	
 	<div id="teapop_logo">
 		<img src="images/teapop_logo.png" />
 	</div>
+	
+	
 
 </header>
