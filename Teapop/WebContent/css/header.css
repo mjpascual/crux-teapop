@@ -8,7 +8,7 @@
 	position: relative;
 	margin: 0px;
 	height: 72px;
-	top: 170px;
+	top: 371px;
 	overflow: hidden;
     z-index: 1;
     background: #992b14 url("../images/backgrounds/dirteffect.png");
@@ -34,7 +34,7 @@
 	height: 72px;
 	overflow: hidden;
 	background: none repeat scroll 0% 0% transparent;
-	top: 98px;
+	top: 301px;
 	z-index: 4;
 }
 
@@ -73,10 +73,17 @@
 	margin-top: -10px;
 }
 
+#teapop_girl {
+	text-align: center;
+	z-index: 1;
+	margin-top: -424px;
+	position: relative;
+}
+
 #teapop_logo {
 	text-align: center;
 	z-index: 2;
-	margin-top: -155px;
+	margin-top: -78px;
 	position: relative;
 }
 
@@ -87,7 +94,7 @@
 #sunrays {
 	margin: auto auto auto -65px;
 	text-align: center;
-	margin-top: -310px;
+	margin-top: -217px;
 }
 
 #header_text {
