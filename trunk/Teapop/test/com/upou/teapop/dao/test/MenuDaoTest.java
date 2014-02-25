@@ -9,6 +9,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import com.upou.teapop.dao.MenuItemDao;
+import com.upou.teapop.data.Category;
 import com.upou.teapop.data.MenuItem;
 import com.upou.teapop.data.Price;
 
@@ -33,9 +34,10 @@ public class MenuDaoTest {
 		menu.setPrice(price);
 		menu.setFeatured(true);
 		menu.setDispPosition(3);
-		
+		Category category = new Category();
+		category.setCategoryId("1");
 		MenuItemDao menuItemDao = new MenuItemDao();
-		boolean result = menuItemDao.createItem(menu);
+		boolean result = menuItemDao.createItem(menu, category);
         assertTrue(result);   
         
 	}
@@ -61,7 +63,9 @@ public class MenuDaoTest {
 		menu.setHidden(true);
 
 		MenuItemDao menuItemDao = new MenuItemDao();
-		boolean result = menuItemDao.createItem(menu);
+		Category category = new Category();
+		category.setCategoryId("1");
+		boolean result = menuItemDao.createItem(menu, category);
         assertTrue(result); 
 
 	}

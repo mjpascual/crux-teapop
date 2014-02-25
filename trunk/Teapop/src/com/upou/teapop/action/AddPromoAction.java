@@ -16,7 +16,7 @@ public class AddPromoAction extends ActionSupport{
 	private Promos specials;
 	
 	
-	public String addPromo(){
+	public String execute(){
 		
 		PromoDao dao = new PromoDao();
 		try {
@@ -26,12 +26,12 @@ public class AddPromoAction extends ActionSupport{
 			
 			if(!promo.getName().isEmpty() && !promo.getDesc().isEmpty()){
 				if(dao.createPromo(promo)){
-					addActionMessage("Promo #" + promo.getName() + DisplayConstants.UPDATE_SUCCESS);
+					addActionMessage(promo.getName() + DisplayConstants.ADD_SUCCESS);
 				} else {
-					addActionError("Promo #" + promo.getName() + " Update Failed");
+					addActionError("Promo " + promo.getName() + " Add Failed");
 				}
 			} else {
-				addActionError("Promo #" + promo.getName() + " Update Failed");
+				addActionError("Promo " + promo.getName() + " Add Failed");
 			}
 			
 		} catch (Exception e) {

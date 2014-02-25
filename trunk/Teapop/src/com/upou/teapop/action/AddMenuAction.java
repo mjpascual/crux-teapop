@@ -1,31 +1,40 @@
 package com.upou.teapop.action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.upou.teapop.dao.MenuDao;
+import com.upou.teapop.constants.DisplayConstants;
 import com.upou.teapop.dao.MenuItemDao;
 import com.upou.teapop.data.Category;
+import com.upou.teapop.data.Menu;
 import com.upou.teapop.data.MenuItem;
 
 public class AddMenuAction extends ActionSupport{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private MenuItem menuItem;
 	
 	private Category category;
+	
+	private Menu menu;
 	 
 	public String execute(){
 		
-		
+		MenuItemDao dao = new MenuItemDao();
 		try {
-			try {
-				MenuItemDao dao = new MenuItemDao();
-				dao.createItem(menuItem);
-			} catch (Exception e) {
-				e.printStackTrace();
+			System.out.println(category.getCategoryId());
+			if(dao.createItem(menuItem, category)){
+				addActionMessage(menuItem.getName() + DisplayConstants.ADD_SUCCESS);
+			} else {
+				addActionError(menuItem.getName() + " add failed");
 			}
 		} catch (Exception e) {
+			addActionError(menuItem.getName() + " add failed");
 			e.printStackTrace();
 		}
-		
+		menu = dao.retrieveMenu();
 		return SUCCESS;
 	}
 
@@ -35,6 +44,16 @@ public class AddMenuAction extends ActionSupport{
 
 	public void setMenuItem(MenuItem menuItem) {
 		this.menuItem = menuItem;
+	}
+	
+	
+
+	public Menu getMenu() {
+		return menu;
+	}
+
+	public void setMenu(Menu menu) {
+		this.menu = menu;
 	}
 
 	public Category getCategory() {

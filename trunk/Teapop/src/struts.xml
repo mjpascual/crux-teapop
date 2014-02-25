@@ -65,14 +65,12 @@
 		</action>
 	
 		
-		<action name="addPromo" class="com.upou.teapop.action.AddPromoAction"
-			method="addPromo">
+		<action name="addPromo" class="com.upou.teapop.action.AddPromoAction">
 			<result name="success">/jsp/admin/promoList.jsp</result>
 			<result name="FAILED">/jsp/admin/blank.jsp</result>
 		</action>
 		
-		<action name="displayEditPromo" class="com.upou.teapop.action.DisplayEditPromoAction"
-			method="editPromo">
+		<action name="displayEditPromo" class="com.upou.teapop.action.DisplayEditPromoAction">
 			<result name="success">/jsp/admin/promoForm.jsp</result>
 			<result name="FAILED">/jsp/admin/blank.jsp</result>
 		</action>
@@ -90,8 +88,7 @@
 			<result name="success">/jsp/admin/menuList.jsp</result>
 		</action>
 		
-		<action name="editPromo" class="com.upou.teapop.action.UpdatePromoAction"
-			method="editPromo">
+		<action name="updatePromo" class="com.upou.teapop.action.UpdatePromoAction">
 			<result name="success">/jsp/admin/promoList.jsp</result>
 			<result name="FAILED">/jsp/admin/blank.jsp</result>
 		</action>
@@ -124,7 +121,7 @@
 			<result>/jsp/admin/menuList.jsp</result>
 		</action>
 		
-		<action name="displayAddMenu">
+		<action name="displayAddMenu" class="com.upou.teapop.action.DisplayAddMenuAction">
 		    <interceptor-ref name="loginInterceptor" />
 			<result>/jsp/admin/menuForm.jsp</result>
 		</action>
@@ -183,7 +180,8 @@
 			<result name="success">/jsp/admin/menuPrint.jsp</result>
 		</action>
 		
-		<action name="displayAddPromo">
+		
+		<action name="displayAddPromo" class="com.upou.teapop.action.DisplayAddPromoAction">
 			<interceptor-ref name="loginInterceptor" />
 			<result>/jsp/admin/promoForm.jsp</result>
 		</action>

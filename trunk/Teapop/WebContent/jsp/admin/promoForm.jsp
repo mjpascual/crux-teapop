@@ -1,5 +1,6 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <section class="category" id="category">
 	<header>
 		Category Management
@@ -14,7 +15,7 @@
 					Add New Promo
 				</s:else>				
 			</h3><hr><br>
-			<form method="post" id="promoForm">
+			<form method="post" id="promoForm" action="<s:property value='action'/>">
 				<div>
 					<label for="promoName">Promo Name:</label>
 					<input type="text" value="<s:property value='promo.name'/>" id="promoName" name="promo.name" maxlength="35" autofocus required>
@@ -29,59 +30,17 @@
 				</div>
 				<div>
 				 	<label for="image_file">Category Image: </label>
-				 	<input type="file" name="promo.image" id="image_file" />
-				</div>	
+				 	<input type="text" name="promo.image" value="<s:property value='promo.image'/>" class="file" disabled />
+				 	<input type="file" class="fileTemp" value="<s:property value='promo.image'/>"/>
+				</div>
 				<s:if test="%{edit}">
 					<input type="hidden" value="<s:property value='promo.promoId'/>" name="promo.promoId"/>
-					<input class="button" onclick="javascript:editPromo()" value="Save Edit">
+					<input type="submit" class="button"  value="Save Edit" id="editPromoFormBtn">
 				</s:if>
 				<s:else>
-					<input class="button" onclick="javascript:addPromo()" value="Save">
+					<input type="submit" class="button" value="Save" id="savePromoFormBtn">
 				</s:else>
 			</form>
 		</div>
-		<s:if test="%{addSuccessful}">
-			<div id="addPromoMessage" class="addSuccessful">
-			 	SAVE SUCCESSFUL
-			</div>
-		</s:if>
-		<s:if test="%{addFailed}">
-			<div id="addPromoMessage" class="addFailed">
-				SAVE FAILED
-			</div>
-		</s:if>
 	</article>
 </section>
-
-<script>
-function addPromoPost(action, data){
-	$.ajax({
-		url: action,
-	    type: "POST",
-	    data: data,
-	    error: function(){
-	        alert('Admin Error');
-	    },
-	    success: function(data){ 
-	    	var $container = $("#body_container");
-			$container.empty();
-			$container.html(data);
-	    },
-	    complete: function (data){
-	    }
-	});
-}
-
-function addPromo(){
-	var form = $('#promoForm').serialize();
-	addPromoPost("addPromo", form);
-}
-
-function editPromo(){
-	var form = $('#promoForm').serialize();
-	addPromoPost("editPromo", form);
-}
-
-
-
-</script>

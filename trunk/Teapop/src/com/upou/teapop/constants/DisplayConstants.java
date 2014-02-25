@@ -17,6 +17,8 @@ public class DisplayConstants {
 	
 	public static final String CAT_ADD_SUCCESS = "Category table was successfully updated!";
 	
+	public static final String ADD_SUCCESS = " was successfully added!";
+	
 	public static final String UPDATE_SUCCESS = " was successfully updated!";
 	
 	public static final String DELETE_SUCCESS = " was successfully deleted!";
