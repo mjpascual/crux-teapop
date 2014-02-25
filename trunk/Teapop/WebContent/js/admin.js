@@ -75,6 +75,10 @@ var BodySwitcher = {
 			BodySwitcher.initForm($formEdit, "#saveEditBtn");
 		}
 		
+		var $print = $container.find(".printIt");														//SET CLASS
+		if ($print.length > 0){ 
+			BodySwitcher.initPrint($print);										    
+		}
 	},
 	
 	initDataTable : function($table){
