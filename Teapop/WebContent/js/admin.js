@@ -71,8 +71,8 @@ var BodySwitcher = {
 
 		var $formEdit = $container.find("form#add_edit");
 		if ( $formEdit .length > 0){
-			$(document).off('click','#addMenuBtn');
-			BodySwitcher.initForm($formEdit, "#addMenuBtn");
+			$(document).off('click','#saveEditBtn');
+			BodySwitcher.initForm($formEdit, "#saveEditBtn");
 		}
 		
 	},
