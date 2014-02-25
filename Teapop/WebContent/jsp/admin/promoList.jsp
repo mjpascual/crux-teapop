@@ -37,7 +37,7 @@
 									</form>
 									<form id="delete" class="smallForm" action="deletePromo">
 										<input type="hidden" name="promoId" value='<s:property value="promoId" />' />
-										<a class="btn btn-mini" id="submitDelBtn"><span class="icon-trash"></span></a>
+										<a class="btn btn-mini deleteBtnClass" id="submitDelBtn"><span class="icon-trash"></span></a>
 									</form>
 								</div>
 							</td>

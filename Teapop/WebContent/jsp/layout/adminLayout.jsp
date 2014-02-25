@@ -10,10 +10,13 @@
 		<link href="css/admin.css" rel="stylesheet">
 		<link href="css/TableTools.css" rel="stylesheet">
 		<link href="css/TableTools_JUI.css" rel="stylesheet">
+		<link href="css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
         <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="js/TableTools.min.js"></script>
         <script type="text/javascript" src="js/ZeroClipboard.js"></script>
+        <script type="text/javascript" src="js/jquery.ui.js"></script>
+        <script type="text/javascript" src="js/jquery.easy-confirm-dialog.min.js"></script>
 		<script src="js/admin.js"></script>
 		<script type="text/javascript">
 	        $(document).ready( function(){
