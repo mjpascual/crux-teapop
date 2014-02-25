@@ -62,7 +62,7 @@
 					<input id="saveEditBtn" class="button" type="submit" value="Save"/>
 				</s:if>
 				<s:else>
-					<input id="addMenuBtn" class="button" type="submit" value="Save"/>
+					<input id="saveAddBtn" class="button" type="submit" value="Save"/>
 				</s:else>
 			</form>
 		</div>
