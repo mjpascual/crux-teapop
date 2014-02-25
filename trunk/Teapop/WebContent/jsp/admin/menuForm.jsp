@@ -11,7 +11,7 @@
 					Edit Menu Item
 				</s:if>
 				<s:else>
-					Add Menu Item
+					Add New Menu Item
 				</s:else>	</h3><hr><br>
 			<form method="post" id="add_edit"  action="<s:property value='action'/>">
 				<div>
