@@ -350,7 +350,7 @@ article.main section article table td:nth-child(1) {
 	width:50px;
 }
 
-article.main section article table tr:first-child th:first-child{
+article.main section article table.table tr:first-child th:first-child{
 	background: white;
 }
 
@@ -777,8 +777,13 @@ div.dataTables_paginate span>a {
 /*
  * Sorting
  */
-table thead th.sorting_asc {
-	background: #66A9BD!important;
+ 
+table#print-table thead th.sorting_asc, table thead th.sorting {
+	background: #66A9BD url('../images/admin/sort_asc.png') no-repeat right center;
+	cursor: pointer;
+}
+table thead th.sorting_asc, table thead th.sorting {
+
 	background: #66A9BD url('../images/admin/sort_asc.png') no-repeat right center;
 	cursor: pointer;
 }
