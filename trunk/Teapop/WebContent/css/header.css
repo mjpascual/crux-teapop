@@ -91,6 +91,14 @@
 	width: 300px;
 }
 
+#teapop_nav {
+	margin-top: -30px;
+}
+
+#teapop_nav2 {
+	margin-top: 46px;
+}
+
 #sunrays {
 	margin: auto auto auto -65px;
 	text-align: center;
