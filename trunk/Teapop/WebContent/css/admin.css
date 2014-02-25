@@ -851,3 +851,8 @@ input[type="file"]  {
 #sizePrice {
 	width: 85px !important;
 }
+
+.ui-widget-header {
+	border: 1px solid #50929B !important;
+	background: #50929B !important;
+}
