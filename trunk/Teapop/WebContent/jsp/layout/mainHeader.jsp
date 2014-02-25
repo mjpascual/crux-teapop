@@ -22,6 +22,11 @@
 			quality="high" wmode="transparent"
 			pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"
 			type="application/x-shockwave-flash">
+		
+	</div>
+	
+	<div id="teapop_girl">
+		<img src="images/teapopGirl_smaller.png" />
 	</div>
 
 	<div id="teapop_logo">
