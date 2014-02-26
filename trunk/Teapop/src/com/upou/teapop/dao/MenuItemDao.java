@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.upou.teapop.constants.DisplayConstants;
 import com.upou.teapop.data.Category;
 import com.upou.teapop.data.Menu;
 import com.upou.teapop.data.MenuItem;
@@ -219,7 +220,8 @@ public class MenuItemDao extends BaseDao {
 			}		
 			
 			for(Category category : categories){
-				if(category.getMain().equalsIgnoreCase("beverage")){
+				System.out.println(category.getMain());
+				if(category.getMain().equalsIgnoreCase(DisplayConstants.MAIN_CAT_BEV)){
 					beverages.getCategories().add(category);
 				} else {
 					otherMenu.getCategories().add(category);
