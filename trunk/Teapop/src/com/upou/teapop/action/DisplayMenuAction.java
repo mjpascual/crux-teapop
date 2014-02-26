@@ -7,6 +7,7 @@ import com.upou.teapop.data.Menu;
 import com.upou.teapop.data.MenuItem;
 import com.upou.teapop.data.MenuSection;
 import com.upou.teapop.data.Price;
+import com.upou.teapop.util.MenuDisplayHelper;
 
 
 public class DisplayMenuAction extends ActionSupport{
@@ -31,10 +32,21 @@ public class DisplayMenuAction extends ActionSupport{
 			e.printStackTrace();
 		}
 //		menu = getMockMenu();
+		MenuDisplayHelper.sort(menu);
 		return SUCCESS;
 	}
 	
-	private Menu getMockMenu(){
+	public static void main(String[] args) {
+		DisplayMenuAction action = new DisplayMenuAction();
+		Menu menu = action.getMockMenu();
+		MenuDisplayHelper.sort(menu);
+		for (MenuItem menuItem : menu.getBeveragesSection().getCategories().get(0).getItems()) {
+			System.out.println(menuItem.getName());
+		}
+
+	}
+	
+	public Menu getMockMenu(){
 		Menu menu = new Menu();
 		
 		Category category1 = new Category();
@@ -54,6 +66,7 @@ public class DisplayMenuAction extends ActionSupport{
 		MenuItem item1 = new MenuItem();
 		item1.setDesc("black tea flavor");
 		item1.setItemId(1);
+		item1.setDispPosition(1);
 		item1.setName("Assam");
 		Price price1 = new Price();
 		price1.setRegular(100);
@@ -63,6 +76,8 @@ public class DisplayMenuAction extends ActionSupport{
 		MenuItem item2 = new MenuItem();
 		item2.setDesc("Wintermelon tea flavor");
 		item2.setItemId(2);
+		item2.setFeatured(true);
+		item2.setDispPosition(0);
 		item2.setName("Wintermelon");
 		Price price2 = new Price();
 		price2.setSmall(90);
@@ -76,6 +91,7 @@ public class DisplayMenuAction extends ActionSupport{
 		item3.setItemId(3);
 		item3.setName("Brown Tea");
 		Price price3 = new Price();
+		item3.setDispPosition(3);
 		price3.setSmall(90);
 		price3.setRegular(100);
 		price3.setLarge(120);
@@ -97,12 +113,14 @@ public class DisplayMenuAction extends ActionSupport{
 		category1.getItems().add(item2);
 		category1.getItems().add(item1);
 		category1.getItems().add(item2);
+		category1.getItems().add(item3);
 		category2.getItems().add(item3);
 
 		MenuSection beverages = new MenuSection();
 		beverages.getCategories().add(category1);
 		beverages.getCategories().add(category2);
 		menu.setBeveragesSection(beverages);
+		menu.setAdditionalSection(beverages);
 		
 		return menu;
 	}

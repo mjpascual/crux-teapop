@@ -9,9 +9,9 @@
 		<div id="categories" class="categories">
 			<ul id="menu_section_links" class="category_links">
 				<li><a title="beverge_wrapper" id="initial_load" class="category_link beverage active">
-						Beverage </a></li>
+						Beverages </a></li>
 				<li><a title="additional_wrapper" class="category_link additional">
-						Additional </a></li>
+						Additionals </a></li>
 			</ul>
 		</div>
 		<div id="beverge_wrapper" class="menu_section_wrapper initialdisplay">

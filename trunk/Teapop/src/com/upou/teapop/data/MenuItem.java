@@ -1,6 +1,6 @@
 package com.upou.teapop.data;
 
-public class MenuItem {
+public class MenuItem implements Comparable<MenuItem>{
 
 	private int itemId;
 
@@ -110,6 +110,14 @@ public class MenuItem {
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+
+	@Override
+	public int compareTo(MenuItem compareMenuItem) {
+		int compareDispPosition = compareMenuItem.getDispPosition(); 
+		 
+		//ascending order
+		return this.dispPosition - compareDispPosition;
 	}
 	
 	
