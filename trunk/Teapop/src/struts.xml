@@ -186,6 +186,10 @@
 			<result>/jsp/admin/promoForm.jsp</result>
 		</action>
 		
+		<action name="sendEmail" class="com.upou.teapop.action.SendEmailAction">
+			<result name="success" type="tiles">contactus</result>
+		</action>
+		
 		<action name="displayDashboard">
 			<interceptor-ref name="loginInterceptor" />
 			<result>/jsp/admin/dashboard.jsp</result>
