@@ -28,11 +28,11 @@ public class DisplayMenuAction extends ActionSupport{
 		MenuItemDao dao = new MenuItemDao();
 		try {
 			menu = dao.retrieveMenu();
+//			menu = getMockMenu();
+			MenuDisplayHelper.sort(menu);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-//		menu = getMockMenu();
-		MenuDisplayHelper.sort(menu);
 		return SUCCESS;
 	}
 	
