@@ -15,84 +15,77 @@ import com.upou.teapop.data.MenuSection;
 import com.upou.teapop.data.Price;
 
 public class MenuItemDao extends BaseDao {
-	
-	private static final String MENU_CREATE   = "INSERT INTO teapop.menu (menu_code, category_id, name, description, currency, price, price_small, price_big, position, featured, hidden) " +
-                                                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
-	
-	private static final String MENU_VIEW     = "SELECT * FROM teapop.menu WHERE menu_id = ?";
-	
+
+	private static final String MENU_CREATE = "INSERT INTO teapop.menu (menu_code, category_id, name, description, currency, price, price_small, price_big, position, featured, hidden) "
+			+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+
+	private static final String MENU_VIEW = "SELECT * FROM teapop.menu WHERE menu_id = ?";
+
 	private static final String MENU_VIEW_ALL = "SELECT * FROM teapop.menu";
-	
-	private static final String MENU_DELETE	  = "DELETE FROM teapop.menu WHERE menu_id = ?";
-	
+
+	private static final String MENU_DELETE = "DELETE FROM teapop.menu WHERE menu_id = ?";
+
 	public static final String MENU_CATEGORY = "SELECT * FROM teapop.category";
-	
+
 	public static final String MENU_UPDATE = "UPDATE teapop.menu SET menu_code=?, category_id=?, name=?, description=?, price=?, price_small=?, price_big=?, featured=?, hidden=? WHERE menu_id=?";
-	
-	public boolean createItem(MenuItem menuItem, Category category) {
+
+	public boolean createItem(MenuItem menuItem, Category category)
+			throws SQLException {
 		boolean result = false;
-		try {
-			Connection conn = createConnection();
-			PreparedStatement stmt = conn.prepareStatement(MENU_CREATE);
-			stmt.setString(1, menuItem.getItemCode());
-			stmt.setInt(2, Integer.valueOf(category.getCategoryId()));
-			stmt.setString(3, menuItem.getName());
-			stmt.setString(4, menuItem.getDesc());
-			stmt.setString(5, menuItem.getPrice().getCurrency());
-			stmt.setDouble(6, menuItem.getPrice().getRegular());
-			stmt.setDouble(7, menuItem.getPrice().getSmall());
-			stmt.setDouble(8, menuItem.getPrice().getLarge());
-			stmt.setInt(9, menuItem.getDispPosition());
-			stmt.setBoolean(10, menuItem.isFeatured());
-			stmt.setBoolean(11, menuItem.isHidden());
-			System.out.println(stmt);
-			stmt.execute();
-			result = true;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		Connection conn = createConnection();
+		PreparedStatement stmt = conn.prepareStatement(MENU_CREATE);
+		stmt.setString(1, menuItem.getItemCode());
+		stmt.setInt(2, Integer.valueOf(category.getCategoryId()));
+		stmt.setString(3, menuItem.getName());
+		stmt.setString(4, menuItem.getDesc());
+		stmt.setString(5, menuItem.getPrice().getCurrency());
+		stmt.setDouble(6, menuItem.getPrice().getRegular());
+		stmt.setDouble(7, menuItem.getPrice().getSmall());
+		stmt.setDouble(8, menuItem.getPrice().getLarge());
+		stmt.setInt(9, menuItem.getDispPosition());
+		stmt.setBoolean(10, menuItem.isFeatured());
+		stmt.setBoolean(11, menuItem.isHidden());
+		stmt.execute();
+		result = true;
+
 		return result;
 	}
 
-	public MenuItem retrieveItem(int menuId) {
+	public MenuItem retrieveItem(int menuId) throws SQLException {
 		MenuItem menuItem = new MenuItem();
-		try {
-			Connection conn = createConnection();
+		Connection conn = createConnection();
 
-			PreparedStatement stmt = conn.prepareStatement(MENU_VIEW);
-			stmt.setInt(1, menuId);
-			ResultSet rs = stmt.executeQuery();
+		PreparedStatement stmt = conn.prepareStatement(MENU_VIEW);
+		stmt.setInt(1, menuId);
+		ResultSet rs = stmt.executeQuery();
 
-			while (rs.next()) {
-				menuItem.setItemId(rs.getInt("menu_id"));
-				menuItem.setItemCode(rs.getString("menu_code"));
-				menuItem.setCatId(rs.getInt("category_id"));
-				menuItem.setName(rs.getString("name"));
-				menuItem.setDesc(rs.getString("description"));
-				Price price = new Price();
-				price.setCurrency(rs.getString("currency"));
-				price.setRegular(rs.getDouble("price"));
-				price.setSmall(rs.getDouble("price_small"));
-				price.setLarge(rs.getDouble("price_big"));
-				menuItem.setPrice(price);
-				menuItem.setDispPosition(rs.getInt("position"));
-				menuItem.setFeatured(rs.getBoolean("featured"));
-				menuItem.setHidden(rs.getBoolean("hidden"));
-			}
-			conn.close();
-			stmt.close();
-			rs.close();
-
-		} catch (SQLException e) {
-			e.printStackTrace();
+		while (rs.next()) {
+			menuItem.setItemId(rs.getInt("menu_id"));
+			menuItem.setItemCode(rs.getString("menu_code"));
+			menuItem.setCatId(rs.getInt("category_id"));
+			menuItem.setName(rs.getString("name"));
+			menuItem.setDesc(rs.getString("description"));
+			Price price = new Price();
+			price.setCurrency(rs.getString("currency"));
+			price.setRegular(rs.getDouble("price"));
+			price.setSmall(rs.getDouble("price_small"));
+			price.setLarge(rs.getDouble("price_big"));
+			menuItem.setPrice(price);
+			menuItem.setDispPosition(rs.getInt("position"));
+			menuItem.setFeatured(rs.getBoolean("featured"));
+			menuItem.setHidden(rs.getBoolean("hidden"));
 		}
+		conn.close();
+		stmt.close();
+		rs.close();
+
 		return menuItem;
 	}
-	
+
 	public List<MenuItem> retrieveItems() {
-		
+
 		List<MenuItem> menuItems = new ArrayList<MenuItem>();
-		
+
 		try {
 			Connection conn = createConnection();
 
@@ -112,12 +105,12 @@ public class MenuItemDao extends BaseDao {
 				price.setSmall(rs.getDouble("price_small"));
 				price.setLarge(rs.getDouble("price_big"));
 				menuItem.setPrice(price);
-//				menuItem.setDispPosition(rs.getInt("position"));
+				// menuItem.setDispPosition(rs.getInt("position"));
 				menuItem.setFeatured(rs.getBoolean("featured"));
 				menuItem.setHidden(rs.getBoolean("hidden"));
 				menuItems.add(menuItem);
 			}
-			
+
 			conn.close();
 			stmt.close();
 			rs.close();
@@ -128,66 +121,53 @@ public class MenuItemDao extends BaseDao {
 		return menuItems;
 	}
 
-	
-	
-	
-	public boolean deleteItem(int id) {
+	public boolean deleteItem(int id) throws SQLException {
 		boolean result = false;
-		try {
-			Connection conn = createConnection();
-			PreparedStatement stmt = conn.prepareStatement(MENU_DELETE);
-			stmt.setInt(1, id);
-			stmt.executeUpdate();
- 
-			result = true;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		Connection conn = createConnection();
+		PreparedStatement stmt = conn.prepareStatement(MENU_DELETE);
+		stmt.setInt(1, id);
+		stmt.executeUpdate();
+
+		result = true;
 		return result;
 	}
-	
+
 	// RETRIEVE
-	public List<Category> retrieveCategories() {
+	public List<Category> retrieveCategories() throws SQLException {
 
 		List<Category> categories = new ArrayList<Category>();
-		try {
-			Connection conn = createConnection();
+		Connection conn = createConnection();
 
-			// get category info
-			PreparedStatement stmt = conn.prepareStatement(MENU_CATEGORY);
-			ResultSet rs = stmt.executeQuery();
+		// get category info
+		PreparedStatement stmt = conn.prepareStatement(MENU_CATEGORY);
+		ResultSet rs = stmt.executeQuery();
 
-			while (rs.next()) {
-				Category category = new Category();
-				category.setDesc(rs.getString("description"));
-				category.setCategoryId(String.valueOf(rs.getInt("category_id")));
-				category.setMain(rs.getString("main_category"));
-				category.setName(rs.getString("name"));
-				category.setImage(rs.getString("image_name"));
-				category.setShowSML(rs.getBoolean("show_sml"));
-				categories.add(category);
-			}
-			conn.close();
-			stmt.close();
-			rs.close();
-
-		} catch (SQLException e) {
-			e.printStackTrace();
+		while (rs.next()) {
+			Category category = new Category();
+			category.setDesc(rs.getString("description"));
+			category.setCategoryId(String.valueOf(rs.getInt("category_id")));
+			category.setMain(rs.getString("main_category"));
+			category.setName(rs.getString("name"));
+			category.setImage(rs.getString("image_name"));
+			category.setShowSML(rs.getBoolean("show_sml"));
+			categories.add(category);
 		}
+		conn.close();
+		stmt.close();
+		rs.close();
 
-			return categories;
-		}
-	
-	
-	
+		return categories;
+	}
+
 	public Menu retrieveMenu() {
 
 		Menu menu = new Menu();
 		MenuSection beverages = new MenuSection();
 		MenuSection otherMenu = new MenuSection();
-		List<Category> categories = retrieveCategories();
+		List<Category> categories;
 		try {
-
+			categories = retrieveCategories();
+			
 			Connection conn = createConnection();
 
 			// get items info
@@ -210,45 +190,44 @@ public class MenuItemDao extends BaseDao {
 				price.setRegular((rs.getDouble("price")));
 				price.setCurrency(rs.getString("currency"));
 				item.setPrice(price);
-				
-				for (Category category : categories){
-					if(Integer.parseInt(category.getCategoryId()) == item.getCatId() ){
+
+				for (Category category : categories) {
+					if (Integer.parseInt(category.getCategoryId()) == item
+							.getCatId()) {
 						item.setCategory(category.getName());
 						category.getItems().add(item);
 					}
 				}
-			}		
-			
-			for(Category category : categories){
-				System.out.println(category.getMain());
-				if(category.getMain().equalsIgnoreCase(DisplayConstants.MAIN_CAT_BEV)){
+			}
+
+			for (Category category : categories) {
+				if (category.getMain().equalsIgnoreCase(
+						DisplayConstants.MAIN_CAT_BEV)) {
 					beverages.getCategories().add(category);
 				} else {
 					otherMenu.getCategories().add(category);
 				}
 			}
 			
+			menu.setAdditionalSection(otherMenu);
+			menu.setBeveragesSection(beverages);
+			
 			conn.close();
 			stmt.close();
 			rs.close();
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		menu.setAdditionalSection(otherMenu);
-		menu.setBeveragesSection(beverages);
-		
+
 		return menu;
 	}
 
-	
-	public boolean updateMenu(MenuItem item, Category category){
+	public boolean updateMenu(MenuItem item, Category category) {
 		boolean result = false;
 		try {
 			Connection conn = createConnection();
 			PreparedStatement stmt = conn.prepareStatement(MENU_UPDATE);
-			
+
 			stmt.setString(1, item.getItemCode());
 			stmt.setInt(2, Integer.valueOf(category.getCategoryId()));
 			stmt.setString(3, item.getName());
@@ -259,16 +238,16 @@ public class MenuItemDao extends BaseDao {
 			stmt.setBoolean(8, item.isFeatured());
 			stmt.setBoolean(9, item.isHidden());
 			stmt.setInt(10, item.getItemId());
-			
+
 			stmt.executeUpdate();
 			result = true;
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return result;
-		
+
 	}
-	
+
 }
