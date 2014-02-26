@@ -54,11 +54,10 @@ ul.siteInformationLinks li {
 #teapopFooterBottom {
 	background: #383838;
 	padding: 22px 0;
+	clear: left;
 }
 
 #copyright {
 	color: #E1E1E1;
-	top: 5px;
-	position: relative;
 	font-size: 20px;
 }

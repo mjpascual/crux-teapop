@@ -7,6 +7,7 @@
 			<ul class="siteInformationLinks">
 				<li>About Us</li>
 				<li>Terms of Service</li>
+				<li class="pointer" onclick="window.location.href=' http://ec2-54-84-168-45.compute-1.amazonaws.com/Teapop/admin '">Admin</li>
 			</ul>
 		</div>
 
@@ -34,5 +35,5 @@
 				|</center>
 		</div>
 	</div>
-
+	<div class="clearfix"></div>
 </footer>
