@@ -52,11 +52,11 @@
 					<label for="menuPrice">Hidden:</label>
 					<input type="checkbox" class="checkbox" name="menuItem.hidden" value="<s:property value='menuItem.hidden'/>" <s:if test="%{menuItem.hidden}">checked</s:if>>
 				</div>
-				<div>
-				 	<label for="image_file">Image: </label>
-				 	<input type="text" class="file" name="image_file" value="<s:property value='image_file'/>" disabled />
-				 	<input type="file" class="fileTemp" value="<s:property value='image_file'/>"/>
-				</div>
+<!-- 				<div> -->
+<!-- 				 	<label for="image_file">Image: </label> -->
+<%-- 				 	<input type="text" class="file" name="image_file" value="<s:property value='image_file'/>" disabled /> --%>
+<%-- 				 	<input type="file" class="fileTemp" value="<s:property value='image_file'/>"/> --%>
+<!-- 				</div> -->
 				<s:if test="%{edit}">
 					<input type="hidden" name="menuItem.itemId" value="<s:property value='menuItem.itemId'/>"/>
 					<input id="saveEditBtn" class="button" type="submit" value="Save"/>

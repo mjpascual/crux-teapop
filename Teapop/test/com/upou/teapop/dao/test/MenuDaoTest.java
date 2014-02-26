@@ -3,6 +3,7 @@ package com.upou.teapop.dao.test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.junit.Ignore;
@@ -18,7 +19,7 @@ public class MenuDaoTest {
 
 	@Ignore
 	@Test
-	public void createMenu() {
+	public void createMenu() throws SQLException {
 
 		MenuItem menu = new MenuItem();
 		menu.setItemId(3);
@@ -44,7 +45,7 @@ public class MenuDaoTest {
 	
 	@Ignore
 	@Test
-	public void updateCategory() {
+	public void updateCategory() throws SQLException {
 	
 		MenuItem menu = new MenuItem();
 		menu.setItemId(3);
@@ -72,7 +73,7 @@ public class MenuDaoTest {
 	
 	@Ignore
 	@Test
-	public void retrieveCategory() {
+	public void retrieveCategory() throws SQLException {
 	
 		MenuItemDao menuItemDao = new MenuItemDao();
 		MenuItem menu = menuItemDao.retrieveItem(3);
@@ -92,7 +93,7 @@ public class MenuDaoTest {
 	
 	@Ignore
 	@Test
-	public void deleteCategory() {
+	public void deleteCategory() throws SQLException {
 	
 		MenuItemDao menuItemDao = new MenuItemDao();
 		Boolean result = menuItemDao.deleteItem(3);

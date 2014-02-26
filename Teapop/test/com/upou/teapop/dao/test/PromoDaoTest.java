@@ -2,7 +2,9 @@ package com.upou.teapop.dao.test;
 
 import static org.junit.Assert.*;
 
+import java.sql.SQLException;
 import java.util.List;
+
 
 
 import org.junit.Ignore;
@@ -16,7 +18,7 @@ public class PromoDaoTest {
 
 	@Ignore
 	@Test
-	public void createPromo() {
+	public void createPromo() throws SQLException {
 
 		Promo promo = new Promo();
 		promo.setPromoId(0);
@@ -33,7 +35,7 @@ public class PromoDaoTest {
 	
 	@Ignore
 	@Test
-	public void updatePromo() {
+	public void updatePromo() throws SQLException {
 	
 		Promo promo = new Promo();
 		promo.setPromoId(3);
@@ -50,7 +52,7 @@ public class PromoDaoTest {
 	
 	@Ignore
 	@Test
-	public void retrievePromo() {
+	public void retrievePromo() throws SQLException {
 	
 		PromoDao promoDao = new PromoDao();
 		Promo cat = promoDao.retrievePromo(3);
@@ -60,7 +62,7 @@ public class PromoDaoTest {
 	
 	@Ignore
 	@Test
-	public void retrievePromos() {
+	public void retrievePromos() throws SQLException {
 	
 		PromoDao promoDao = new PromoDao();
 		List <Promo> cat = promoDao.retrieveCategories();
@@ -70,7 +72,7 @@ public class PromoDaoTest {
 	
 	@Ignore
 	@Test
-	public void deletePromo() {
+	public void deletePromo() throws SQLException {
 	
 		PromoDao promoDao = new PromoDao();
 		Boolean result = promoDao.deletePromo(3);
