@@ -66,6 +66,7 @@ public class DisplayMenuAction extends ActionSupport{
 		MenuItem item1 = new MenuItem();
 		item1.setDesc("black tea flavor");
 		item1.setItemId(1);
+		item1.setFeatured(true);
 		item1.setDispPosition(1);
 		item1.setName("Assam");
 		Price price1 = new Price();
@@ -90,6 +91,7 @@ public class DisplayMenuAction extends ActionSupport{
 		item3.setDesc("brown tea flavoar");
 		item3.setItemId(3);
 		item3.setName("Brown Tea");
+		item3.setFeatured(false);
 		Price price3 = new Price();
 		item3.setDispPosition(3);
 		price3.setSmall(90);

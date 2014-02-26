@@ -7,7 +7,15 @@ body {
 	font-family: canterBold;
 	font-size: 28px;
 }
-
+.bestseller {
+	height: 35px;
+	top: -6px;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	left: -26px;
+	z-index: 0;
+}
 .pointer {
 	cursor: pointer;
 }
@@ -267,6 +275,12 @@ a {
 .menu .category .item .name {
 	float: left;
 	padding-right: 10px;
+	position: relative;
+}
+
+.menu .category .item .name strong{
+	z-index: 9;
+	position: relative;
 }
 
 .menu .price {

@@ -12,7 +12,12 @@ public class DisplaySpecialsAction extends ActionSupport {
 	
 	public String execute(){
 		PromoDao dao = new PromoDao();
-		specials = dao.retrievePromos();
+		try {
+			specials = dao.retrievePromos();	
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 		return SUCCESS;
 	}
 
