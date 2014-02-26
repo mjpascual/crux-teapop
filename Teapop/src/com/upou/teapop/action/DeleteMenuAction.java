@@ -1,7 +1,10 @@
 package com.upou.teapop.action;
 
+import java.sql.SQLException;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.upou.teapop.constants.DisplayConstants;
+import com.upou.teapop.constants.ErrorConstants;
 import com.upou.teapop.dao.MenuItemDao;
 import com.upou.teapop.data.Menu;
 
@@ -18,10 +21,18 @@ public class DeleteMenuAction extends ActionSupport {
 	
 	public String deleteMenu(){
 		MenuItemDao dao = new MenuItemDao();
-		if(dao.deleteItem(itemId)){
-			addActionMessage("Item #" + itemId  + DisplayConstants.DELETE_SUCCESS);
-		} else {
-			addActionError("Failed to Delete Promo #" + itemId);
+		try {
+			if(dao.deleteItem(itemId)){
+				addActionMessage("Item #" + itemId  + DisplayConstants.DELETE_SUCCESS);
+			} else {
+				addActionError("Failed to Delete Promo #" + itemId);
+			}
+		} catch (SQLException e) {
+			addActionError(ErrorConstants.SEV_ERROR + e);
+			e.printStackTrace();
+		} catch (Exception e) {
+			addActionError(ErrorConstants.SEV_ERROR + e);
+			e.printStackTrace();
 		}
 		
 		menu = dao.retrieveMenu();

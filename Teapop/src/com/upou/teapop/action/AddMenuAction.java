@@ -1,7 +1,10 @@
 package com.upou.teapop.action;
 
+import java.sql.SQLException;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.upou.teapop.constants.DisplayConstants;
+import com.upou.teapop.constants.ErrorConstants;
 import com.upou.teapop.dao.MenuItemDao;
 import com.upou.teapop.data.Category;
 import com.upou.teapop.data.Menu;
@@ -23,18 +26,31 @@ public class AddMenuAction extends ActionSupport{
 	public String execute(){
 		
 		MenuItemDao dao = new MenuItemDao();
+		System.out.println(menuItem.isFeatured());
+		System.out.println(menuItem.isHidden());
 		try {
-			System.out.println(category.getCategoryId());
 			if(dao.createItem(menuItem, category)){
 				addActionMessage(menuItem.getName() + DisplayConstants.ADD_SUCCESS);
 			} else {
 				addActionError(menuItem.getName() + " add failed");
 			}
-		} catch (Exception e) {
-			addActionError(menuItem.getName() + " add failed");
+			
+		} catch (SQLException e) {
 			e.printStackTrace();
+			addActionError(ErrorConstants.SEV_ERROR + e);
+			return ERROR;
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+			addActionError(ErrorConstants.INPUT_ERROR + e);
+			return ERROR;
+		} catch (Exception e){
+			e.printStackTrace();
+			addActionError(ErrorConstants.SEV_ERROR + e);
+			return ERROR;
 		}
+		
 		menu = dao.retrieveMenu();
+		
 		return SUCCESS;
 	}
 

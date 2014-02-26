@@ -2,6 +2,7 @@ package com.upou.teapop.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.upou.teapop.constants.DisplayConstants;
+import com.upou.teapop.constants.ErrorConstants;
 import com.upou.teapop.dao.MenuItemDao;
 import com.upou.teapop.data.Category;
 import com.upou.teapop.data.Menu;
@@ -27,18 +28,14 @@ public class UpdateMenuAction extends ActionSupport {
 	public String execute(){
 		MenuItemDao dao = new MenuItemDao();
 		try {
-			menuItem.setHidden(hidden);
-			menuItem.setFeatured(featured);
 			if(dao.updateMenu(menuItem, category)){
 				addActionMessage("Item #" + menuItem.getItemId() + DisplayConstants.UPDATE_SUCCESS);
-				System.out.println("1");
 			} else {
 				addActionError("Item #" + menuItem.getItemId() + " UPDATE FAILED");
-				System.out.println("SUCCESS");
 			}
 		} catch (Exception e) {
-			System.out.println(e.getLocalizedMessage());
 			e.printStackTrace();
+			addActionError(ErrorConstants.SEV_ERROR + e);
 		}
 		System.out.println("SUCCESS");
 		menu = dao.retrieveMenu();
