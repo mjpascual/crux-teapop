@@ -5,6 +5,8 @@
 
 <div id="menu_box">
 	<div id="menu_wrapper" class="menu">
+	
+		<s:if test="menu != null">
 
 		<div id="categories" class="categories">
 			<ul id="menu_section_links" class="category_links">
@@ -14,7 +16,10 @@
 						Additionals </a></li>
 			</ul>
 		</div>
+		
+		
 		<div id="beverge_wrapper" class="menu_section_wrapper initialdisplay">
+			<s:if test="menu.beveragesSection.categories.size > 0">
 			<div id="beverage_menu_categories" class="menu_categories">
 				<s:iterator status="status" value="menu.beveragesSection.categories">
 					<a class="category_link"
@@ -25,9 +30,11 @@
 					</a>
 				</s:iterator>
 			</div>
-
+			</s:if>
+			
 			<div class="menu_border" class="">
 				<ul id="beverage_content_slider" class="contentSliderMenu">
+					<s:if test="menu.beveragesSection.categories.size > 0">
 					<s:iterator status="status"
 						value="menu.beveragesSection.categories">
 						<li>
@@ -60,6 +67,9 @@
 
 									<div class="item">
 										<div class="name">
+											<s:if test="featured">
+												<img class="bestseller" src="images/bestseller.png"/>
+											</s:if>
 											<strong><s:property value="name" /> </strong>
 										</div>
 										<div class="description">
@@ -122,14 +132,20 @@
 							</div>
 						</li>
 					</s:iterator>
+					</s:if>
+					<s:else>
+						There are no items added in this section yet.
+					</s:else>
 				</ul>
 			</div>
+		
 		</div>
 
 
 		<%-- ADDITIONAL WRAPPER --%>
 
 		<div id="additional_wrapper" class="menu_section_wrapper">
+			<s:if test="menu.additionalSection.categories.size > 0">
 			<div id="additional_menu_categories" class="menu_categories">
 				<s:iterator status="status"
 					value="menu.additionalSection.categories">
@@ -141,9 +157,11 @@
 					</a>
 				</s:iterator>
 			</div>
+			</s:if>
 
 			<div class="menu_border">
 				<ul id="additional_content_slider" class="contentSliderMenu">
+					<s:if test="menu.additionalSection.categories.size > 0">
 					<s:iterator status="status"
 						value="menu.additionalSection.categories">
 						<li>
@@ -176,6 +194,9 @@
 
 									<div class="item">
 										<div class="name">
+											<s:if test="featured">
+												<img class="bestseller" src="images/bestseller.png"/>
+											</s:if>
 											<strong><s:property value="name" /> </strong>
 										</div>
 										<div class="description">
@@ -239,9 +260,20 @@
 
 						</li>
 					</s:iterator>
+					</s:if>
+					<s:else>
+						There are no items added in this section yet.
+					</s:else>
 				</ul>
 			</div>
 		</div>
+		</s:if>
+		<s:else>
+			<br/>
+			<center>
+				There was a problem with retrieving the Menu. Please try again later.
+			</center>
+		</s:else>
 	</div>
 </div>
 

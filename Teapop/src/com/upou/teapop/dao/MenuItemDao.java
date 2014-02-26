@@ -206,7 +206,7 @@ public class MenuItemDao extends BaseDao {
 				Price price = new Price();
 				price.setSmall((rs.getDouble("price_small")));
 				price.setLarge((rs.getDouble("price_big")));
-				price.setRegular((rs.getDouble("price_big")));
+				price.setRegular((rs.getDouble("price")));
 				price.setCurrency(rs.getString("currency"));
 				item.setPrice(price);
 				
