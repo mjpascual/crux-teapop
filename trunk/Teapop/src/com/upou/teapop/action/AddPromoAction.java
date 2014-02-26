@@ -1,7 +1,10 @@
 package com.upou.teapop.action;
 
+import java.sql.SQLException;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.upou.teapop.constants.DisplayConstants;
+import com.upou.teapop.constants.ErrorConstants;
 import com.upou.teapop.dao.PromoDao;
 import com.upou.teapop.data.Promo;
 import com.upou.teapop.data.Promos;
@@ -20,7 +23,8 @@ public class AddPromoAction extends ActionSupport{
 		
 		PromoDao dao = new PromoDao();
 		try {
-			if(promo.getImage() == null){
+			System.out.println("TIM " + promo.getImage());
+			if(promo.getImage() == null || promo.getImage().isEmpty()){
 				promo.setImage("default.png");
 			}
 			
@@ -34,8 +38,12 @@ public class AddPromoAction extends ActionSupport{
 				addActionError("Promo " + promo.getName() + " Add Failed");
 			}
 			
-		} catch (Exception e) {
-			return ERROR;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			addActionError(ErrorConstants.SEV_ERROR + e);
+		}catch (Exception e) {
+			e.printStackTrace();
+			addActionError(ErrorConstants.SEV_ERROR + e);
 		}
 		
 		specials = dao.retrievePromos();

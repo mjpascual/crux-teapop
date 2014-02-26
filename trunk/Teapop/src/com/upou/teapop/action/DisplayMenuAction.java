@@ -1,6 +1,7 @@
 package com.upou.teapop.action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.upou.teapop.constants.ErrorConstants;
 import com.upou.teapop.dao.MenuItemDao;
 import com.upou.teapop.data.Category;
 import com.upou.teapop.data.Menu;
@@ -32,6 +33,7 @@ public class DisplayMenuAction extends ActionSupport{
 			MenuDisplayHelper.sort(menu);
 		} catch (Exception e) {
 			e.printStackTrace();
+			addActionError(ErrorConstants.SEV_ERROR + e);
 		}
 		return SUCCESS;
 	}
