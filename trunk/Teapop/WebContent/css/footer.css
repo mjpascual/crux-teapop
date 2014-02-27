@@ -61,3 +61,28 @@ ul.siteInformationLinks li {
 	color: #E1E1E1;
 	font-size: 20px;
 }
+
+.ui-widget-header {
+	border: 1px solid #D84468;
+	background: none repeat scroll 0% 0% brown;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.ui-dialog-title {
+	padding-right: 60px;
+	padding-left: 5px;
+}
+
+.ui-widget-content {
+	border: 1px solid #D84468;
+	background: #DDDDDD;
+	color: #222222;
+}
+.ui-dialog-titlebar-close {
+	margin-bottom: 5px;
+}
+
+#aboutus-dialog p {
+	padding-left: 10px;
+}
