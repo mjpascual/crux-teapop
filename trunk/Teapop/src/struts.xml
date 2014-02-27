@@ -141,10 +141,11 @@
 			<result>/jsp/admin/categoryForm.jsp</result>
 		</action>
 		
-		<action name="addCategory" class="com.upou.teapop.action.AddCategoryAction" >
+		<action name="addCategory" class="com.upou.teapop.action.AddCategoryAction" > 
 		   	<result name="success">/jsp/admin/categoryList.jsp</result>
 		    <result name="error">/jsp/admin/categoryForm.jsp</result>
         	<result name="done">/jsp/admin/blank.jsp</result>
+        	<result name="input">/jsp/admin/blank.jsp</result>
 		</action>
 		
 		<action name="deleteCategory" class="com.upou.teapop.action.DeleteCategoryAction" >

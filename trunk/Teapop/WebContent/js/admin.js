@@ -42,6 +42,42 @@ var BodySwitcher = {
 		});
 	},
 	
+	ajaxCallImage : function(action, data, callback, callback1){
+		$.ajax({
+			url: action,
+		    type: "POST",
+		    data: data,
+		    async:false,
+            cache:false,
+            contentType: false,
+            processData: false,
+		    error: function(jqXHR, exception) {
+	            if (jqXHR.status === 0) {
+	                alert('Not connect.\n Verify Network.');
+	            } else if (jqXHR.status == 404) {
+	                alert('Requested page not found. [404]');
+	            } else if (jqXHR.status == 500) {
+	                alert('Internal Server Error [500].');
+	            } else if (exception === 'parsererror') {
+	                alert('Requested JSON parse failed.');
+	            } else if (exception === 'timeout') {
+	                alert('Time out error.');
+	            } else if (exception === 'abort') {
+	                alert('Ajax request aborted.');
+	            } else {
+	                alert('Uncaught Error.\n' + jqXHR.responseText);
+	            }
+	        },
+		    success: function(data){ 
+		    	callback(data);
+		    },
+		    complete: function (data){
+		    	callback1(data);
+		    }
+		});
+	},
+	
+	
 	showBody : function(data){
 		var $container = $("#body_container");
 		$container.removeChildrenFromDom();
@@ -121,19 +157,23 @@ var BodySwitcher = {
 		$checkBox.change(function() {
 			$(this).is(':checked') ? $(this).val(true) : $(this).val(false);
 		});
+		
 		var $fileTemp = $form.find(".fileTemp");											    		//SET THIS CLASS
 		var $file 	  = $form.find(".file");															//SET THIS CLASS
 		$(document).on("change",".fileTemp", function(){
 			$file.val($fileTemp.val().split('\\').pop());
 		});
+		
 		$(document).on("click", btn, function(e){ 
 			if($form[0].checkValidity()) {
 				var disabled = $form.find(':input:disabled').removeAttr('disabled');
 				var action = $form.attr("action");
-				var data = $form.serialize();
+				
+				var data = $form.serializefiles();
+			
 				e.preventDefault();
 				disabled.attr('disabled','disabled');
-				self.ajaxCall(action, data, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
+				self.ajaxCallImage(action, data, $.proxy(self.showBody, this), $.proxy(self.initCall, this));
 			}
 		});
 		
@@ -186,5 +226,22 @@ var AdminNavBehavour = {
 	       });
 	    this.empty(); 
 	    try { this.get().innerHTML = ""; } catch (e) {} 
+	};
+})( jQuery );
+
+(function($) {
+	$.fn.serializefiles = function() {
+	    var obj = $(this);
+	    var formData = new FormData();
+	    $.each($(obj).find("input[type='file']"), function(i, tag) {
+	        $.each($(tag)[0].files, function(i, file) {
+	            formData.append(tag.name, file);
+	        });
+	    });
+	    var params = $(obj).serializeArray();
+	    $.each(params, function (i, val) {
+	        formData.append(val.name, val.value);
+	    });
+	    return formData;
 	};
 })( jQuery );

@@ -15,7 +15,7 @@
 					Add New Promo
 				</s:else>				
 			</h3><hr><br>
-			<form method="post" id="add_edit" action="<s:property value='action'/>">
+			<form method="post" id="add_edit" action="<s:property value='action'/>" enctype="multipart/form-data">
 				<div>
 					<label for="promoName">Promo Name:</label>
 					<input type="text" value="<s:property value='promo.name'/>" id="promoName" name="promo.name" maxlength="35" autofocus required>
@@ -29,9 +29,9 @@
 					<textarea  name="promo.desc" rows="6" maxlength="250" required><s:property value='promo.desc'/></textarea>
 				</div>
 				<div>
-				 	<label for="image_file">Category Image: </label>
+				 	<label for="image_file">Promo Image: </label>
 				 	<input type="text" name="promo.image" value="<s:property value='promo.image'/>" class="file" disabled />
-				 	<input type="file" class="fileTemp" value="<s:property value='promo.image'/>"/>
+				 	<input type="file" name="myFile" class="fileTemp"/>
 				</div>
 				<s:if test="%{edit}">
 					<input type="hidden" value="<s:property value='promo.promoId'/>" name="promo.promoId"/>
