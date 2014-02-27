@@ -63,12 +63,15 @@
 		<div id="locationInfo">(033) 376-4362</div>
 		
 		<img class="locationIcon iconLeft" src="images/home/email.png">
-		<div id="locationInfo">crux@upou.edu.ph</div>
+		<div id="locationInfo">
+			<a href="mailto:teapopcafe@gmail.com?Subject=Teapop" target="_top">
+			teapopcafe@gmail.com</a>
+		</div>
 		
 		<a href="https://www.facebook.com/TeaPop/info"> 
 			<img border="0" class="locationIcon iconLeft" src="images/facebook_logo.png" id="facebook_logo">
 		</a>
-		<div id="locationInfo">Like us on Facebook!</div>
+		<div id="locationInfo"><a href="https://www.facebook.com/TeaPop/info"> Like us on Facebook!</a></div>
 	</div>
 	
 
