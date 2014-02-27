@@ -31,9 +31,11 @@
 
 	<div id="teapopFooterBottom">
 		<div id="copyright">
-			<center>| CRUX | PATRICK DUREZA | MARY JOY PASCUAL | TIM TAN
-				|<a href="#">UPOU-CRUX</a> &#169; 2014 All Rights Reserved. <br>
-			Version 1.0.0</center>
+			<center>
+				<a href="#">UPOU-CRUX</a> &#169; 2014 All Rights Reserved. <br>
+				Version 1.0.0 <br>
+				| PATRICK DUREZA | MARY JOY PASCUAL | TIM TAN |<br>
+			</center>
 		</div>
 	</div>
 	<div class="clearfix"></div>

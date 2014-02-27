@@ -9,17 +9,17 @@
 		<h3>Try Our Specials!</h3>
 		<p>
 		<ul>
-			<li>Special 1</li>
-			<li>Special 2</li>
-			<li>Special 3</li>
+			<li>Dark Chocolate Milk Tea</li>
+			<li>Green Apple Italian Soda</li>
+			<li>Strawberry Milk Shake</li>
 		</ul>
 		</p>
 	</div>
 	<div id="delivery" class="grid_8">
-		<h3>Delivery Hours:</h3>
+		<h3>Opening Hours:</h3>
 		<p>
-			Mon-Thu: 10am - 8pm <br /> Fri-Sat: 10am - 11:30pm <br /> Sun: 11am
-			- 8pm <br />
+			Mondays to Sundays<br /> 
+			10:00 AM - 2:00 AM<br />
 		</p>
 	</div>
 </div>
