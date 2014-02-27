@@ -1,6 +1,12 @@
 package com.upou.teapop.action;
 
+import java.io.File;
 import java.sql.SQLException;
+
+import javax.servlet.ServletContext;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.upou.teapop.constants.DisplayConstants;
@@ -11,19 +17,30 @@ import com.upou.teapop.data.Promos;
 
 public class AddPromoAction extends ActionSupport{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
+	
 	private Promo promo;
 	private Promos specials;
 	
+	private File myFile;
+    private String myFileContentType;
+    private String myFileFileName;
 	
 	public String execute(){
 		
 		PromoDao dao = new PromoDao();
 		try {
-			System.out.println("TIM " + promo.getImage());
+			
+			ServletContext context = ServletActionContext.getServletContext();
+			
+			String appPath = context.getRealPath("");
+			String filePath = appPath+DisplayConstants.CAT_IMAGE_PATH;
+	       
+			File fileToCreate = new File(filePath, getMyFileFileName());
+	        FileUtils.copyFile(fileToCreate , getMyFile());
+	        
+	        promo.setImage(getMyFileFileName());
+	        
 			if(promo.getImage() == null || promo.getImage().isEmpty()){
 				promo.setImage("default.png");
 			}
@@ -65,6 +82,31 @@ public class AddPromoAction extends ActionSupport{
 	public void setSpecials(Promos specials) {
 		this.specials = specials;
 	}
+
+	public File getMyFile() {
+		return myFile;
+	}
+
+	public void setMyFile(File myFile) {
+		this.myFile = myFile;
+	}
+
+	public String getMyFileContentType() {
+		return myFileContentType;
+	}
+
+	public void setMyFileContentType(String myFileContentType) {
+		this.myFileContentType = myFileContentType;
+	}
+
+	public String getMyFileFileName() {
+		return myFileFileName;
+	}
+
+	public void setMyFileFileName(String myFileFileName) {
+		this.myFileFileName = myFileFileName;
+	}
+	
 	
 	
 

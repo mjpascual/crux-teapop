@@ -23,6 +23,9 @@ public class DisplayConstants {
 	
 	public static final String DELETE_SUCCESS = " was successfully deleted!";
 	
+	public static final String CAT_IMAGE_PATH = "\\images\\categories";
 	
+	public static final String PROMOS_IMAGE_PATH = "\\images\\promos";
+
 	
 }

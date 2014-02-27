@@ -24,7 +24,7 @@
 							<label for="username">Username:</label><br>
 							<input type="text" id="username" name="user.username" autofocus required><br>
 							<label for="password">Password:</label><br>
-							<input type="password" id="password" name="user.password" autofocus required><br>
+							<input type="password" id="password" name="user.password" required><br>
 <!-- 							<a href="#">Forgotten Password</a> -->
 							<br>
 							<div class="submitLogin">

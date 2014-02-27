@@ -40,7 +40,7 @@
 				<div>
 				 	<label for="image_file">Category Image: </label>
 				 	<input type="text" name="category.image" value="<s:property value='category.image'/>" class="file" disabled />
-				 	<input type="file" class="fileTemp" value="<s:property value='category.image'/>"/>
+				 	<input type="file" name="myFile" class="fileTemp"/>
 				</div>
 				<div>
 					<label for="Position">Display Position: </label>
