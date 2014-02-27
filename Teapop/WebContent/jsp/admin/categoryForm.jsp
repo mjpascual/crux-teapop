@@ -16,7 +16,7 @@
 				</s:else>				
 			</h3>
 			<hr><br>
-			<form id="add" action="addCategory">
+			<form id="add" action="addCategory" enctype="multipart/form-data">
 				<div class="idContainer">
 					<label for="categoryId">Id:</label>
 					<input type="text" class="formId" name="category.categoryId" value="<s:property value='category.categoryId'/>" disabled />

@@ -16,7 +16,6 @@ import com.upou.teapop.data.Category;
 public class CategoryDaoTest {
 
 
-	@Ignore
 	@Test
 	public void createCategory() {
 
