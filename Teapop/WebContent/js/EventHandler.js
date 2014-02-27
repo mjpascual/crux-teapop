@@ -90,5 +90,9 @@ var EventHandler = {
 //			scrollTop : $("#content_wrapper").offset().top
 //		}, 500, "swing");
 	}
-
 };
+
+function showDialog(){
+	 $( "#aboutus-dialog" ).dialog();
+	 $(".ui-button-text").text("X");
+}
