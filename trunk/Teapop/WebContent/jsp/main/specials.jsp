@@ -10,11 +10,10 @@
 	<div class="menu_border">
 		<ul id="contentSliderMenu" class="contentSliderMenu">
 			<s:if test="specials.promos.size > 0">
+			
 			<s:iterator status="status" value="specials.promos">
 				<li>
-					<!-- category item -->
-					<div class="category"
-						id="promolink<s:property value="%{#status.index}"/>">
+					<div class="promo_section" id="promolink<s:property value="%{#status.index}"/>">
 						<div class="promo_photo_container">
 							<img title="<s:property value="desc" />" class="promo_photo"
 								src="images/promos/<s:property value="image"/>">
@@ -29,6 +28,7 @@
 							</div>
 							<div class="clear"></div>
 						</div>
+						<div class="clear"></div>
 					</div>
 				</li>
 			</s:iterator>
@@ -37,7 +37,9 @@
 				There are no items added in this section yet.
 			</s:else>
 		</ul>
+		<div class="clear"></div>
 	</div>
+	<div class="clear"></div>
 </div>
 </s:if>
 <s:else>
