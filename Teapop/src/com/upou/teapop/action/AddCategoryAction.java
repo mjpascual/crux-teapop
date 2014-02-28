@@ -35,18 +35,22 @@ public class AddCategoryAction extends ActionSupport{
 		
 		try {
 			
-			ServletContext context = ServletActionContext.getServletContext();
-			
-			String appPath = context.getRealPath("");
-			String filePath = appPath+DisplayConstants.CAT_IMAGE_PATH;
-	       
-			File fileToCreate = new File(filePath, getMyFileFileName());
-	        FileUtils.copyFile(getMyFile(), fileToCreate);
-	        
-	        category.setImage(getMyFileFileName());
-	        
-	        if(category.getImage() == null || category.getImage().equals("")){
+			if(getMyFileFileName() != null && !getMyFileFileName().equals("")) {
+				
+				ServletContext context = ServletActionContext.getServletContext();
+				
+				String appPath = context.getRealPath("");
+				String filePath = appPath+DisplayConstants.CAT_IMAGE_PATH;
+		       
+				File fileToCreate = new File(filePath, getMyFileFileName());
+		        FileUtils.copyFile(getMyFile(), fileToCreate);
+		    
+		        category.setImage(getMyFileFileName());
+		        
+			} else {
+				
 				category.setImage(DisplayConstants.DEFAULT_CAT_IMG);
+				
 			}
 	        
 			result = categoryDao.createCategory(category);

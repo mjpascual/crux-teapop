@@ -31,18 +31,22 @@ public class AddPromoAction extends ActionSupport{
 		PromoDao dao = new PromoDao();
 		try {
 			
-			ServletContext context = ServletActionContext.getServletContext();
+			if(getMyFileFileName() != null && !getMyFileFileName().equals("")) {
 			
-			String appPath = context.getRealPath("");
-			String filePath = appPath+DisplayConstants.CAT_IMAGE_PATH;
-	       
-			File fileToCreate = new File(filePath, getMyFileFileName());
-	        FileUtils.copyFile(fileToCreate , getMyFile());
-	        
-	        promo.setImage(getMyFileFileName());
-	        
-			if(promo.getImage() == null || promo.getImage().isEmpty()){
+				ServletContext context = ServletActionContext.getServletContext();
+				
+				String appPath = context.getRealPath("");
+				String filePath = appPath+DisplayConstants.PROMOS_IMAGE_PATH;
+		       
+				File fileToCreate = new File(filePath, getMyFileFileName());
+				FileUtils.copyFile(getMyFile(), fileToCreate);
+		        
+		        promo.setImage(getMyFileFileName());
+		        
+			} else {
+				
 				promo.setImage("default.png");
+				
 			}
 			
 			if(!promo.getName().isEmpty() && !promo.getDesc().isEmpty()){

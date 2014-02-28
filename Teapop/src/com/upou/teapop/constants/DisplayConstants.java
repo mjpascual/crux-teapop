@@ -1,5 +1,7 @@
 package com.upou.teapop.constants;
 
+import java.io.File;
+
 public class DisplayConstants {
 	
 	
@@ -23,9 +25,8 @@ public class DisplayConstants {
 	
 	public static final String DELETE_SUCCESS = " was successfully deleted!";
 	
-	public static final String CAT_IMAGE_PATH = "\\images\\categories";
+	public static final String CAT_IMAGE_PATH = File.separator+"images"+File.separator+"categories";
 	
-	public static final String PROMOS_IMAGE_PATH = "\\images\\promos";
+	public static final String PROMOS_IMAGE_PATH = File.separator+"images"+File.separator+"promos";
 
-	
 }
